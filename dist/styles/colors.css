@@ -1,12 +1,20 @@
 :root {
   --color-primary: #5da562;
-  --color-light: #ffffffdd;
-  --color-dark: #222222;
+  --color-fore: #ffffffdd;
+  --color-back: #222222;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-primary: #0B6C12;
+    --color-fore: #222222;
+    --color-back: #ffffffdd;
+  }
 }
 
 html {
-  background: var(--color-dark);
-  color: var(--color-light);
+  background: var(--color-back);
+  color: var(--color-fore);
 }
 
 a {
