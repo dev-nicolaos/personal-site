@@ -1,0 +1,45 @@
+:root {
+  --spacing-base: 5px;
+  --spacing-0: var(--spacing-base);
+  --spacing-1: calc(var(--spacing-base) * 2);
+  --spacing-2: calc(var(--spacing-base) * 4);
+  --spacing-3: calc(var(--spacing-base) * 8);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: auto;
+}
+
+@supports (padding-inline: 5%) {
+  body {
+    padding-inline: 5%;
+    max-inline-size: 960px;
+  }
+
+  main {
+    padding-block: var(--spacing-2);
+  }
+
+  img, picture {
+    max-inline-size: 100%;
+  }
+}
+
+@supports not (padding-inline: 5%) {
+  body {
+    padding: 0 5%;
+    max-width: 960px;
+  }
+
+  main {
+    padding: var(--spacing-2) 0;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}

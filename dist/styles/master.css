@@ -1,0 +1,7 @@
+@import 'reset.css';
+@import 'typography.css';
+@import 'colors.css';
+@import 'animations.css';
+@import 'layout.css';
+@import 'sections/header.css';
+@import 'sections/bio.css';

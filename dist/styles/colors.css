@@ -1,0 +1,14 @@
+:root {
+  --color-primary: #5da562;
+  --color-light: #ffffffdd;
+  --color-dark: #222222;
+}
+
+html {
+  background: var(--color-dark);
+  color: var(--color-light);
+}
+
+a {
+  color: var(--color-primary);
+}

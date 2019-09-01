@@ -1,0 +1,53 @@
+@supports (margin-block-end: var(--spacing-2)) {
+  #bio {
+    margin-block-end: var(--spacing-3);
+  }
+
+  #bio h1,
+  #self-photo {
+    display: block;
+    margin-block-end: var(--spacing-2);
+  }
+
+  #bio p:not(:last-child) {
+    margin-block-end: var(--spacing-2);
+  }
+}
+
+@supports not (margin-block-end: var(--spacing-2)) {
+  #bio {
+    margin-bottom: var(--spacing-3);
+  }
+
+  #bio h1,
+  #self-photo {
+    margin-bottom: var(--spacing-2);
+  }
+
+  #bio p:not(:last-child) {
+    margin-bottom: var(--spacing-2);
+  }
+}
+
+/* @media (width >= 768px) { */
+@media (min-width: 768px) {
+  #bio {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas:
+      'heading heading'
+      'img p1'
+      'img p2'
+      'img p3';
+    grid-column-gap: var(--spacing-2);
+  }
+
+  #bio h1 {
+    grid-area: heading;
+  }
+
+  #self-photo {
+    grid-area: img;
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,35 @@
+@font-face {
+  font-family: Public Sans Web;
+  font-style: normal;
+  font-weight: normal;
+  font-display: fallback;
+  src: url(../assets/fonts/PublicSans-Regular.woff2) format('woff2');
+}
+
+html {
+  font-family: Public Sans Web, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+}
+
+p {
+  line-height: 1.4;
+}
+
+@media (min-width: 768px) {
+  p {
+    font-size: 1.1em;
+    line-height: 1.6;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  font-size: 2em;
+}

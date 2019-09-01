@@ -1,0 +1,52 @@
+#site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#logo {
+  animation-name: periodic-spin;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #logo {
+    animation: none;
+  }
+}
+
+#site-nav {
+  display: flex;
+  align-content: center;
+}
+
+@supports (padding-block: var(--spacing-2)) {
+  #site-header {
+    padding-block: var(--spacing-2);
+  }
+
+  #logo {
+    inline-size: var(--spacing-3);
+    margin-inline-end: var(--spacing-2);
+  }
+
+  #site-nav .nav-link:not(:last-child) {
+    margin-inline-end: 15px;
+  }
+}
+
+@supports not (padding-block: var(--spacing-2)) {
+  #site-header {
+    padding: var(--spacing-2) 0;
+  }
+
+  #logo {
+    width: var(--spacing-3);
+    margin-right: var(--spacing-2);
+  }
+
+  #site-nav .nav-link:not(:last-child) {
+    margin-right: var(--spacing-1);
+  }
+}
