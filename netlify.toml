@@ -1,0 +1,9 @@
+[build]
+  publish = "dist/"
+
+# Redirect default Netlify subdomain to primary domain
+[[redirects]]
+  from = "https://dev-nicolaos.netlify.com/*"
+  to = "https://nicolaos.dev/:splat"
+  status = 301
+  force = true
