@@ -27,6 +27,10 @@ body {
   img, picture {
     max-inline-size: 100%;
   }
+
+  h1, p:not(:last-child) {
+    margin-block-end: var(--spacing-2);
+  }
 }
 
 @supports not (padding-inline: 5%) {
@@ -39,7 +43,11 @@ body {
     padding: var(--spacing-2) 0;
   }
 
-  img {
+  img, picture {
     max-width: 100%;
+  }
+
+  h1, p:not(:last-child) {
+    margin-bottom: var(--spacing-2);
   }
 }

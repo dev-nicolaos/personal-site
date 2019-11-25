@@ -3,13 +3,8 @@
     margin-block-end: var(--spacing-3);
   }
 
-  #bio h1,
   #self-photo {
     display: block;
-    margin-block-end: var(--spacing-2);
-  }
-
-  #bio p:not(:last-child) {
     margin-block-end: var(--spacing-2);
   }
 }
@@ -19,12 +14,8 @@
     margin-bottom: var(--spacing-3);
   }
 
-  #bio h1,
   #self-photo {
-    margin-bottom: var(--spacing-2);
-  }
-
-  #bio p:not(:last-child) {
+    display: block;
     margin-bottom: var(--spacing-2);
   }
 }
