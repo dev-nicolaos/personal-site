@@ -1,12 +1,14 @@
 :root {
   --color-primary: #5da562;
+  --color-accent: #c0c0c0;
   --color-fore: #ffffffdd;
   --color-back: #222222;
 }
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: light), print {
   :root {
     --color-primary: #0B6C12;
+    --color-accent: #ac7e54;
     --color-fore: #222222;
     --color-back: #ffffffdd;
   }
