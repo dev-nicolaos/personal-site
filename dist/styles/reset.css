@@ -1,8 +1,14 @@
 /* prettier-ignore */
 html, body, div, span,
-h1, h2, h3, p, a,
-img, ul, li, picture,
-header, footer, main, nav, section {
+article, aside, footer, header, main, nav, section,
+blockquote, h1, h2, h3, h4, h5, h6, hr, p, pre,
+a, abbr, br, cite, code, data, del, dfn, em, i, ins, kbd, mark, q, samp, strong, sub, sup, time, var, wbr,
+dd, dl, dt, li, ol, ul,
+audio, canvas, iframe, img, object, picture, svg, video,
+caption, col, colgroup, table, tbody, td, tfoot, th, thead, tr,
+details, summary,
+button, datalist, fieldset, form, input, label, legend, meter, optgroup, option, output, progress, select, textarea {
+  box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 	border: 0;

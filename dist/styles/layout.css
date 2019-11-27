@@ -6,10 +6,6 @@
   --spacing-3: calc(var(--spacing-base) * 8);
 }
 
-* {
-  box-sizing: border-box;
-}
-
 body {
   margin: auto;
 }
