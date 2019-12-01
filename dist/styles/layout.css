@@ -24,7 +24,7 @@ body {
     max-inline-size: 100%;
   }
 
-  h1, p:not(:last-child) {
+  :not(header) > h1, p:not(:last-child) {
     margin-block-end: var(--spacing-2);
   }
 }
@@ -43,7 +43,7 @@ body {
     max-width: 100%;
   }
 
-  h1, p:not(:last-child) {
+  :not(header) > h1, p:not(:last-child) {
     margin-bottom: var(--spacing-2);
   }
 }

@@ -2,12 +2,16 @@
   margin-bottom: var(--spacing-1);
 }
 
-#resume-header :not(:last-child) {
-  margin-bottom: .15em;
-}
-
 #logo {
   display: none;
+}
+
+#resume-name, #resume-profession {
+  margin-bottom: var(--spacing-0);
+}
+
+#contact-info li:not(:last-child) {
+  margin-bottom: var(--spacing-1);
 }
 
 #contact-info {
@@ -15,8 +19,12 @@
 }
 
 @media (min-width: 560px) {
-  #resume-header :not(:last-child) {
-    margin-bottom: 0;
+  #resume-header {
+    display: grid;
+    grid-template-columns: auto auto 1fr auto;
+    grid-template-rows: auto auto;
+    grid-gap: var(--spacing-1);
+    align-items: flex-end;
   }
 
   #logo {
@@ -24,12 +32,8 @@
     width: var(--spacing-3);
   }
 
-  #resume-header {
-    display: grid;
-    grid-template-columns: auto auto 1fr auto;
-    grid-template-rows: auto auto;
-    grid-gap: var(--spacing-1);
-    align-items: flex-end;
+  #resume-name, #resume-profession, #contact-info li:not(:last-child) {
+    margin-bottom: 0;
   }
 
   #resume-name {
@@ -54,5 +58,4 @@
   #contact-info li:not(:last-child)::after {
     content: " |";
   }
-
 }
