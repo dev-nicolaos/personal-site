@@ -8,6 +8,8 @@
   minify = true
 [context.production.processing.html]
   pretty_urls = true
+[context.production.processing.images]
+  compress = true
 
 # Redirect default Netlify subdomain to primary domain
 [[redirects]]
