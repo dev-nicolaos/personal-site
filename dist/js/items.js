@@ -1,4 +1,4 @@
-export const resources = {
+export const utilityBeltItems = {
   tools: [
     {
       name: 'Visual Studio Code',
@@ -65,6 +65,10 @@ export const resources = {
       url: 'https://caniuse.com/',
     },
     {
+      name: "24 ways",
+      url: "https://24ways.org/",
+    },
+    {
       name: 'freeCodeCamp',
       url: 'https://www.freecodecamp.org/',
     },
@@ -109,7 +113,7 @@ export const resources = {
       url: 'https://github.com/Microsoft/Terminal',
     },
     {
-      name: 'https://deno.land/Deno',
+      name: 'Deno',
       url: 'https://deno.land/',
     },
     {
