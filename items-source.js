@@ -1,4 +1,4 @@
-console.log(JSON.stringify({
+const items = JSON.stringify({
   tools: [
     {
       name: "Visual Studio Code",
@@ -125,4 +125,9 @@ console.log(JSON.stringify({
       url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/globalThis",
     },
   ],
-}));
+});
+
+const fileContents = `export const utilityBeltItems = JSON.parse('${items}');`;
+const encodedData = new TextEncoder().encode(fileContents);
+
+Deno.writeFileSync('dist/js/items.js', encodedData);
