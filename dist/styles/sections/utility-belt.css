@@ -46,7 +46,7 @@ utility-belt {
 }
 
 .accordion-list-item {
-  margin-bottom: var(--spacing-1);
+  margin-bottom: var(--spacing-2);
 }
 
 @media (min-width: 768px) {
