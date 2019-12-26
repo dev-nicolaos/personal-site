@@ -5,7 +5,7 @@ utility-belt {
 }
 
 .accordion-section + .accordion-section {
-  border-block-start: 1px solid var(--color-primary);
+  border-top: 1px solid var(--color-primary);
 }
 
 .accordion-section summary {
@@ -46,7 +46,7 @@ utility-belt {
 }
 
 .accordion-list-item {
-  margin-block-end: var(--spacing-1);
+  margin-bottom: var(--spacing-1);
 }
 
 @media (min-width: 768px) {
@@ -63,12 +63,12 @@ utility-belt {
 
   .accordion-section + .accordion-section {
     border: none;
-    border-inline-start: 1px solid var(--color-primary);
+    border-left: 1px solid var(--color-primary);
   }
 
   [open] .accordion-section-list {
     animation: fade-in-from-left 1000ms ease;
-    padding-block: var(--spacing-1) var(--spacing-2);
+    padding: var(--spacing-2) 0;
   }
 
   @media (prefers-reduced-motion: reduce) {
