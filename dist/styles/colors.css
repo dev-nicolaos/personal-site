@@ -2,7 +2,8 @@
   --color-primary: #5da562;
   --color-accent: #c0c0c0;
   /* Edge doesn't support alpha values in hex yet */
-  /* --color-fore:  ffffffdd */
+  /* https://caniuse.com/#feat=mdn-css_types_color_alpha_hexadecimal_notation */
+  /* --color-fore: #ffffffdd; */
   --color-fore: rgba(255, 255, 255, 0.867);
   --color-back: #222222;
 }
@@ -12,7 +13,7 @@
     --color-primary: #0B6C12;
     --color-accent: #ac7e54;
     --color-fore: #222222;
-    --color-back: #ffffffdd;
+    --color-back: rgba(255, 255, 255, 0.867);
   }
 }
 
