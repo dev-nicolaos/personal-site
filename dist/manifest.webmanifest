@@ -1,0 +1,44 @@
+{
+  "name": "Nicolaos Skimas' Portfolio",
+  "short_name": "NS",
+  "description": "The official portfolio site of Nicolaos Skimas, web developer in Vancouver WA",
+  "icons": [
+    {
+      "src": "./assets/icons/logo-48.webp",
+      "type": "image/webp",
+      "sizes": "48x48"
+    },
+    {
+      "src": "./assets/icons/logo-48.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "./assets/icons/logo-192.webp",
+      "type": "image/webp",
+      "sizes": "192x192"
+    },
+    {
+      "src": "./assets/icons/logo-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "./assets/icons/logo-512.webp",
+      "type": "image/webp",
+      "sizes": "512x512"
+    },
+    {
+      "src": "./assets/icons/logo-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "scope": "/",
+  "theme_color": "#0B6C12",
+  "background_color": "#ffffff",
+  "lang": "en-US",
+  "display": "standalone",
+  "orientation": "any"
+}

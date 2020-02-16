@@ -12,7 +12,17 @@
     <meta name="author" content="Nicolaos Skimas" />
     <title>Nicolaos Skimas | Web Developer</title>
 
+    <meta name="theme-color" content="#0B6C12">
+    <link rel="manifest" href="./manifest.webmanifest">
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("./sw.js");
+      }
+    </script>
+
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/assets/icons/logo-192.png">
+
     <link rel="stylesheet" href="styles/index.css" />
     <script src="js/utility-belt.js" type="module"></script>
   </head>
