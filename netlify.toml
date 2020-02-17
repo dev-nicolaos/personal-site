@@ -2,7 +2,7 @@
   publish = "dist/"
 
 [context.production.processing]
-  skip_processing = false
+  skip_processing = true
 [context.production.processing.css]
   bundle = true
   minify = true
