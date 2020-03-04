@@ -1,8 +1,9 @@
-const cacheName = "sw-cache";
+const cacheName  = "sw-cache-v1";
+
 const files = [
   "/manifest.webmanifest",
   "/index.html",
-  "/resume.html",
+  "/resume/index.html",
   // JS
   "/js/utility-belt.js",
   "/js/items.js",
@@ -34,14 +35,39 @@ const files = [
   "/assets/img/nicolaos-wide.webp",
 ];
 
-self.addEventListener('fetch', e => {
-  e.respondWith(caches.match(e.request).then(cacheRes =>
-      cacheRes || fetch(e.request).then(fetchRes =>
-        caches.open(cacheName).then(cache => {
-          cache.put(e.request, fetchRes.clone());
-          return fetchRes;
-        })
-      )
-    )
-  );
-});
+const handleInstall = async () => {
+  const cache = await caches.open(cacheName);
+  return cache.addAll(files);
+};
+
+self.addEventListener('install', (e) => e.waitUntil(handleInstall()));
+
+const handleActivate = async () => {
+  const keyList = await caches.keys();
+  keyList.forEach(key => {
+    if (key !== cacheName) {
+      caches.delete(key);
+    }
+  });
+};
+
+self.addEventListener('activate', e => e.waitUntil(handleActivate()));
+
+const handleFetch = async (req) => {
+  try {
+    const res = await fetch(req);
+    if (res.ok) {
+      const cache = await caches.open(cacheName);
+      cache.put(req, res.clone());
+      return res;
+    } else {
+      throw Error(`Request returned a ${res.status}: ${res.statusText}`);
+    }
+  } catch (err) {
+    console.warn(`SW: An error occured while fetching ${req.url} (${req.method})`);
+    console.warn(err);
+    return await caches.match(req);
+  }
+};
+
+self.addEventListener('fetch', e => e.respondWith(handleFetch(e.request)));
