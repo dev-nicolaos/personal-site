@@ -1,9 +1,7 @@
 :root {
   --color-primary: #5da562;
   --color-accent: #c0c0c0;
-  /* Edge doesn't support alpha values in hex yet */
-  /* --color-fore:  ffffffdd */
-  --color-fore: rgba(255, 255, 255, 0.867);
+  --color-fore:  #ffffffdd;
   --color-back: #222222;
 }
 
