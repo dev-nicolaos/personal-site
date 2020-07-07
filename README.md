@@ -20,4 +20,4 @@ The short version is [parsing JSON is way faster](https://v8.dev/blog/cost-of-ja
 #### Updating the Utility Belt Items
 
 1. Make the desired change to the data in `items-source.js`
-1. Run `deno --allow-write items-source.js` to populate `dist/js/items.js` with the new data
+1. Run `deno run --allow-write items-source.js` to populate `dist/js/items.js` with the new data
