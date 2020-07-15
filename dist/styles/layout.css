@@ -8,42 +8,18 @@
 
 body {
   margin: auto;
+  padding: 0 5%;
+  max-inline-size: 960px;
 }
 
-@supports (padding-inline: 5%) {
-  body {
-    padding-inline: 5%;
-    max-inline-size: 960px;
-  }
-
-  main {
-    padding-block: var(--spacing-2);
-  }
-
-  img, picture {
-    max-inline-size: 100%;
-  }
-
-  :not(header) > h1, p:not(:last-child) {
-    margin-block-end: var(--spacing-2);
-  }
+main {
+  padding: var(--spacing-2) 0;
 }
 
-@supports not (padding-inline: 5%) {
-  body {
-    padding: 0 5%;
-    max-width: 960px;
-  }
+img, picture {
+  max-inline-size: 100%;
+}
 
-  main {
-    padding: var(--spacing-2) 0;
-  }
-
-  img, picture {
-    max-width: 100%;
-  }
-
-  :not(header) > h1, p:not(:last-child) {
-    margin-bottom: var(--spacing-2);
-  }
+:not(header) > h1, p:not(:last-child) {
+  margin-block-end: var(--spacing-2);
 }
