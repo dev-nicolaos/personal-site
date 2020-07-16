@@ -1,23 +1,10 @@
-@supports (margin-block-end: var(--spacing-2)) {
-  #bio {
-    margin-block-end: var(--spacing-3);
-  }
-
-  #self-photo {
-    display: block;
-    margin-block-end: var(--spacing-2);
-  }
+#bio {
+  margin-block-end: var(--spacing-3);
 }
 
-@supports not (margin-block-end: var(--spacing-2)) {
-  #bio {
-    margin-bottom: var(--spacing-3);
-  }
-
-  #self-photo {
-    display: block;
-    margin-bottom: var(--spacing-2);
-  }
+#self-photo {
+  display: block;
+  margin-block-end: var(--spacing-2);
 }
 
 /* @media (width >= 768px) { */
