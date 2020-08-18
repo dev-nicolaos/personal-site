@@ -23,6 +23,12 @@ const renderAccordionSection = (items, sectionName, index) => `
   </details>
 `;
 
+const mqList = matchMedia("(min-width: 768px)");
+let desktop = mqList.matches;
+mqList.addEventListener("change", e => {
+  desktop = e.matches;
+});
+
 class UtilityBelt extends HTMLElement {
   constructor() {
     super();
@@ -30,11 +36,10 @@ class UtilityBelt extends HTMLElement {
     this.querySelectorAll("summary").forEach(el =>
       el.addEventListener("click", e => {
         e.preventDefault();
-        const mobile = getComputedStyle(this, "::after").content === "none";
         const currentlyOpen = this.querySelector("[open]");
         const targetAlreadyOpen = e.currentTarget.parentElement === currentlyOpen;
 
-        if (mobile) {
+        if (!desktop) {
           e.currentTarget.parentElement.toggleAttribute("open");
           if (!targetAlreadyOpen) {
             currentlyOpen.removeAttribute("open");

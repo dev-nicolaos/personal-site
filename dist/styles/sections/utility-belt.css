@@ -55,12 +55,6 @@ utility-belt {
     position: relative;
   }
 
-  utility-belt::after {
-    content: 'Hi';
-    visibility: hidden;
-    width: 0;
-  }
-
   .accordion-section + .accordion-section {
     border: none;
     border-left: 1px solid var(--color-primary);
