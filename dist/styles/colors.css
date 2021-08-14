@@ -1,24 +1,22 @@
 :root {
-  --color-primary: #5da562;
-  --color-accent: #c0c0c0;
-  --color-fore:  #ffffffdd;
+  --color-accent: #5ca0a5;
   --color-back: #222222;
+  --color-fore:  #ffffffdd;
+  --color-primary: #5da562;
+  --std-gradient: linear-gradient(90deg, var(--color-primary) 0%, var(--color-accent) 100%);
 }
 
 @media (prefers-color-scheme: light), print {
   :root {
-    --color-primary: #0B6C12;
-    --color-accent: #ac7e54;
-    --color-fore: #222222;
+    --color-accent: #0a646b;
     --color-back: #ffffffdd;
+    --color-fore: #222222;
+    --color-primary: #0B6C12;
   }
 }
 
 html {
   background: var(--color-back);
   color: var(--color-fore);
-}
-
-a {
-  color: var(--color-primary);
+  scrollbar-color: var(--color-accent) var(--color-back);
 }

@@ -1,5 +1,6 @@
 :root {
-  --spacing-base: 5px;
+  font-size: 1em;
+  --spacing-base: .5rem;
   --spacing-0: var(--spacing-base);
   --spacing-1: calc(var(--spacing-base) * 2);
   --spacing-2: calc(var(--spacing-base) * 4);
@@ -8,18 +9,16 @@
 
 body {
   margin: auto;
-  padding: 0 5%;
   max-inline-size: 960px;
+  padding: 0 5% var(--spacing-3) 5%;
 }
 
-main {
-  padding: var(--spacing-2) 0;
+@media print {
+  /* Let the printing margins handle it */
+  body { padding: 0; }
 }
 
-img, picture {
+img {
+  height: auto;
   max-inline-size: 100%;
-}
-
-:not(header) > h1, p:not(:last-child) {
-  margin-block-end: var(--spacing-2);
 }

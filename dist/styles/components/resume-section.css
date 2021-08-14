@@ -1,0 +1,32 @@
+.resume-section { text-align: center; }
+
+.resume-section:not(:last-child) {
+  margin-bottom: var(--spacing-3);
+}
+
+.resume-section_title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-block-end: var(--spacing-2);
+}
+
+.resume-section_list { list-style: disc inside; }
+
+/* This represents an <li> that contains another list */
+.resume-section_sublist {
+  list-style-type: none;
+  margin-block-end: var(--spacing-2);
+}
+
+.resume-section_subtitle {
+  font-size: 1.2em;
+  margin-block-end: var(--spacing-1);
+}
+
+.resume-section_list-item { line-height: 1.8; }
+.resume-section_list-item::marker { color: var(--color-primary); }
+
+@media (min-width: 620px) {
+  .resume-section { text-align: initial; }
+  .resume-section_sublist .resume-section_list-item { margin-inline-start: var(--spacing-1); }
+}

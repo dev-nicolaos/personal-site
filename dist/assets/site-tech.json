@@ -1,0 +1,86 @@
+[
+  {
+    "name": "C3 CSS",
+    "url": "https://c3css.com/"
+  },
+  {
+    "name": "CanIUse",
+    "url": "https://caniuse.com/"
+  },
+  {
+    "name": "CSS Custom Properties",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/--*"
+  },
+  {
+    "name": "CSS Grid",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout"
+  },
+  {
+    "name": "CSS Logical Properties",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties"
+  },
+  {
+    "name": "Editor Config",
+    "url": "https://editorconfig.org/"
+  },
+  {
+    "name": "ES Modules",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules"
+  },
+  {
+    "name": "Fetch API",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API"
+  },
+  {
+    "name": "Firefox Dev Tools",
+    "url": "https://developer.mozilla.org/en-US/docs/Tools"
+  },
+  {
+    "name": "Git",
+    "url": "https://git-scm.com/"
+  },
+  {
+    "name": "GitHub",
+    "url": "https://github.com/"
+  },
+  {
+    "name": "Google Domains",
+    "url": "https://domains.google/"
+  },
+  {
+    "name": "HTML Picture element",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture"
+  },
+  {
+    "name": "JS Await",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await"
+  },
+  {
+    "name": "JS Destructuring Assignment",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment"
+  },
+  {
+    "name": "Lighthouse",
+    "url": "https://developers.google.com/web/tools/lighthouse/"
+  },
+  {
+    "name": "MDN",
+    "url": "https://developer.mozilla.org/"
+  },
+  {
+    "name": "Netlify",
+    "url": "https://www.netlify.com/"
+  },
+  {
+    "name": "Squoosh",
+    "url": "https://squoosh.app/"
+  },
+  {
+    "name": "Visual Studio Code",
+    "url": "https://code.visualstudio.com/"
+  },
+  {
+    "name": "Windows Terminal",
+    "url": "https://github.com/Microsoft/Terminal"
+  }
+]

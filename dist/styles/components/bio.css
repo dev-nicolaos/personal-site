@@ -1,0 +1,23 @@
+.bio { margin-block-end: var(--spacing-3); }
+
+.bio_photo {
+  display: block;
+  inline-size: min(100%, 380px);
+  margin: var(--spacing-2) auto 0;
+}
+
+.bio_paragraph, .bio_blockquote {
+  font-size: 1.1em;
+  line-height: 1.8;
+}
+
+.bio_paragraph:not(:last-of-type) {
+  margin-block-end: var(--spacing-3);
+}
+
+.bio_blockquote {
+  font-style: italic;
+  margin: var(--spacing-1) auto 0 auto;
+  max-inline-size: 20em;
+  text-align: center;
+}
