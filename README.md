@@ -6,3 +6,10 @@ This is the repo for my portfolio site. I have two goals for this project:
 
 1. Zero Dependencies
 2. Score 100 in every [Lighthouse](https://developers.google.com/web/tools/lighthouse/) category
+
+## Development
+
+To start a dev server...
+
+1. If not already installed (or out of date), run `npm i -g netlify-cli@latest`
+2. In this projects root folder, run `netlify dev`
