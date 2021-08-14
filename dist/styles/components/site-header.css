@@ -1,0 +1,35 @@
+.site-header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: var(--spacing-2) 0 var(--spacing-3);
+}
+
+@keyframes periodic-spin {
+  0% { transform: rotate(0); }
+  12% { transform: rotate(360deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.site-header_logo {
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  animation-name: periodic-spin;
+  inline-size: 3rem;
+  margin-inline-end: var(--spacing-2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header_logo { animation: none; }
+}
+
+.site-header_nav {
+  align-content: center;
+  display: flex;
+  gap: var(--spacing-1);
+  list-style: none;
+}
+
+@media (min-width: 400px) {
+  .site-header_nav { gap: var(--spacing-2); }
+}
