@@ -6,7 +6,7 @@
   --std-gradient: linear-gradient(90deg, var(--color-primary) 0%, var(--color-accent) 100%);
 }
 
-@media (prefers-color-scheme: light), print {
+@media print {
   :root {
     --color-accent: #0a646b;
     --color-back: #ffffffdd;
