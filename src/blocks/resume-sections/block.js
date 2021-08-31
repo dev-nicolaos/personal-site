@@ -22,12 +22,4 @@ const renderSection = ([title, items]) => `
   </section>
 `;
 
-// TODO: remove IIFE when top level await has wide support
-// https://caniuse.com/mdn-javascript_operators_await_top_level
-(async () => {
-  const response = await fetch("/assets/resume.json");
-  const container = document.getElementsByTagName("main")[0];
-  container.innerHTML = Object.entries(await response.json())
-    .map(renderSection)
-    .join('');
-})();
+export default (sections) => Object.entries(sections).map(renderSection).join('');
