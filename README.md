@@ -12,4 +12,6 @@ This is the repository for my portfolio site. I have two goals for this project:
 To start a dev server...
 
 1. If not already installed (or out of date), run `npm i -g netlify-cli@latest`
-2. In this project's root folder, run `netlify dev`
+2. In this project's root folder, run `deno run -A dev.ts`
+3. If on Windows, open another terminal and run `netlify dev` from this project's root folder
+    - This is due to a current limitation of `Deno.run`, see _dev.ts_ for more details

@@ -2,6 +2,7 @@ import {
   copySync,
   emptyDirSync,
   ensureFileSync,
+  existsSync,
   walkSync,
 } from "https://deno.land/std@0.106.0/fs/mod.ts";
 
@@ -21,9 +22,9 @@ async function hydrateBlocks(file: string): Promise<string> {
       const blockFolder = `./${SOURCE_FOLDER}/blocks/${blockName}`;
 
       const { default: render } = await import(`${blockFolder}/block.js`);
-      const blockData = JSON.parse(
-        Deno.readTextFileSync(`${blockFolder}/data.json`),
-      );
+      const blockData = existsSync(`${blockFolder}/data.json`)
+        ? JSON.parse(Deno.readTextFileSync(`${blockFolder}/data.json`))
+        : null;
       renderedBlocks[blockName] = render(blockData).trim();
     }
   }
@@ -34,19 +35,26 @@ async function hydrateBlocks(file: string): Promise<string> {
   );
 }
 
-emptyDirSync(BUILD_FOLDER);
+try {
+  emptyDirSync(BUILD_FOLDER);
 
-Array
-  .from(walkSync(SOURCE_FOLDER))
-  .filter(entry => entry.isFile && !entry.path.includes("blocks"))
-  .forEach(async ({ path, name }) => {
-    const outPath = path.replace(SOURCE_FOLDER, BUILD_FOLDER);
-    ensureFileSync(outPath);
+  Array
+    .from(walkSync(SOURCE_FOLDER))
+    .filter(entry => entry.isFile && !entry.path.includes("blocks"))
+    .forEach(async ({ path, name }) => {
+      const outPath = path.replace(SOURCE_FOLDER, BUILD_FOLDER);
+      ensureFileSync(outPath);
 
-    if (name.endsWith(".html")) {
-      const outFile = await hydrateBlocks(Deno.readTextFileSync(path));
-      Deno.writeTextFileSync(outPath, outFile);
-    } else {
-      copySync(path, outPath, { overwrite: true });
-    }
-  });
+      if (name.endsWith(".html")) {
+        const outFile = await hydrateBlocks(Deno.readTextFileSync(path));
+        Deno.writeTextFileSync(outPath, outFile);
+      } else {
+        copySync(path, outPath, { overwrite: true });
+      }
+    });
+
+  console.log("Build completed successfully!");
+} catch (err) {
+  console.error("Build failed with the following error:");
+  console.error(err);
+}
