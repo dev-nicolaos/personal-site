@@ -1,4 +1,6 @@
-.vscode
+.vscode/**/*
+!.vscode/extensions.json
+
 dist
 
 # Local Netlify folder
