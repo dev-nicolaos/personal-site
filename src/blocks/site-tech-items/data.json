@@ -20,6 +20,10 @@
     "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties"
   },
   {
+    "name": "Deno",
+    "url": "https://deno.land/"
+  },
+  {
     "name": "Editor Config",
     "url": "https://editorconfig.org/"
   },
