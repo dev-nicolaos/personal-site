@@ -1,27 +1,13 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="author" content="Nicolaos Skimas" />
+    {{ head-boilerplate }}
+
     <meta name="description" content="See Nicolaos' work experience, education, and more" />
     <title>Nicolaos Skimas' Resume</title>
 
-    <meta name="theme-color" content="#0B6C12">
-
-    <link rel="icon" href="../favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="/assets/icons/logo-192.png">
-    <link rel="manifest" href="/manifest.webmanifest">
-
-    <link rel="stylesheet" href="/styles/reset.css" />
-    <link rel="stylesheet" href="/styles/typography.css" />
-    <link rel="stylesheet" href="/styles/colors.css" />
-    <link rel="stylesheet" href="/styles/layout.css" />
-    <link rel="stylesheet" href="/styles/misc.css" />
     <link rel="stylesheet" href="/styles/components/resume-header.css" />
     <link rel="stylesheet" href="/styles/components/resume-section.css" />
-    <script src="/js/resume-sections.js" type="module"></script>
   </head>
   <body>
     <header class="resume-header">
@@ -35,6 +21,6 @@
       </ul>
     </header>
 
-    <main></main>
+    <main>{{ resume-sections }}</main>
   </body>
 </html>

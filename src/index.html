@@ -1,32 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {{ head-boilerplate }}
 
     <meta
       name="description"
       content="The official portfolio site of Nicolaos Skimas, web developer in Vancouver WA"
     />
-    <meta name="author" content="Nicolaos Skimas" />
     <title>Nicolaos Skimas | Web Developer</title>
 
-    <meta name="theme-color" content="#5da562">
-
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="/assets/icons/logo-192.png">
-    <link rel="manifest" href="/manifest.webmanifest">
-
-    <link rel="stylesheet" href="/styles/reset.css" />
-    <link rel="stylesheet" href="/styles/typography.css" />
-    <link rel="stylesheet" href="/styles/colors.css" />
-    <link rel="stylesheet" href="/styles/layout.css" />
-    <link rel="stylesheet" href="/styles/misc.css" />
     <link rel="stylesheet" href="/styles/components/site-header.css" />
     <link rel="stylesheet" href="/styles/components/page-header.css" />
     <link rel="stylesheet" href="/styles/components/bio.css" />
     <link rel="stylesheet" href="/styles/components/site-tech.css" />
-    <script type="module" src="/js/site-tech.js"></script>
   </head>
 
   <body>
@@ -99,7 +85,7 @@
 
       <section class="site-tech">
         <h1 class="site-tech_heading">What I Use for this Site</h1>
-        <ul id="site-tech_items"></ul>
+        {{ site-tech-items }}
       </section>
     </main>
   </body>

@@ -20,6 +20,10 @@
     "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties"
   },
   {
+    "name": "Deno",
+    "url": "https://deno.land/"
+  },
+  {
     "name": "Editor Config",
     "url": "https://editorconfig.org/"
   },
@@ -48,7 +52,7 @@
     "url": "https://domains.google/"
   },
   {
-    "name": "HTML Picture element",
+    "name": "HTML Picture Element",
     "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture"
   },
   {
