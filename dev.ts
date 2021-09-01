@@ -1,21 +1,37 @@
 import { debounce } from "https://deno.land/std@0.106.0/async/mod.ts";
 
-const build = debounce(async (event?) => {
-  if (event) {
-    console.log(
-      new Date().toLocaleTimeString(),
-      "Change detected, attempting to build...",
-    );
+import {
+  buildAllHTMLFiles,
+  buildHTMLFiles,
+  buildSite,
+  copyStaticFile,
+  filterStaticPaths,
+} from "./build-system.ts";
+
+const handleChange = debounce(async (event: Deno.FsEvent) => {
+  console.log(
+    new Date().toLocaleTimeString(),
+    "Change detected, attempting to build...",
+  );
+
+  const changedBlockFiles = event.paths.filter(path => path.includes("blocks"));
+
+  if (changedBlockFiles.length > 0) {
+    buildAllHTMLFiles();
+  } else {
+    const changedHTMLFiles = event.paths.filter(path => path.endsWith(".html"));
+    if (changedHTMLFiles.length > 0) {
+      await buildHTMLFiles(changedHTMLFiles);
+    }
   }
 
-  const process = Deno.run({
-    cmd: ["deno", "run", "-A", "--unstable", "build.ts"],
+  event.paths.filter(filterStaticPaths).forEach(path => {
+    copyStaticFile(path)
   });
-
-  await process.status();
 }, 200);
 
-build();
+
+await buildSite();
 
 if (Deno.build.os !== "windows") {
   // Deno.run is currently unable to find scripts (as opposed to executables)
@@ -26,5 +42,4 @@ if (Deno.build.os !== "windows") {
 
 const watcher = Deno.watchFs("./src");
 console.log("Watching for changes...");
-for await (const event of watcher) build(event);
-
+for await (const event of watcher) handleChange(event);
