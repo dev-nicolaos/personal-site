@@ -11,6 +11,8 @@ This is the repository for my portfolio site. I have two goals for this project:
 
 You will need both [Node](https://nodejs.org/) (to run the netlify dev server) and [Deno](https://deno.land/) (to run the build system) installed to run the site locally.
 
+Deno's standard modules are still currently unstable, so it is advisable to use the specific version of Deno referenced in _netlify.toml_ that is guaranteed to work with the version of the standard modules referenced by the build scripts.
+
 To start a dev server...
 
 1. If not already installed (or out of date), run `npm i -g netlify-cli@latest`
