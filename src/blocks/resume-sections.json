@@ -4,7 +4,7 @@
       "Building/maintaining modern web applications using React/Redux",
       "Creating pattern library of reusable, accessible UI components",
       "Building/maintaining gateway services running on Node",
-      "Practicing agile development techniques in SCRUM framework"
+      "Practicing agile development techniques in Scrum framework"
     ],
     "Software Developer at Trend Capital": [
       "Helped develop new marketing sites/forms using Laravel and Sass"
@@ -25,16 +25,17 @@
     ]
   },
   "Technical Skills": [
-    "Highly skilled with HTML5, CSS3 (+ Sass/Emotion), and JavaScript (+ ES6/TypeScript)",
+    "Highly skilled with modern HTML, CSS, and JavaScript/TypeScript",
     "Very comfortable with Git, NPM, and modern development workflows",
     "Experience with accessiblilty, functional programming, and testing",
-    "Experience with a variety of JS libraries/frameworks (React, Angular, Express)",
+    "Experience with a variety of JS environments (React, Express, Deno)",
     "Working knowledge of deployment options/infrastructure"
   ],
   "Essential Skills": [
     "Continually seeking to grow professionally and learn new technologies/patterns",
     "Ability to work effectively in a collaborative team environment",
-    "Strong written and verbal communication skills"
+    "Strong written and verbal communication skills",
+    "User centric focus"
   ],
   "Awards": [
     "Eagle Scout"
