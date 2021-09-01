@@ -1,4 +1,5 @@
 [build]
+  # If Netlify build servers ever support Deno OOTB, the first half of this command can be dropped
   command = "curl -fsSL https://deno.land/x/install/install.sh | sh && /opt/buildhome/.deno/bin/deno run --allow-read --allow-write --unstable ./build.ts"
   publish = "dist/"
 
