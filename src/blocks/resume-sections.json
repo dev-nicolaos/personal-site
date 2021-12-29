@@ -1,13 +1,13 @@
 {
   "Work Experience": {
     "Software Engineer at The Home Depot QuoteCenter": [
-      "Building/maintaining modern web applications using React/Redux",
+      "Building/maintaining a modern React application which generates multi-billion dollar annual revenue",
       "Creating pattern library of reusable, accessible UI components",
-      "Building/maintaining gateway services running on Node",
+      "Building/maintaining gateway services running on Node.js",
       "Practicing agile development techniques in Scrum framework"
     ],
     "Software Developer at Trend Capital": [
-      "Helped develop new marketing sites/forms using Laravel and Sass"
+      "Helped develop new marketing sites and web forms using Laravel and Sass"
     ],
     "Front End Developer at Dice Services": [
       "Developed/maintained data-driven control panel built in AngularJS",
@@ -16,7 +16,7 @@
     "Web Development and IT intern at Glenwood Community Church": [
       "Helped develop online giving page",
       "Improved usability throughout website",
-      "Wrote custom CSS for the website and internal contact management system"
+      "Wrote custom CSS for website and internal contact management system"
     ]
   },
   "Education": {
@@ -37,11 +37,12 @@
     "Strong written and verbal communication skills",
     "User centric focus"
   ],
+  "Volunteer Work": [
+    "Middle school ministry volunteer with local churches",
+    "Open source software/documentation contributor",
+    "Short term mission trip to Port-au-Prince Haiti"
+  ],
   "Awards": [
     "Eagle Scout"
-  ],
-  "Volunteer Work": [
-    "Volunteered in the Middle School Ministry at Glenwood Community Church",
-    "Mission Trip to Port-au-Prince Haiti"
   ]
 }
