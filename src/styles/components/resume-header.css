@@ -5,6 +5,11 @@
   text-align: center;
 }
 
+@media print {
+  /* Let the printing margins handle it */
+  .resume-header { margin-block-start: 0; }
+}
+
 .resume-header_logo { display: none; }
 
 .resume-header_name { font-size: 2em; }
