@@ -1,10 +1,9 @@
+import { copySync } from "https://deno.land/std@0.120.0/fs/copy.ts";
 import {
-  copySync,
   emptyDirSync,
   ensureFileSync,
-  existsSync,
   walkSync,
-} from "https://deno.land/std@0.106.0/fs/mod.ts";
+} from "https://deno.land/std@0.120.0/fs/mod.ts";
 
 const SOURCE_FOLDER_NAME = "src";
 const BUILD_FOLDER_NAME = "dist";
@@ -12,6 +11,16 @@ const BLOCKS_FOLDER_NAME = "blocks";
 const BLOCKS_FOLDER_PATH = `./${SOURCE_FOLDER_NAME}/${BLOCKS_FOLDER_NAME}`;
 
 type BlocksDict = { [blockName: string]: string };
+
+function getBlockData(blockName: string) {
+  try {
+    return JSON.parse(
+      Deno.readTextFileSync(`${BLOCKS_FOLDER_PATH}/${blockName}.json`),
+    );
+  } catch {
+    return null;
+  }
+}
 
 async function generateBlocks(): Promise<BlocksDict> {
   const renderedBlocks: { [index: string]: string } = {};
@@ -24,11 +33,7 @@ async function generateBlocks(): Promise<BlocksDict> {
       );
 
       const blockName = name.slice(0, -3);
-      const blockData = existsSync(`${BLOCKS_FOLDER_PATH}/${blockName}.json`)
-        ? JSON.parse(
-          Deno.readTextFileSync(`${BLOCKS_FOLDER_PATH}/${blockName}.json`),
-        )
-        : null;
+      const blockData = getBlockData(blockName);
 
       renderedBlocks[blockName] = render(blockData).trim();
     }

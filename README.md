@@ -16,7 +16,7 @@ Deno's standard modules are still currently unstable, so it is advisable to use 
 To start a dev server...
 
 1. If not already installed (or out of date), run `npm i -g netlify-cli@latest`
-2. In this project's root folder, run `deno run --allow-read --allow-write --unstable dev.ts`
+2. In this project's root folder, run `deno run -A --unstable dev.ts`
 3. If on Windows, open another terminal and run `netlify dev` from this project's root folder
     - This is due to a current limitation of `Deno.run`, see _dev.ts_ for more details
 
