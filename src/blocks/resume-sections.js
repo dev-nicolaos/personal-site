@@ -1,3 +1,5 @@
+import sections from "./resume-sections.json" assert { type: "json" };
+
 const renderListItem = (content) =>
   /*html*/`<li class="resume-section_list-item">${content}</li>`;
 
@@ -22,4 +24,4 @@ const renderSection = ([title, items]) => /*html*/`
   </section>
 `;
 
-export default (sections) => Object.entries(sections).map(renderSection).join('');
+export default Object.entries(sections).map(renderSection).join('');

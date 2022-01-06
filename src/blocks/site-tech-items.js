@@ -1,4 +1,6 @@
-export default (items) => /*html*/`
+import items from "./site-tech-items.json" assert { type: "json" };
+
+export default /*html*/`
   <ul id="site-tech_items">
     ${items.map(({ name, url }) => /*html*/`
       <li class="site-tech_item">

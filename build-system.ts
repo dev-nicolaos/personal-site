@@ -12,30 +12,19 @@ const BLOCKS_FOLDER_PATH = `./${SOURCE_FOLDER_NAME}/${BLOCKS_FOLDER_NAME}`;
 
 type BlocksDict = { [blockName: string]: string };
 
-function getBlockData(blockName: string) {
-  try {
-    return JSON.parse(
-      Deno.readTextFileSync(`${BLOCKS_FOLDER_PATH}/${blockName}.json`),
-    );
-  } catch {
-    return null;
-  }
-}
-
 async function generateBlocks(): Promise<BlocksDict> {
   const renderedBlocks: { [index: string]: string } = {};
 
   for await (const { isFile, name } of Deno.readDir(BLOCKS_FOLDER_PATH)) {
     if (isFile && (name.endsWith(".js") || name.endsWith(".ts"))) {
-      const { default: render } = await import(
+      const { default: block }: { default: string } = await import(
         // performance.now to bust cache in case block file has changed
         `${BLOCKS_FOLDER_PATH}/${name}?${performance.now()}`
       );
 
       const blockName = name.slice(0, -3);
-      const blockData = getBlockData(blockName);
 
-      renderedBlocks[blockName] = render(blockData).trim();
+      renderedBlocks[blockName] = block.trim();
     }
   }
 
@@ -63,14 +52,13 @@ export async function buildHTMLFiles(htmlPaths: string[]) {
 }
 
 type FilterFunction = (path: string) => boolean;
-const getAllSourceFilePaths = (filterFn: FilterFunction): string[] =>
-  Array
-    .from(walkSync(SOURCE_FOLDER_NAME))
-    .reduce(
-      (acc: string[], { isFile, path }) => isFile ? acc.concat(path) : acc,
-      [],
-    )
-    .filter(filterFn);
+const getAllSourceFilePaths = (filterFn?: FilterFunction): string[] => {
+  const paths = Array
+    .from(walkSync(SOURCE_FOLDER_NAME, { includeDirs: false }))
+    .map(({ path }) => path);
+
+  return filterFn ? paths.filter(filterFn) : paths;
+};
 
 const getAllHTMLFilePaths = () =>
   getAllSourceFilePaths((path) => path.endsWith(".html"));
