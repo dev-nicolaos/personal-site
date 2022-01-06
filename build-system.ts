@@ -1,4 +1,4 @@
-import { copySync } from "http://deno.land/std@0.120.0/fs/copy.ts";
+import { copySync } from "https://deno.land/std@0.120.0/fs/copy.ts";
 import {
   emptyDirSync,
   ensureFileSync,
