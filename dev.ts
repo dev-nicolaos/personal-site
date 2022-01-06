@@ -33,12 +33,27 @@ const handleChange = debounce(async (event: Deno.FsEvent) => {
 
 await buildSite();
 
-if (Deno.build.os !== "windows") {
-  // Deno.run is currently unable to find scripts (as opposed to executables)
-  // in the PATH on Windows, which is how npm packages like netlify ship
-  const p = Deno.run({ cmd: ["netlify", "dev"] });
-  await p.status();
-}
+const devCommand = ["netlify", "dev"];
+
+const netlifyServer = Deno.run({
+  cmd: Deno.build.os === "windows" ? ["cmd", "/c"].concat(devCommand) : devCommand,
+  stderr: "piped",
+  stdout: "null",
+  stdin: "null",
+});
+
+netlifyServer.stderrOutput().then(err => {
+  console.error(new TextDecoder().decode(err));
+  Deno.exit();
+});
+
+addEventListener('unload', () => {
+  try {
+    netlifyServer.kill("SIGINT");
+  } catch {
+    // swallow error if netlify server has already stopped
+  }
+});
 
 const watcher = Deno.watchFs("./src");
 console.log("Watching for changes...");
