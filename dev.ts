@@ -30,29 +30,21 @@ const handleChange = debounce(async (event: Deno.FsEvent) => {
   });
 }, 200);
 
-
+console.log("Building site...");
 await buildSite();
+console.log("Site built successfully!");
 
-const devCommand = ["netlify", "dev"];
-
+console.log("Starting dev server...");
+const devCommand = ["netlify", "dev"].concat(Deno.args);
 const netlifyServer = Deno.run({
   cmd: Deno.build.os === "windows" ? ["cmd", "/c"].concat(devCommand) : devCommand,
   stderr: "piped",
-  stdout: "null",
-  stdin: "null",
 });
 
 netlifyServer.stderrOutput().then(err => {
-  console.error(new TextDecoder().decode(err));
+  const decodedError = new TextDecoder().decode(err);
+  console.error("Dev server errored with error:", decodedError);
   Deno.exit();
-});
-
-addEventListener('unload', () => {
-  try {
-    netlifyServer.kill("SIGINT");
-  } catch {
-    // swallow error if netlify server has already stopped
-  }
 });
 
 const watcher = Deno.watchFs("./src");

@@ -17,6 +17,9 @@ To start a dev server...
 
 1. If not already installed (or out of date), run `npm i -g netlify-cli@latest`
 2. In this project's root folder, run `deno run -A --unstable dev.ts`
+    - Builds site, starts a watcher to rebuild site on file change, and starts a netlify dev server.
+    - Any arguments passed after the script name will be passed on to the [`netlify dev`](https://cli.netlify.com/commands/dev/) command that starts the server.
+    - Note, that it may take a few moments for the server to spin up
 
 ### Blocks
 
