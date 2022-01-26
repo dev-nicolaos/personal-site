@@ -1,0 +1,8 @@
+.thought_pub-date {
+  display: block;
+  margin-block-end: var(--spacing-2);
+}
+
+.thought :is(.blockquote, .paragraph) {
+  font-size: 1.1em;
+}
