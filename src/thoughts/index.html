@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    {{ head-boilerplate }}
+
+    <meta
+      name="description"
+      content="Index of thoughts posted by Nicolaos Skimas"
+    />
+    <title>Thoughts | Nicolaos Skimas</title>
+
+    <link rel="stylesheet" href="/styles/components/site-header.css" />
+    <link rel="stylesheet" href="/styles/components/page-header.css" />
+    <link rel="stylesheet" href="/styles/components/thoughts-list.css" />
+    <script type="module" src="/js/localize-time.js"></script>
+  </head>
+  <body>
+    {{ site-header }}
+
+    <main>
+      <div class="page-header">
+        <h1 class="page-header_heading">Thoughts</h1>
+        <hr class="page-header_divider">
+      </div>
+
+      {{ thoughts-list }}
+    </main>
+  </body>
+</html>

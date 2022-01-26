@@ -1,0 +1,12 @@
+.thought-listing { display: block; }
+.thought-listing:not(:last-of-type) {
+  margin-block-end: var(--spacing-3);
+}
+
+.thought-listing_title {
+  display: block;
+  font-size: 1.5em;
+  margin-block-end: var(--spacing-0);
+}
+
+.thought-listing_date { font-style: italic; }
