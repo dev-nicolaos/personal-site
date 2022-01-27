@@ -1,4 +1,4 @@
-import { debounce } from "https://deno.land/std@0.120.0/async/mod.ts";
+import { debounce } from "https://deno.land/std@0.122.0/async/mod.ts";
 
 import {
   buildAllHTMLFiles,
