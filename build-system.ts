@@ -10,35 +10,43 @@ const BUILD_FOLDER_NAME = "dist";
 const BLOCKS_FOLDER_NAME = "blocks";
 const BLOCKS_FOLDER_PATH = `./${SOURCE_FOLDER_NAME}/${BLOCKS_FOLDER_NAME}`;
 
-type BlocksDict = { [blockName: string]: string };
+type BlockFunc = () => string;
+type BlocksDict = { [blockName: string]: BlockFunc | string };
 
-async function generateBlocks(): Promise<BlocksDict> {
-  const renderedBlocks: { [index: string]: string } = {};
+async function getBlockFuncs(): Promise<BlocksDict> {
+  const blocks: BlocksDict = {};
 
   for await (const { isFile, name } of Deno.readDir(BLOCKS_FOLDER_PATH)) {
     if (isFile && (name.endsWith(".js") || name.endsWith(".ts"))) {
-      const { default: block }: { default: string } = await import(
+      const { default: block }: { default: BlockFunc } = await import(
         // performance.now to bust cache in case block file has changed
         `${BLOCKS_FOLDER_PATH}/${name}?${performance.now()}`
       );
 
       const blockName = name.slice(0, -3);
 
-      renderedBlocks[blockName] = block.trim();
+      blocks[blockName] = block;
     }
   }
 
-  return renderedBlocks;
+  return blocks;
 }
 
 const getBuildPath = (sourcePath: string) =>
   sourcePath.replace(SOURCE_FOLDER_NAME, BUILD_FOLDER_NAME);
 
+const hydrateBlock = (blocks: BlocksDict) => (match: string) => {
+  const invokedName = match.slice(2, -2).trim();
+  const maybeBlock = blocks[invokedName];
+  if (!maybeBlock) return match;
+  return (typeof maybeBlock === "string" ? maybeBlock : maybeBlock()).trim();
+};
+
 const hydrateBlocksInFile = (file: string, blocks: BlocksDict) =>
-  file.replaceAll(/{{ \S+ }}/g, (match) => blocks[match.slice(2, -2).trim()]);
+  file.replaceAll(/{{ \S+ }}/g, hydrateBlock(blocks));
 
 export async function buildHTMLFiles(htmlPaths: string[]) {
-  const blocks = await generateBlocks();
+  const blocks = await getBlockFuncs();
   htmlPaths.forEach((path) => {
     const outFile = hydrateBlocksInFile(
       Deno.readTextFileSync(path),
