@@ -1,8 +1,8 @@
-import { debounce } from "https://deno.land/std@0.120.0/async/mod.ts";
+import { debounce } from "https://deno.land/std@0.122.0/async/mod.ts";
 
 import {
-  buildAllHTMLFiles,
-  buildHTMLFiles,
+  buildAllPages,
+  buildPages,
   buildSite,
   copyStaticFile,
   filterStaticPaths,
@@ -17,11 +17,11 @@ const handleChange = debounce(async (event: Deno.FsEvent) => {
   const changedBlockFiles = event.paths.filter(path => path.includes("blocks"));
 
   if (changedBlockFiles.length > 0) {
-    buildAllHTMLFiles();
+    buildAllPages();
   } else {
     const changedHTMLFiles = event.paths.filter(path => path.endsWith(".html"));
     if (changedHTMLFiles.length > 0) {
-      await buildHTMLFiles(changedHTMLFiles);
+      await buildPages(changedHTMLFiles);
     }
   }
 

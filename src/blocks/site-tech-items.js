@@ -1,4 +1,4 @@
-import items from "./site-tech-items.json" assert { type: "json" };
+import items from "./data/site-tech-items.json" assert { type: "json" };
 
 export default /*html*/`
   <ul id="site-tech_items">
