@@ -1,4 +1,4 @@
-import thoughtsMetaData from "./thoughts-meta-data.json" assert { type: "json" };
+import thoughtsMetaData from "./data/thoughts-meta-data.json" assert { type: "json" };
 
 const createListing = ([url, listing]) => /*html*/`
   <li class="thought-listing">

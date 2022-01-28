@@ -1,4 +1,4 @@
-import sections from "./resume-sections.json" assert { type: "json" };
+import sections from "./data/resume-sections.json" assert { type: "json" };
 
 const renderListItem = (content) =>
   /*html*/`<li class="resume-section_list-item">${content}</li>`;

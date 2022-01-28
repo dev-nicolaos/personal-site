@@ -1,4 +1,4 @@
-import thoughtMetaData from "./thoughts-meta-data.json" assert { type: "json" };
+import thoughtMetaData from "./data/thoughts-meta-data.json" assert { type: "json" };
 
 export default (thoughtSlug) => /*html*/`
   <title>${thoughtMetaData[thoughtSlug].title} | Nicolaos Skimas</title>
