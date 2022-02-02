@@ -10,7 +10,7 @@ const createListing = ([url, listing]) => /*html*/`
 `;
 
 const sortListings = ([_url1, entry1], [_url2, entry2]) =>
-  Date.parse(entry1.publishDate) - Date.parse(entry2.publishDate);
+  Date.parse(entry2.publishDate) - Date.parse(entry1.publishDate);
 
 const listings = Object
   .entries(thoughtsMetaData)
