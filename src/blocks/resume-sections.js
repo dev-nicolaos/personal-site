@@ -1,12 +1,12 @@
 import sections from "./data/resume-sections.json" assert { type: "json" };
 
 const renderListItem = (content) =>
-  /*html*/`<li class="resume-section_list-item">${content}</li>`;
+  /*html*/`<li class="list-item">${content}</li>`;
 
 const renderSublist = ([title, items]) => /*html*/`
   <li class="resume-section_sublist">
     <h4 class="resume-section_subtitle">${title}</h4>
-    <ul class="resume-section_list">
+    <ul>
       ${items.map(renderListItem).join('')}
     </ul>
   </li>
@@ -15,7 +15,7 @@ const renderSublist = ([title, items]) => /*html*/`
 const renderSection = ([title, items]) => /*html*/`
   <section class="resume-section">
     <h3 class="resume-section_title">${title}</h3>
-    <ul class="resume-section_list">
+    <ul>
       ${Array.isArray(items)
         ? items.map(renderListItem).join('')
         : Object.entries(items).map(renderSublist).join('')
