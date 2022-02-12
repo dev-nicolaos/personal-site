@@ -78,7 +78,7 @@ export async function buildPages(pageSourcePaths: string[]) {
 }
 
 type FilterFunction = (path: string) => boolean;
-const getAllSourceFilePaths = (filterFn?: FilterFunction): string[] => {
+const getAllSourceFilePaths = (filterFn?: FilterFunction) => {
   const paths = Array
     .from(walkSync(SOURCE_FOLDER_NAME, { includeDirs: false }))
     .map(({ path }) => path);
