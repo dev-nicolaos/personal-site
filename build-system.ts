@@ -35,11 +35,11 @@ async function getBlockFuncs(): Promise<BlocksDict> {
   return blocks;
 }
 
-const sourcePathRegex = `^${SOURCE_FOLDER_NAME}\\${SEP}(${PAGES_FOLDER_NAME}|${STATIC_FOLDER_NAME})`;
+const sourcePathRegex = `${SOURCE_FOLDER_NAME}\\${SEP}(${PAGES_FOLDER_NAME}|${STATIC_FOLDER_NAME})`;
 const getBuildPath = (sourcePath: string) =>
   sourcePath.replace(new RegExp(sourcePathRegex), BUILD_FOLDER_NAME);
 
-const hydrateBlock = (blocks: BlocksDict, pageSlug: string) => (match: string) => {
+const getHydrateBlock = (blocks: BlocksDict, pageSlug: string) => (match: string) => {
   const invokedName = match.slice(2, -2).trim();
   const maybeBlock = blocks[invokedName];
   if (!maybeBlock) return match;
@@ -47,11 +47,11 @@ const hydrateBlock = (blocks: BlocksDict, pageSlug: string) => (match: string) =
 };
 
 const hydrateBlocksInFile = (file: string, blocks: BlocksDict, pageSlug: string) =>
-  file.replaceAll(/{{ \S+ }}/g, hydrateBlock(blocks, pageSlug));
+  file.replaceAll(/{{ \S+ }}/g, getHydrateBlock(blocks, pageSlug));
 
 const getSlug = (path: string) => {
   if (!path.endsWith(`${SEP}index.html`)) {
-    throw Error(`All pages must live at /slug/index.html, encountered ${path}`);
+    throw Error(`All pages must live at /{slug}/index.html, encountered ${path}`);
   }
 
   const slugEndIndex = path.length - 11; // /index.html
