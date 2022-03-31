@@ -1,10 +1,10 @@
-import { copySync } from "https://deno.land/std@0.125.0/fs/copy.ts";
+import { copySync } from "https://deno.land/std@0.132.0/fs/copy.ts";
 import {
   emptyDirSync,
   ensureFileSync,
   walkSync,
-} from "https://deno.land/std@0.125.0/fs/mod.ts";
-import { SEP } from "https://deno.land/std@0.125.0/path/separator.ts";
+} from "https://deno.land/std@0.132.0/fs/mod.ts";
+import { SEP } from "https://deno.land/std@0.132.0/path/separator.ts";
 
 const SOURCE_FOLDER_NAME = "src";
 const BUILD_FOLDER_NAME = "dist";
