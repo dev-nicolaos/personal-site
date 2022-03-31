@@ -6,10 +6,10 @@ import {
 } from "https://deno.land/std@0.132.0/fs/mod.ts";
 import { SEP } from "https://deno.land/std@0.132.0/path/separator.ts";
 
-const SOURCE_FOLDER_NAME = "src";
+export const SOURCE_FOLDER_NAME = "src";
 const BUILD_FOLDER_NAME = "dist";
-const BLOCKS_FOLDER_NAME = "blocks";
-const PAGES_FOLDER_NAME = "pages";
+export const BLOCKS_FOLDER_NAME = "blocks";
+export const PAGES_FOLDER_NAME = "pages";
 const STATIC_FOLDER_NAME = "www";
 const BLOCKS_FOLDER_PATH = `./${SOURCE_FOLDER_NAME}/${BLOCKS_FOLDER_NAME}`;
 
@@ -100,11 +100,16 @@ export function copyStaticFile(filePath: string) {
 }
 
 export const filterStaticPaths = (path: string) =>
-  path.startsWith(`src${SEP}www`);
+  path.includes(`src${SEP}www`) && Deno.lstatSync(path).isFile;
 
 function copyAllStaticFiles() {
   const staticFilePaths = getAllSourceFilePaths(filterStaticPaths);
   staticFilePaths.forEach(copyStaticFile);
+}
+
+export function removeBuiltFile(path: string) {
+  const buildPath = getBuildPath(path);
+  Deno.removeSync(buildPath);
 }
 
 export async function buildSite() {
