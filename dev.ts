@@ -5,44 +5,47 @@ import {
   buildPages,
   buildSite,
   copyStaticFile,
-  filterStaticPaths,
-  removeBuiltFile,
+  filterBlockSourceFilePaths,
+  filterPageSourceFilePaths,
+  filterStaticSourceFilePaths,
+  removeFromBuild,
   SOURCE_FOLDER_NAME,
-  BLOCKS_FOLDER_NAME,
-  PAGES_FOLDER_NAME,
 } from "./build-system.ts";
 
-import { startServer, killServer } from "./devServer.ts";
+import { killServer, startServer } from "./devServer.ts";
 
-const getDebouncedPageBuilder = (pageSourcePath: string) => debounce(async () => {
-  await buildPages([pageSourcePath]);
-}, 200);
+const getDebouncedPageBuilder = (pageSourcePath: string) =>
+  debounce(async () => {
+    await buildPages([pageSourcePath]);
+  }, 200);
 
 const debouncedPageBuilders: {
-  [pageSourcePath: string]: ReturnType<typeof getDebouncedPageBuilder>,
+  [pageSourcePath: string]: ReturnType<typeof getDebouncedPageBuilder>;
 } = {};
 
 function buildIndividualPage(pageSourcePath: string) {
   if (!debouncedPageBuilders[pageSourcePath]) {
-    debouncedPageBuilders[pageSourcePath] = getDebouncedPageBuilder(pageSourcePath);
+    debouncedPageBuilders[pageSourcePath] = getDebouncedPageBuilder(
+      pageSourcePath,
+    );
   }
   debouncedPageBuilders[pageSourcePath]();
 }
 
-function handlePagesChange(event: Deno.FsEvent) {
-  if (event.paths.find(path => path.includes(BLOCKS_FOLDER_NAME))) {
+function handleBlockAndPageChanges(changedSourcePaths: string[]) {
+  if (changedSourcePaths.find(filterBlockSourceFilePaths)) {
     buildAllPages();
   } else {
-    event.paths
-      .filter((path) => path.includes(PAGES_FOLDER_NAME) && path.endsWith("index.html"))
-      .forEach(event.kind === "remove" ? removeBuiltFile : buildIndividualPage);
+    changedSourcePaths
+      .filter(filterPageSourceFilePaths)
+      .forEach(buildIndividualPage);
   }
 }
 
-function handleStaticAssetsChange(event: Deno.FsEvent) {
-  event.paths
-    .filter(filterStaticPaths)
-    .forEach(event.kind === "remove" ? removeBuiltFile : copyStaticFile);
+function handleStaticAssetChanges(changedSourcePaths: string[]) {
+  changedSourcePaths
+    .filter(filterStaticSourceFilePaths)
+    .forEach(copyStaticFile);
 }
 
 const logChangeDetected = debounce(() => {
@@ -54,8 +57,12 @@ const logChangeDetected = debounce(() => {
 
 function handleChange(event: Deno.FsEvent) {
   logChangeDetected();
-  handlePagesChange(event);
-  handleStaticAssetsChange(event);
+  if (event.kind === "remove") {
+    event.paths.forEach(removeFromBuild);
+  } else {
+    handleBlockAndPageChanges(event.paths);
+    handleStaticAssetChanges(event.paths);
+  }
 }
 
 try {
@@ -83,7 +90,9 @@ try {
 
   // Kill server if this process ends programattically (e.g. Deno.exit)
   const handleUnload = () => {
-    console.log("Unload event triggered for build watcher, stopping dev server...");
+    console.log(
+      "Unload event triggered for build watcher, stopping dev server...",
+    );
     killServer(server.pid);
   };
   addEventListener("unload", handleUnload);
@@ -91,7 +100,9 @@ try {
   // If the server stops (either programmatically or errors out), stop this process
   server.status().then((serverExitStatus) => {
     if (!serverExitStatus.success) {
-      console.error(`Dev server errored with code ${serverExitStatus.code}, stopping build watcher...`);
+      console.error(
+        `Dev server errored with code ${serverExitStatus.code}, stopping build watcher...`,
+      );
     }
     removeEventListener("unload", handleUnload);
     Deno.exit();
