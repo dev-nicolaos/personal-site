@@ -1,12 +1,12 @@
-import { copySync } from "https://deno.land/std@0.122.0/fs/copy.ts";
+import { copySync } from "https://deno.land/std@0.132.0/fs/copy.ts";
 import {
   emptyDirSync,
   ensureFileSync,
   walkSync,
-} from "https://deno.land/std@0.122.0/fs/mod.ts";
-import { SEP } from "https://deno.land/std@0.122.0/path/separator.ts";
+} from "https://deno.land/std@0.132.0/fs/mod.ts";
+import { SEP } from "https://deno.land/std@0.132.0/path/separator.ts";
 
-const SOURCE_FOLDER_NAME = "src";
+export const SOURCE_FOLDER_NAME = "src";
 const BUILD_FOLDER_NAME = "dist";
 const BLOCKS_FOLDER_NAME = "blocks";
 const PAGES_FOLDER_NAME = "pages";
@@ -35,23 +35,31 @@ async function getBlockFuncs(): Promise<BlocksDict> {
   return blocks;
 }
 
-const sourcePathRegex = `^${SOURCE_FOLDER_NAME}\\${SEP}(${PAGES_FOLDER_NAME}|${STATIC_FOLDER_NAME})`;
+const sourcePathRegex =
+  `${SOURCE_FOLDER_NAME}\\${SEP}(${PAGES_FOLDER_NAME}|${STATIC_FOLDER_NAME})`;
 const getBuildPath = (sourcePath: string) =>
   sourcePath.replace(new RegExp(sourcePathRegex), BUILD_FOLDER_NAME);
 
-const hydrateBlock = (blocks: BlocksDict, pageSlug: string) => (match: string) => {
-  const invokedName = match.slice(2, -2).trim();
-  const maybeBlock = blocks[invokedName];
-  if (!maybeBlock) return match;
-  return (typeof maybeBlock === "string" ? maybeBlock : maybeBlock(pageSlug)).trim();
-};
+const getHydrateBlock = (blocks: BlocksDict, pageSlug: string) =>
+  (match: string) => {
+    const invokedName = match.slice(2, -2).trim();
+    const maybeBlock = blocks[invokedName];
+    if (!maybeBlock) return match;
+    return (typeof maybeBlock === "string" ? maybeBlock : maybeBlock(pageSlug))
+      .trim();
+  };
 
-const hydrateBlocksInFile = (file: string, blocks: BlocksDict, pageSlug: string) =>
-  file.replaceAll(/{{ \S+ }}/g, hydrateBlock(blocks, pageSlug));
+const hydrateBlocksInFile = (
+  file: string,
+  blocks: BlocksDict,
+  pageSlug: string,
+) => file.replaceAll(/{{ \S+ }}/g, getHydrateBlock(blocks, pageSlug));
 
 const getSlug = (path: string) => {
   if (!path.endsWith(`${SEP}index.html`)) {
-    throw Error(`All pages must live at /slug/index.html, encountered ${path}`);
+    throw Error(
+      `All pages must live at /{slug}/index.html, encountered ${path}`,
+    );
   }
 
   const slugEndIndex = path.length - 11; // /index.html
@@ -59,8 +67,8 @@ const getSlug = (path: string) => {
 
   const folderName = path.slice(slugStartIndex, slugEndIndex);
 
-  return folderName === 'src' ? '/' : folderName;
-}
+  return folderName === SOURCE_FOLDER_NAME ? "/" : folderName;
+};
 
 export async function buildPages(pageSourcePaths: string[]) {
   const blocks = await getBlockFuncs();
@@ -77,8 +85,25 @@ export async function buildPages(pageSourcePaths: string[]) {
   });
 }
 
+export const filterStaticSourceFilePaths = (path: string) => {
+  try {
+    return path.includes(SOURCE_FOLDER_NAME + SEP + STATIC_FOLDER_NAME) &&
+      Deno.lstatSync(path).isFile;
+  } catch {
+    return false;
+  }
+};
+
+export const filterPageSourceFilePaths = (path: string) =>
+  path.includes(SOURCE_FOLDER_NAME + SEP + PAGES_FOLDER_NAME) &&
+  path.endsWith("index.html");
+
+export const filterBlockSourceFilePaths = (path: string) =>
+  path.includes(SOURCE_FOLDER_NAME + SEP + BLOCKS_FOLDER_NAME) &&
+  (path.endsWith(".js") || path.endsWith(".ts"));
+
 type FilterFunction = (path: string) => boolean;
-const getAllSourceFilePaths = (filterFn?: FilterFunction): string[] => {
+const getAllSourceFilePaths = (filterFn?: FilterFunction) => {
   const paths = Array
     .from(walkSync(SOURCE_FOLDER_NAME, { includeDirs: false }))
     .map(({ path }) => path);
@@ -86,11 +111,8 @@ const getAllSourceFilePaths = (filterFn?: FilterFunction): string[] => {
   return filterFn ? paths.filter(filterFn) : paths;
 };
 
-const getAllPagePaths = () =>
-  getAllSourceFilePaths((path) => path.startsWith(`src${SEP}pages`));
-
 export async function buildAllPages() {
-  await buildPages(getAllPagePaths());
+  await buildPages(getAllSourceFilePaths(filterPageSourceFilePaths));
 }
 
 export function copyStaticFile(filePath: string) {
@@ -99,12 +121,20 @@ export function copyStaticFile(filePath: string) {
   copySync(filePath, buildPath, { overwrite: true });
 }
 
-export const filterStaticPaths = (path: string) =>
-  path.startsWith(`src${SEP}www`);
-
 function copyAllStaticFiles() {
-  const staticFilePaths = getAllSourceFilePaths(filterStaticPaths);
+  const staticFilePaths = getAllSourceFilePaths(filterStaticSourceFilePaths);
   staticFilePaths.forEach(copyStaticFile);
+}
+
+export function removeFromBuild(path: string) {
+  try {
+    const buildPath = getBuildPath(path);
+    Deno.removeSync(buildPath, { recursive: true });
+  } catch (err) {
+    if (!(err instanceof Deno.errors.NotFound)) {
+      throw err;
+    }
+  }
 }
 
 export async function buildSite() {

@@ -1,52 +1,119 @@
-import { debounce } from "https://deno.land/std@0.122.0/async/mod.ts";
+import { debounce } from "https://deno.land/std@0.132.0/async/mod.ts";
 
 import {
   buildAllPages,
   buildPages,
   buildSite,
   copyStaticFile,
-  filterStaticPaths,
+  filterBlockSourceFilePaths,
+  filterPageSourceFilePaths,
+  filterStaticSourceFilePaths,
+  removeFromBuild,
+  SOURCE_FOLDER_NAME,
 } from "./build-system.ts";
 
-const handleChange = debounce(async (event: Deno.FsEvent) => {
-  console.log(
-    new Date().toLocaleTimeString(),
-    "Change detected, attempting to build...",
-  );
+import { killServer, startServer } from "./devServer.ts";
 
-  const changedBlockFiles = event.paths.filter(path => path.includes("blocks"));
+const getDebouncedPageBuilder = (pageSourcePath: string) =>
+  debounce(async () => {
+    await buildPages([pageSourcePath]);
+  }, 200);
 
-  if (changedBlockFiles.length > 0) {
+const debouncedPageBuilders: {
+  [pageSourcePath: string]: ReturnType<typeof getDebouncedPageBuilder>;
+} = {};
+
+function buildIndividualPage(pageSourcePath: string) {
+  if (!debouncedPageBuilders[pageSourcePath]) {
+    debouncedPageBuilders[pageSourcePath] = getDebouncedPageBuilder(
+      pageSourcePath,
+    );
+  }
+  debouncedPageBuilders[pageSourcePath]();
+}
+
+function handleBlockAndPageChanges(changedSourcePaths: string[]) {
+  if (changedSourcePaths.find(filterBlockSourceFilePaths)) {
     buildAllPages();
   } else {
-    const changedHTMLFiles = event.paths.filter(path => path.endsWith(".html"));
-    if (changedHTMLFiles.length > 0) {
-      await buildPages(changedHTMLFiles);
-    }
+    changedSourcePaths
+      .filter(filterPageSourceFilePaths)
+      .forEach(buildIndividualPage);
   }
+}
 
-  event.paths.filter(filterStaticPaths).forEach(path => {
-    copyStaticFile(path)
-  });
+function handleStaticAssetChanges(changedSourcePaths: string[]) {
+  changedSourcePaths
+    .filter(filterStaticSourceFilePaths)
+    .forEach(copyStaticFile);
+}
+
+const logChangeDetected = debounce(() => {
+  console.log(
+    new Date().toLocaleTimeString(),
+    "Changes detected, attempting to rebuild...",
+  );
 }, 200);
 
-console.log("Building site...");
-await buildSite();
-console.log("Site built successfully!");
+function handleChange(event: Deno.FsEvent) {
+  logChangeDetected();
+  if (event.kind === "remove") {
+    event.paths.forEach(removeFromBuild);
+  } else {
+    handleBlockAndPageChanges(event.paths);
+    handleStaticAssetChanges(event.paths);
+  }
+}
 
-console.log("Starting dev server...");
-const devCommand = ["netlify", "dev"].concat(Deno.args);
-const netlifyServer = Deno.run({
-  cmd: Deno.build.os === "windows" ? ["cmd", "/c"].concat(devCommand) : devCommand,
-  stderr: "piped",
-});
+try {
+  console.log("Building site...");
+  await buildSite();
+  console.log("Site built successfully!");
 
-netlifyServer.stderrOutput().then(err => {
-  const decodedError = new TextDecoder().decode(err);
-  console.error("Dev server errored with error:", decodedError);
-  Deno.exit();
-});
+  console.log("Starting dev server...");
+  const server = startServer();
 
-const watcher = Deno.watchFs("./src");
-console.log("Watching for changes...");
-for await (const event of watcher) handleChange(event);
+  // BEGIN HANDLING SHUTDOWN
+
+  /**
+   * We have two processes to manage:
+   *  - This Deno process which watches for changes to the site source code and rebuilds
+   *  - The server process we spawn w/Deno.run which serves completed build folder
+   * We want to make sure that if one process terminates, the other does as well.
+   * Place any code needed to ensure this behavior in this section
+   */
+
+  /**
+   * Free Wins
+   *  - Because the server iherits stdin, pressing ctrl+c in the terminal running this process should stop it as well.
+   */
+
+  // Kill server if this process ends programattically (e.g. Deno.exit)
+  const handleUnload = () => {
+    console.log(
+      "Unload event triggered for build watcher, stopping dev server...",
+    );
+    killServer(server.pid);
+  };
+  addEventListener("unload", handleUnload);
+
+  // If the server stops (either programmatically or errors out), stop this process
+  server.status().then((serverExitStatus) => {
+    if (!serverExitStatus.success) {
+      console.error(
+        `Dev server errored with code ${serverExitStatus.code}, stopping build watcher...`,
+      );
+    }
+    removeEventListener("unload", handleUnload);
+    Deno.exit();
+  });
+
+  // END HANDLING SHUTDOWN
+
+  const watcher = Deno.watchFs(SOURCE_FOLDER_NAME);
+  console.log("Watching for changes...");
+  for await (const event of watcher) handleChange(event);
+} catch (err) {
+  console.error("Uncaught error in build watcher:", err);
+  Deno.exit(1);
+}
