@@ -19,3 +19,6 @@
   to = "https://nicolaos.dev/:splat"
   status = 301
   force = true
+
+[[plugins]]
+  package = "@netlify/plugin-lighthouse"
