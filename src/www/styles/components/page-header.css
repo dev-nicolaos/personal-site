@@ -1,12 +1,14 @@
 .page-header { margin-block-end: var(--spacing-3); }
 
+.page-header[data-no-content] { font-size: 1.3em; }
+
 .page-header_heading {
   font-size: 2em;
   text-align: center;
 }
 
 .page-header_subheading {
-  font-size: 1.5em;
+  font-size: 1.4em;
   margin-block-start: var(--spacing-2);
   text-align: center;
 }

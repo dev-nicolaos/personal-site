@@ -19,3 +19,7 @@
   to = "https://nicolaos.dev/:splat"
   status = 301
   force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/404"
