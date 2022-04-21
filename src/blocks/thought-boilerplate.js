@@ -1,7 +1,7 @@
-import thoughtMetaData from "./data/thoughts-meta-data.json" assert { type: "json" };
+import pagesMetaData from "./data/pages-meta-data.json" assert { type: "json" };
 
 export default (thoughtSlug) => /*html*/`
-  <title>${thoughtMetaData[thoughtSlug].title} | Nicolaos Skimas</title>
+  <title>${pagesMetaData[thoughtSlug].title} | Nicolaos Skimas</title>
 
   <link rel="stylesheet" href="/styles/components/site-header.css" />
   <link rel="stylesheet" href="/styles/components/thought.css" />

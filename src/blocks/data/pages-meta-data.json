@@ -1,0 +1,25 @@
+{
+  "/": {
+    "title": "Welcome to my site!",
+    "subtitle": "My name is Nicolaos Skimas, and I'm a web developer."
+  },
+  "thoughts": {
+    "title": "Thoughts"
+  },
+  "tips-for-future-developers": {
+    "title": "Tips for Future Developers",
+    "publishDate": "2022-02-02",
+    "type": "thought"
+  },
+  "support-right-to-repair": {
+    "title": "Support Right to Repair",
+    "subtitle": "An open letter to our legislators",
+    "publishDate": "2022-01-26",
+    "type": "thought"
+  },
+  "404": {
+    "title": "404",
+    "subtitle": "I hate to say it, but it looks like the page you're searching for doesn't exist.",
+    "type": "no-content"
+  }
+}
