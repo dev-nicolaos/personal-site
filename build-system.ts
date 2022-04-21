@@ -67,7 +67,7 @@ const getSlug = (path: string) => {
 
   const folderName = path.slice(slugStartIndex, slugEndIndex);
 
-  return folderName === SOURCE_FOLDER_NAME ? "/" : folderName;
+  return folderName === PAGES_FOLDER_NAME ? "/" : folderName;
 };
 
 export async function buildPages(pageSourcePaths: string[]) {
