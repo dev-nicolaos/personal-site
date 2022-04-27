@@ -1,4 +1,4 @@
-import thoughtsMetaData from "./data/thoughts-meta-data.json" assert { type: "json" };
+import pagesMetaData from "./data/pages-meta-data.json" assert { type: "json" };
 
 const createListing = ([url, listing]) => /*html*/`
   <li class="thought-listing">
@@ -12,8 +12,11 @@ const createListing = ([url, listing]) => /*html*/`
 const sortListings = ([_url1, entry1], [_url2, entry2]) =>
   Date.parse(entry2.publishDate) - Date.parse(entry1.publishDate);
 
+const filterThoughts = ([_url, { type = "" }]) => type === "thought";
+
 const listings = Object
-  .entries(thoughtsMetaData)
+  .entries(pagesMetaData)
+  .filter(filterThoughts)
   .sort(sortListings)
   .map(createListing)
   .join("");
