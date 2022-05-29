@@ -1,4 +1,4 @@
-import { buildSite } from "./build-system.ts";
+import { buildSite } from "./utils.ts";
 
 try {
   await buildSite();
