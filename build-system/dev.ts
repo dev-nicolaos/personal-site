@@ -1,5 +1,7 @@
-import { debounce } from "https://deno.land/std@0.132.0/async/mod.ts";
+import { debounce } from "std/async/mod.ts";
 
+import { SOURCE_FOLDER_PATH } from './consts.ts';
+import { killServer, startServer } from "./devServer.ts";
 import {
   buildAllPages,
   buildPages,
@@ -9,10 +11,8 @@ import {
   filterPageSourceFilePaths,
   filterStaticSourceFilePaths,
   removeFromBuild,
-  SOURCE_FOLDER_NAME,
-} from "./build-system.ts";
+} from "./utils.ts";
 
-import { killServer, startServer } from "./devServer.ts";
 
 const getDebouncedPageBuilder = (pageSourcePath: string) =>
   debounce(async () => {
@@ -110,7 +110,7 @@ try {
 
   // END HANDLING SHUTDOWN
 
-  const watcher = Deno.watchFs(SOURCE_FOLDER_NAME);
+  const watcher = Deno.watchFs(SOURCE_FOLDER_PATH);
   console.log("Watching for changes...");
   for await (const event of watcher) handleChange(event);
 } catch (err) {

@@ -31,14 +31,14 @@ Blocks are JS or TS modules that generate and inject reusable chunks of HTML int
 
 ### Building the Site
 
-Deno's standard modules are still currently unstable, so it is advisable to use the specific version of Deno referenced in _netlify.toml_ that is guaranteed to work with the version of the standard modules referenced by the build scripts. The build command is `deno run -A --unstable build.ts` and the output folder is `dist`.
+Deno's standard modules are still currently unstable, so it is advisable to use the specific version of Deno referenced in _netlify.toml_ that is guaranteed to work with the version of the standard modules referenced by the build scripts. The build command is `deno task build` and the output folder is `dist`.
 
 ### Starting a Dev Server
 
 You will need both [Node](https://nodejs.org/) (to run the netlify dev server) and [Deno](https://deno.land/) (to run the build system) installed to run the dev server.
 
 1. If not already installed (or out of date), run `npm i -g netlify-cli@latest`
-2. In this project's root folder, run `deno run -A --unstable dev.ts`
+2. In this project's root folder, run `deno task dev`
     - Builds site, starts a watcher to rebuild site on file change, and starts a netlify dev server
-    - Any arguments passed after the script name will be passed on to the [`netlify dev`](https://cli.netlify.com/commands/dev/) command that starts the server
+    - Any additional arguments will be passed on to the [`netlify dev`](https://cli.netlify.com/commands/dev/) command that starts the server
     - Note that it may take a few moments for the server to spin up

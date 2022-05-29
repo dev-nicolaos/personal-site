@@ -1,17 +1,21 @@
-import { copySync } from "https://deno.land/std@0.132.0/fs/copy.ts";
+import { copySync } from "std/fs/copy.ts";
 import {
   emptyDirSync,
   ensureFileSync,
   walkSync,
-} from "https://deno.land/std@0.132.0/fs/mod.ts";
-import { SEP } from "https://deno.land/std@0.132.0/path/separator.ts";
+} from "std/fs/mod.ts";
+import { SEP } from "std/path/mod.ts";
 
-export const SOURCE_FOLDER_NAME = "src";
-const BUILD_FOLDER_NAME = "dist";
-const BLOCKS_FOLDER_NAME = "blocks";
-const PAGES_FOLDER_NAME = "pages";
-const STATIC_FOLDER_NAME = "www";
-const BLOCKS_FOLDER_PATH = `./${SOURCE_FOLDER_NAME}/${BLOCKS_FOLDER_NAME}`;
+import {
+  BLOCKS_FOLDER_NAME,
+  BLOCKS_FOLDER_PATH,
+  BUILD_FOLDER_NAME,
+  BUILD_FOLDER_PATH,
+  PAGES_FOLDER_NAME,
+  SOURCE_FOLDER_NAME,
+  SOURCE_FOLDER_PATH,
+  STATIC_FOLDER_NAME,
+} from './consts.ts';
 
 type BlockFunc = (pageSlug: string) => string;
 type BlocksDict = { [blockName: string]: BlockFunc | string };
@@ -23,7 +27,7 @@ async function getBlockFuncs(): Promise<BlocksDict> {
     if (isFile && (name.endsWith(".js") || name.endsWith(".ts"))) {
       const { default: block }: { default: BlockFunc } = await import(
         // performance.now to bust cache in case block file has changed
-        `${BLOCKS_FOLDER_PATH}/${name}?${performance.now()}`
+        `../${SOURCE_FOLDER_NAME}/${BLOCKS_FOLDER_NAME}/${name}?${performance.now()}`
       );
 
       const blockName = name.slice(0, -3);
@@ -105,7 +109,7 @@ export const filterBlockSourceFilePaths = (path: string) =>
 type FilterFunction = (path: string) => boolean;
 const getAllSourceFilePaths = (filterFn?: FilterFunction) => {
   const paths = Array
-    .from(walkSync(SOURCE_FOLDER_NAME, { includeDirs: false }))
+    .from(walkSync(SOURCE_FOLDER_PATH, { includeDirs: false }))
     .map(({ path }) => path);
 
   return filterFn ? paths.filter(filterFn) : paths;
@@ -138,7 +142,7 @@ export function removeFromBuild(path: string) {
 }
 
 export async function buildSite() {
-  emptyDirSync(BUILD_FOLDER_NAME);
+  emptyDirSync(BUILD_FOLDER_PATH);
   await buildAllPages();
   copyAllStaticFiles();
 }
