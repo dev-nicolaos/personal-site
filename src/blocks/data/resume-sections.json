@@ -1,10 +1,10 @@
 {
   "Work Experience": {
     "Software Engineer at The Home Depot QuoteCenter": [
-      "Building/maintaining a modern React application which generates multi-billion dollar annual revenue",
-      "Creating pattern library of reusable, accessible UI components",
-      "Building/maintaining gateway services running on Node.js",
-      "Practicing agile development techniques in Scrum framework"
+      "Built/maintained a modern React application which generated multi-billion dollar annual revenue",
+      "Lead a cross-functional group focused on fostering frontend excellence through education and collaboration",
+      "Built/maintained gateway microservices running on Node.js",
+      "Practiced agile development techniques in Scrum framework"
     ],
     "Software Developer at Trend Capital": [
       "Helped develop new marketing sites and web forms using Laravel and Sass"
@@ -38,9 +38,10 @@
     "User centric focus"
   ],
   "Volunteer Work": [
-    "Middle school ministry volunteer with local churches",
+    "Student ministry volunteer with local churches",
     "Open source software/documentation contributor",
-    "Short term mission trip to Port-au-Prince Haiti"
+    "Participant in various volunteer opportunities with local foodbanks",
+    "Short term mission trip to Port-au-Prince Haiti in 2017"
   ],
   "Awards": [
     "Eagle Scout"
