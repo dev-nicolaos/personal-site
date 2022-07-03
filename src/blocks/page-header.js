@@ -1,32 +1,24 @@
 import pagesMetaData from "./data/pages-meta-data.json" assert { type: "json" };
 
-const buildHeaderBase = ({ title, subtitle }) => /*html*/`
-  <div class="page-header">
+const buildHeaderBase = ({ title, subtitle = '', noContent = false }) => /*html*/`
+  <hgroup class="page-header" ${noContent ? 'data-no-content' : ''}>
     <h1 class="page-header_heading">${title}</h1>
     ${subtitle ? /* html */`
-      <h2 class="page-header_subheading">${subtitle}</h2>
+      <p class="page-header_subheading">${subtitle}</p>
     ` : ""}
-    <hr class="page-header_divider">
-  </div>
+  </hgroup>
 `;
 
 const thoughtHeader = ({ title, subtitle, publishDate }) => /*html*/`
-  ${buildHeaderBase({ title, subtitle })}
+  <header class="thought_header">
+    ${buildHeaderBase({ title, subtitle })}
 
-  <time class="thought_pub-date" datetime="${publishDate}">
-    ${publishDate}
-  </time>
+    <time datetime="${publishDate}">${publishDate}</time>
+  </header>
 `;
 
-const noContentHeader = ({ title, subtitle }) => /*html*/`
-  <main class="page-header" data-no-content>
-    <h1 class="page-header_heading">${title}</h1>
-    ${subtitle ? /*html*/`
-      <p class="page-header_subheading">${subtitle}</p>
-    `: ""}
-    <hr class="page-header_divider">
-  </main>
-`;
+const noContentHeader = ({ title, subtitle }) =>
+  buildHeaderBase({title, subtitle, noContent: true });
 
 const standardHeader = ({ title, subtitle }) =>
   buildHeaderBase({ title, subtitle });

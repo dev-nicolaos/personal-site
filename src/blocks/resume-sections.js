@@ -5,7 +5,7 @@ const renderListItem = (content) =>
 
 const renderSublist = ([title, items]) => /*html*/`
   <li class="resume-section_sublist">
-    <h4 class="resume-section_subtitle">${title}</h4>
+    <h3 class="resume-section_subtitle">${title}</h3>
     <ul>
       ${items.map(renderListItem).join('')}
     </ul>
@@ -14,7 +14,7 @@ const renderSublist = ([title, items]) => /*html*/`
 
 const renderSection = ([title, items]) => /*html*/`
   <section class="resume-section">
-    <h3 class="resume-section_title">${title}</h3>
+    <h2 class="resume-section_title">${title}</h2>
     <ul>
       ${Array.isArray(items)
         ? items.map(renderListItem).join('')

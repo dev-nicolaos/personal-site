@@ -1,5 +1,14 @@
 .page-header { margin-block-end: var(--spacing-3); }
 
+.page-header::after {
+  background: var(--std-gradient);
+  border-radius: var(--spacing-0);
+  content: '';
+  display: block;
+  height: .5em;
+  margin-block-start: var(--spacing-3);
+}
+
 .page-header[data-no-content] { font-size: 1.3em; }
 
 .page-header_heading {
@@ -11,11 +20,4 @@
   font-size: 1.4em;
   margin-block-start: var(--spacing-2);
   text-align: center;
-}
-
-.page-header_divider {
-  background: var(--std-gradient);
-  border-radius: var(--spacing-0);
-  height: .5em;
-  margin-block-start: var(--spacing-3);
 }

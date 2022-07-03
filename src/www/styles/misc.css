@@ -30,3 +30,5 @@
 }
 .list-item::marker { color: var(--color-primary); }
 .list-item[data-link]::marker { color: var(--color-fore); }
+
+.contents { display: contents; }
