@@ -35,7 +35,7 @@ export default /*html*/`
       font-family: Public Sans Web;
       font-style: normal;
       font-weight: normal;
-      src: url(../assets/fonts/PublicSans-Regular.woff2) format('woff2');
+      src: url(/assets/fonts/PublicSans-Regular.woff2) format('woff2');
     }
 
     @font-face {
@@ -43,7 +43,7 @@ export default /*html*/`
       font-family: Public Sans Web;
       font-style: italic;
       font-weight: normal;
-      src: url(../assets/fonts/PublicSans-Italic.woff2) format('woff2');
+      src: url(/assets/fonts/PublicSans-Italic.woff2) format('woff2');
     }
 
     @font-face {
@@ -51,7 +51,7 @@ export default /*html*/`
       font-family: Public Sans Web;
       font-style: normal;
       font-weight: bold;
-      src: url(../assets/fonts/PublicSans-Bold.woff2) format('woff2');
+      src: url(/assets/fonts/PublicSans-Bold.woff2) format('woff2');
     }
 
     html {
