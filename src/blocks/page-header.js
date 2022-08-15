@@ -11,7 +11,7 @@ const buildHeaderBase = (heading, subHeading = '', noContent = false) => /*html*
 
 const thoughtHeader = (heading, subHeading, publishDate) => /*html*/`
   <header class="thought_header">
-    ${buildHeaderBase({ heading, subHeading })}
+    ${buildHeaderBase(heading, subHeading)}
 
     <time datetime="${publishDate}">${publishDate}</time>
   </header>
