@@ -1,37 +1,31 @@
 import pagesMetaData from "./data/pages-meta-data.json" assert { type: "json" };
 
-const buildHeaderBase = ({ title, subtitle = '', noContent = false }) => /*html*/`
+const buildHeaderBase = (heading, subHeading = '', noContent = false) => /*html*/`
   <hgroup class="page-header" ${noContent ? 'data-no-content' : ''}>
-    <h1 class="page-header_heading">${title}</h1>
-    ${subtitle ? /* html */`
-      <p class="page-header_subheading">${subtitle}</p>
+    <h1 class="page-header_heading">${heading}</h1>
+    ${subHeading ? /* html */`
+      <p class="page-header_subheading">${subHeading}</p>
     ` : ""}
   </hgroup>
 `;
 
-const thoughtHeader = ({ title, subtitle, publishDate }) => /*html*/`
+const thoughtHeader = (heading, subHeading, publishDate) => /*html*/`
   <header class="thought_header">
-    ${buildHeaderBase({ title, subtitle })}
+    ${buildHeaderBase({ heading, subHeading })}
 
     <time datetime="${publishDate}">${publishDate}</time>
   </header>
 `;
 
-const noContentHeader = ({ title, subtitle }) =>
-  buildHeaderBase({title, subtitle, noContent: true });
-
-const standardHeader = ({ title, subtitle }) =>
-  buildHeaderBase({ title, subtitle });
-
 export default (pageSlug) => {
-  const pageMetaData = pagesMetaData[pageSlug];
+  const { heading, subHeading, template, publishDate } = pagesMetaData[pageSlug];
 
-  switch (pageMetaData.type) {
+  switch (template) {
     case "thought":
-      return thoughtHeader(pageMetaData);
+      return thoughtHeader(heading, subHeading, publishDate);
     case "no-content":
-      return noContentHeader(pageMetaData);
+      return buildHeaderBase(heading, subHeading, true);
     default:
-      return standardHeader(pageMetaData);
+      return buildHeaderBase(heading, subHeading);
   }
 };

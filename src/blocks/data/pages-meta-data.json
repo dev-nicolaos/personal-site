@@ -1,25 +1,34 @@
 {
   "/": {
-    "title": "Welcome to my site!",
-    "subtitle": "My name is Nicolaos Skimas, and I'm a web developer."
+    "title": "Nicolaos Skimas",
+    "titleTrailer": "Web Developer",
+    "description": "Thanks for stopping by! I keep my thoughts and resume posted on this site and use it to hone my web skills.",
+    "heading": "Welcome to my site!",
+    "subHeading": "My name is Nicolaos Skimas, and I'm a web developer."
   },
   "thoughts": {
-    "title": "Thoughts"
+    "heading": "Thoughts"
+  },
+  "resume": {
+    "heading": "Resume",
+    "description": "A formatted record of my work experience, education, and skills kept mostly up to date"
   },
   "tips-for-future-developers": {
-    "title": "Tips for Future Developers",
+    "description": "Here are a few practices I found helpful in my professional growth as a developer. I hope they're helpful for you too!",
+    "heading": "Tips for Future Developers",
     "publishDate": "2022-02-02",
-    "type": "thought"
+    "template": "thought"
   },
   "support-right-to-repair": {
-    "title": "Support Right to Repair",
-    "subtitle": "An open letter to our legislators",
+    "description": "An open letter to our legislators in support of Right to Repair legislation.",
+    "heading": "Support Right to Repair",
+    "subHeading": "An open letter to our legislators",
     "publishDate": "2022-01-26",
-    "type": "thought"
+    "template": "thought"
   },
   "404": {
-    "title": "404",
-    "subtitle": "I hate to say it, but it looks like the page you're searching for doesn't exist.",
-    "type": "no-content"
+    "heading": "404",
+    "subHeading": "I hate to say it, but it looks like the page you're searching for doesn't exist.",
+    "template": "no-content"
   }
 }
