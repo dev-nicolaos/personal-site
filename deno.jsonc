@@ -1,7 +1,7 @@
 {
   "importMap": "import_map.json",
   "tasks": {
-    "dev": "deno run -A --unstable build-system/dev.ts",
-    "build": "deno run -A --unstable build-system/build.ts"
+    "dev": "deno run -A build-system/dev.ts",
+    "build": "deno run -A build-system/build.ts"
   }
 }
