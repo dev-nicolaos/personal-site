@@ -24,16 +24,8 @@ export default (pageSlug) => {
 
     <style>
       /* RESET */
-      html, body, div, span,
-      article, aside, footer, header, main, nav, section,
-      blockquote, h1, h2, h3, h4, h5, h6, hr, p, pre,
-      a, abbr, br, cite, code, data, del, dfn, em, i, ins, kbd, mark, q, samp, strong, sub, sup, time, var, wbr,
-      dd, dl, dt, li, ol, ul,
-      audio, canvas, iframe, img, object, picture, svg, video,
-      caption, col, colgroup, table, tbody, td, tfoot, th, thead, tr,
-      details, summary,
-      button, datalist, fieldset, form, input, label, legend, meter, optgroup, option, output, progress, select, textarea {
-        font: inherit;
+      a, article, blockquote, body, details, div, h1, h2, h3, header, html, img, li, main, nav, ol, p, picture, section, span, summary, svg, time, ul {
+      font: inherit;
         border: 0;
         box-sizing: border-box;
         margin: 0;
