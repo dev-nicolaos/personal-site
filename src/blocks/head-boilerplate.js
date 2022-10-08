@@ -15,7 +15,7 @@ export default (pageSlug) => {
     <title>${title} | ${titleTrailer}</title>
     <meta name="author" content="Nicolaos Skimas" />
     ${description ? /*html*/`<meta name="description" content="${description}" />` : "" }
-    
+
     <meta name="theme-color" content="#5da562">
 
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
