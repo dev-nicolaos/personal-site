@@ -1,5 +1,10 @@
 {
   "Work Experience": {
+    "Senior Software Engineer at The Home Depot": [
+      "Enabling teams to build consistent and accessible UIs by creating clear documentation and shared themes",
+      "Partnering with UX designers to design and develop a flexible and accessible enterprise design system",
+      "Built robust CI/CD pipelines with GitHub Actions and Google Cloud Platform"
+    ],
     "Software Engineer at The Home Depot QuoteCenter": [
       "Built/maintained a modern React application which generated multi-billion dollar annual revenue",
       "Lead a cross-functional group focused on fostering frontend excellence through education and collaboration",
