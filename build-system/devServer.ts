@@ -9,10 +9,6 @@ const windowsKillServer = (pid: number) => {
   });
 };
 
-const unixKillServer = (pid: number) => {
-  Deno.kill(pid, "SIGTERM");
-};
-
 const getStartServer = (prependCommand: string[] = []) => () =>
   Deno.run({
     cmd: prependCommand.concat(["netlify", "dev"].concat(Deno.args)),
@@ -20,6 +16,6 @@ const getStartServer = (prependCommand: string[] = []) => () =>
 
 const [startServer, killServer] = Deno.build.os === "windows"
   ? [getStartServer(["cmd", "/c"]), windowsKillServer]
-  : [getStartServer(), unixKillServer];
+  : [getStartServer(), Deno.kill];
 
 export { startServer, killServer };

@@ -1,6 +1,6 @@
 [build]
   # If Netlify build servers ever support Deno OOTB, the first half of this command can be dropped
-  command = "curl -fsSL https://deno.land/x/install/install.sh | sh -s v1.26.1 && /opt/buildhome/.deno/bin/deno task build"
+  command = "curl -fsSL https://deno.land/x/install/install.sh | sh -s v1.27.0 && /opt/buildhome/.deno/bin/deno task build"
   publish = "dist/"
 
 [context.production.processing]
