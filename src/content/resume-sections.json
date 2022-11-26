@@ -1,0 +1,52 @@
+{
+  "Work Experience": {
+    "Senior Software Engineer at The Home Depot": [
+      "Enabling teams to build consistent and accessible UIs by creating clear documentation and shared themes",
+      "Partnering with UX designers to design and develop a flexible and accessible enterprise design system",
+      "Built robust CI/CD pipelines with GitHub Actions and Google Cloud Platform"
+    ],
+    "Software Engineer at The Home Depot QuoteCenter": [
+      "Built/maintained a modern React application which generated multi-billion dollar annual revenue",
+      "Lead a cross-functional group focused on fostering frontend excellence through education and collaboration",
+      "Built/maintained gateway microservices running on Node.js",
+      "Practiced agile development techniques in Scrum framework"
+    ],
+    "Software Developer at Trend Capital": [
+      "Helped develop new marketing sites and web forms using Laravel and Sass"
+    ],
+    "Front End Developer at Dice Services": [
+      "Developed/maintained data-driven control panel built in AngularJS",
+      "Worked on projects using Angular and Ionic"
+    ],
+    "Web Development and IT intern at Glenwood Community Church": [
+      "Helped develop online giving page",
+      "Improved usability throughout website",
+      "Wrote custom CSS for website and internal contact management system"
+    ]
+  },
+  "Education": {
+    "B.A. in Digital Technology and Culture from Washington State University Vancouver": [
+      "Minor: Communications"
+    ]
+  },
+  "Technical Skills": [
+    "Highly skilled with modern HTML, CSS, and JavaScript/TypeScript",
+    "Very comfortable with Git, NPM, and modern development workflows",
+    "Experience with accessiblilty, functional programming, and testing",
+    "Experience with a variety of JS environments (React, Express, Deno)",
+    "Working knowledge of deployment options/infrastructure"
+  ],
+  "Essential Skills": [
+    "Continually seeking to grow professionally and learn new technologies/patterns",
+    "Ability to work effectively in a collaborative team environment",
+    "Strong written and verbal communication skills",
+    "User centric focus"
+  ],
+  "Volunteer Work": [
+    "Student ministry volunteer with local churches",
+    "Open source software/documentation contributor",
+    "Participant in various volunteer opportunities with local foodbanks",
+    "Short term mission trip to Port-au-Prince Haiti in 2017"
+  ],
+  "Awards": ["Eagle Scout"]
+}

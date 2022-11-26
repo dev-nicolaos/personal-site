@@ -1,0 +1,17 @@
+---
+import PageHeader from "@components/PageHeader.astro";
+import SiteHeader from "@components/SiteHeader.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="404">
+  <SiteHeader />
+
+  <main>
+    <PageHeader
+      noContent
+      heading="404"
+      subHeading="I hate to say it, but it looks like the page you're searching for doesn't exist."
+    />
+  </main>
+</BaseLayout>

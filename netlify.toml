@@ -1,18 +1,3 @@
-[build]
-  # If Netlify build servers ever support Deno OOTB, the first half of this command can be dropped
-  command = "curl -fsSL https://deno.land/x/install/install.sh | sh -s v1.27.0 && /opt/buildhome/.deno/bin/deno task build"
-  publish = "dist/"
-
-[context.production.processing]
-  skip_processing = true
-[context.production.processing.css]
-  bundle = true
-  minify = true
-[context.production.processing.html]
-  pretty_urls = true
-[context.production.processing.images]
-  compress = true
-
 # Redirect default Netlify subdomain to primary domain
 [[redirects]]
   from = "https://nicolaos-dot-dev.netlify.com/*"

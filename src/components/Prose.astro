@@ -1,0 +1,46 @@
+<style>
+  div {
+    line-height: 1.8;
+    font-size: var(--font-size-prose);
+  }
+
+  div > :global(* + *) {
+    margin-block-start: var(--space-s);
+  }
+
+  div :global(h2) {
+    font-size: var(--font-size-secondary-heading);
+    margin-block-start: var(--space-m);
+  }
+
+  div :global(a) {
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+
+  div :global(a:hover) {
+    text-decoration: underline;
+  }
+
+  div :global(blockquote) {
+    font-style: italic;
+    margin-inline: var(--space-s-m);
+  }
+
+  div > :global(blockquote > * + *) {
+    margin-block-start: var(--space-s);
+  }
+
+  div :global(li) {
+    list-style-position: inside;
+  }
+
+  div :global(details > summary) {
+    cursor: pointer;
+    font-style: italic;
+  }
+</style>
+
+<div>
+  <slot />
+</div>

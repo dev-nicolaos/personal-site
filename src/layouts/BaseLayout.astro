@@ -1,0 +1,172 @@
+---
+interface Props {
+  description?: string;
+  title: string;
+  titleTrailer?: string;
+}
+
+const { description, title, titleTrailer = "Nicolaos Skimas" } = Astro.props;
+---
+
+<style is:global>
+  /* RESET */
+
+  *,
+  ::before,
+  ::after {
+    font: inherit;
+    border: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+  }
+
+  /* END RESET */
+
+  /* TYPOGRAPHY */
+
+  @font-face {
+    font-display: fallback;
+    font-family: Public Sans Web;
+    font-style: normal;
+    font-weight: normal;
+    src: url(/assets/fonts/PublicSans-Regular.woff2) format("woff2");
+  }
+
+  @font-face {
+    font-display: fallback;
+    font-family: Public Sans Web;
+    font-style: italic;
+    font-weight: normal;
+    src: url(/assets/fonts/PublicSans-Italic.woff2) format("woff2");
+  }
+
+  @font-face {
+    font-display: fallback;
+    font-family: Public Sans Web;
+    font-style: normal;
+    font-weight: bold;
+    src: url(/assets/fonts/PublicSans-Bold.woff2) format("woff2");
+  }
+
+  html {
+    font-family: Public Sans Web, Helvetica, Arial, sans-serif;
+  }
+
+  :root {
+    /* @link https://utopia.fyi/type/calculator?c=320,16,1.125,1024,18,1.2,7,0,&s=0.5,2|4|6,&g=s,l,xl,12 */
+    --step-0: clamp(1rem, calc(0.94rem + 0.28vw), 1.13rem);
+    --step-1: clamp(1.13rem, calc(1.02rem + 0.51vw), 1.35rem);
+    --step-2: clamp(1.27rem, calc(1.1rem + 0.81vw), 1.62rem);
+    --step-3: clamp(1.42rem, calc(1.19rem + 1.18vw), 1.94rem);
+    --step-4: clamp(1.6rem, calc(1.27rem + 1.66vw), 2.33rem);
+    --step-5: clamp(1.8rem, calc(1.35rem + 2.27vw), 2.8rem);
+    --step-6: clamp(2.03rem, calc(1.42rem + 3.03vw), 3.36rem);
+    --step-7: clamp(2.28rem, calc(1.48rem + 3.98vw), 4.03rem);
+
+    --font-size-base: var(--step-0);
+    --font-size-prose: var(--step-1);
+    --font-size-secondary-heading: var(--step-3);
+    --font-size-primary-heading: var(--step-5);
+    --font-size-mega-heading: var(--step-7);
+  }
+
+  /* END TYPOGRAPHY */
+
+  /* COLOR */
+
+  :root {
+    --color-accent: #5ca0a5;
+    --color-back: #222222;
+    --color-fore: #ffffffdd;
+    --color-primary: #5da562;
+    --std-gradient: linear-gradient(
+      90deg,
+      var(--color-primary) 0%,
+      var(--color-accent) 100%
+    );
+  }
+
+  @media print {
+    :root {
+      --color-accent: #0a646b;
+      --color-back: #ffffffdd;
+      --color-fore: #222222;
+      --color-primary: #0b6c12;
+    }
+  }
+
+  html {
+    background: var(--color-back);
+    color: var(--color-fore);
+    scrollbar-color: var(--color-accent) var(--color-back);
+  }
+
+  /* END COLOR */
+
+  /* LAYOUT */
+
+  :root {
+    /* @link https://utopia.fyi/space/calculator?c=320,16,1.125,1024,18,1.25,7,0,&s=0.5,2|4|6,&g=s,l,xl,12 */
+    --space-xs: clamp(0.5rem, calc(0.47rem + 0.14vw), 0.56rem);
+    --space-s: clamp(1rem, calc(0.94rem + 0.28vw), 1.13rem);
+    --space-m: clamp(2rem, calc(1.89rem + 0.57vw), 2.25rem);
+    --space-l: clamp(4rem, calc(3.77rem + 1.14vw), 4.5rem);
+    --space-xl: clamp(6rem, calc(5.66rem + 1.7vw), 6.75rem);
+
+    /* One-up pairs */
+    --space-xs-s: clamp(0.5rem, calc(0.22rem + 1.42vw), 1.13rem);
+    --space-s-m: clamp(1rem, calc(0.43rem + 2.84vw), 2.25rem);
+    --space-m-l: clamp(2rem, calc(0.86rem + 5.68vw), 4.5rem);
+    --space-l-xl: clamp(4rem, calc(2.75rem + 6.25vw), 6.75rem);
+
+    /* https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html */
+    --min-touch-target-size: 24px;
+  }
+
+  body {
+    margin: var(--space-m) auto;
+    inline-size: min(90vw, 960px);
+  }
+
+  @media print {
+    /* Let the printing margins handle it */
+    body {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  img {
+    height: auto;
+    max-inline-size: 100%;
+  }
+
+  .contents {
+    display: contents;
+  }
+
+  /* END LAYOUT */
+</style>
+
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{title} | {titleTrailer}</title>
+    <meta name="author" content="Nicolaos Skimas" />
+    {description && <meta name="description" content={description} />}
+
+    <meta name="theme-color" content="#5da562" />
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/assets/icons/logo-192.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+  </head>
+
+  <body>
+    <slot />
+  </body>
+</html>

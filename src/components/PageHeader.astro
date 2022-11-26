@@ -1,0 +1,42 @@
+---
+const { heading, noContent = false, subHeading } = Astro.props;
+---
+
+<style>
+  hgroup {
+    margin-block-end: var(--space-m-l);
+  }
+
+  hgroup::after {
+    background: var(--std-gradient);
+    border-radius: var(--space-xs);
+    content: "";
+    display: block;
+    height: 0.5em;
+    margin-block-start: var(--space-m-l);
+  }
+
+  h1 {
+    font-size: var(--font-size-primary-heading);
+    text-align: center;
+  }
+
+  hgroup[data-no-content] h1 {
+    font-size: var(--font-size-mega-heading);
+  }
+
+  p {
+    font-size: var(--font-size-prose);
+    margin-block-start: var(--space-m);
+    text-align: center;
+  }
+
+  hgroup[data-no-content] p {
+    font-size: var(--font-size-secondary-heading);
+  }
+</style>
+
+<hgroup class="page-header" data-no-content={noContent}>
+  <h1>{heading}</h1>
+  {subHeading && <p>{subHeading}</p>}
+</hgroup>
