@@ -3,7 +3,6 @@
     "check-formatting": "prettier --check .",
     "format": "prettier --write ."
   },
-  "type": "module",
   "devDependencies": {
     "astro": "^1.6.11",
     "prettier": "^2.8.0",
