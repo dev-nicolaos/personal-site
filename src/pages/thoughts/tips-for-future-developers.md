@@ -11,7 +11,7 @@ A couple of years ago I got a message from an old friend who was studying comput
 
 This advice is targeted at someone who has learned the basics of programming and is looking to take his or her skill set to the next level and/or start a career. There are tons of helpful resources out there for absolute beginners that I won't try and recreate, but I'll link a few below if that's what you were looking for.
 
-<details open>
+<details>
   <summary>Resources for absolute beginners</summary>
 
 - [Harvard's intro to computer science course](https://youtu.be/1tnj3UCkux)
