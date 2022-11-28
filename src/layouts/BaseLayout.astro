@@ -20,6 +20,21 @@ const { description, title, titleTrailer = "Nicolaos Skimas" } = Astro.props;
 
     <meta name="theme-color" content="#5da562" />
 
+    {
+      [
+        "/assets/fonts/PublicSans-Regular.woff2",
+        "/assets/fonts/PublicSans-Italic.woff2",
+        "/assets/fonts/PublicSans-Bold.woff2",
+      ].map((url) => (
+        <link
+          rel="preload"
+          href={url}
+          as="font"
+          type="font/woff2"
+          crossorigin
+        />
+      ))
+    }
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" href="/assets/icons/logo-192.png" />
     <link rel="manifest" href="/manifest.webmanifest" />
@@ -43,7 +58,7 @@ const { description, title, titleTrailer = "Nicolaos Skimas" } = Astro.props;
       /* TYPOGRAPHY */
 
       @font-face {
-        font-display: fallback;
+        font-display: optional;
         font-family: Public Sans Web;
         font-style: normal;
         font-weight: normal;
@@ -51,7 +66,7 @@ const { description, title, titleTrailer = "Nicolaos Skimas" } = Astro.props;
       }
 
       @font-face {
-        font-display: fallback;
+        font-display: optional;
         font-family: Public Sans Web;
         font-style: italic;
         font-weight: normal;
@@ -59,7 +74,7 @@ const { description, title, titleTrailer = "Nicolaos Skimas" } = Astro.props;
       }
 
       @font-face {
-        font-display: fallback;
+        font-display: optional;
         font-family: Public Sans Web;
         font-style: normal;
         font-weight: bold;
