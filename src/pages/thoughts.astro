@@ -45,7 +45,7 @@ const thoughts = (await Astro.glob("./thoughts/**/*.md"))
       {
         thoughts.map(({ frontmatter, url }) => (
           <li>
-            <Link href={url}>{frontmatter.heading}</Link>
+            <Link href={url + "/"}>{frontmatter.heading}</Link>
             <LocalizedDate date={frontmatter.publishDate} />
           </li>
         ))
