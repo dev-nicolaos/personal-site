@@ -1,0 +1,55 @@
+---
+import Link from "@components/Link.astro";
+import LocalizedDate from "@components/LocalizedDate.astro";
+import PageHeader from "@components/PageHeader.astro";
+import SiteHeader from "@components/SiteHeader.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const filterOutDrafts = (thought) => !thought.frontmatter.draft;
+
+const sortThoughts = (thought1, thought2) =>
+  Date.parse(thought2.frontmatter.publishDate) -
+  Date.parse(thought1.frontmatter.publishDate);
+
+const thoughts = (await Astro.glob("./thoughts/**/*.md"))
+  .filter(filterOutDrafts)
+  .sort(sortThoughts);
+---
+
+<style>
+  li {
+    display: block;
+  }
+  li:not(:last-of-type) {
+    margin-block-end: var(--space-m-l);
+  }
+
+  li :global(a) {
+    display: block;
+    font-size: var(--font-size-secondary-heading);
+    margin-block-end: var(--space-s);
+  }
+
+  li :global(time) {
+    font-style: italic;
+    font-size: var(--font-size-base);
+  }
+</style>
+
+<BaseLayout title="Thoughts">
+  <SiteHeader />
+  <main>
+    <PageHeader heading="Thoughts" />
+
+    <ul>
+      {
+        thoughts.map(({ frontmatter, url }) => (
+          <li>
+            <Link href={url + "/"}>{frontmatter.heading}</Link>
+            <LocalizedDate date={frontmatter.publishDate} />
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+</BaseLayout>

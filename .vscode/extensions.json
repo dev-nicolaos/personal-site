@@ -1,7 +1,7 @@
 {
   "recommendations": [
-    "denoland.vscode-deno",
+    "astro-build.astro-vscode",
     "editorconfig.editorconfig",
-    "pushqrdx.inline-html"
+    "esbenp.prettier-vscode"
   ]
 }

@@ -1,0 +1,36 @@
+---
+const { bordered, ...rest } = Astro.props;
+
+const attr = {
+  ...rest,
+  ...(rest.href?.startsWith("http") && {
+    target: "_blank",
+    rel: "noopener",
+  }),
+};
+---
+
+<style>
+  a {
+    display: inline-block;
+    font-size: var(--font-size-base);
+    line-height: max(var(--min-touch-target-size), 1em);
+    min-block-size: var(--min-touch-target-size);
+    min-inline-size: var(--min-touch-target-size);
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  a.bordered {
+    border: 2px solid var(--color-accent);
+    border-radius: var(--space-xs);
+    padding: var(--space-xs);
+    line-height: 1;
+  }
+</style>
+
+<a class:list={[{ bordered }]} {...attr}><slot /></a>

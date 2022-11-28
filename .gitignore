@@ -1,8 +1,9 @@
 .vscode/**/*
 !.vscode/extensions.json
-!.vscode/settings.recommended.json
 
 dist
 
 # Local Netlify folder
 .netlify
+
+node_modules
