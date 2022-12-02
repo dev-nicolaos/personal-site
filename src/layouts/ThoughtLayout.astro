@@ -2,6 +2,7 @@
 import LocalizedDate from "@components/LocalizedDate.astro";
 import PageHeader from "@components/PageHeader.astro";
 import Prose from "@components/Prose.astro";
+import RSSAutodiscovery from "@components/RSSAutodiscovery.astro";
 import SiteHeader from "@components/SiteHeader.astro";
 import BaseLayout from "./BaseLayout.astro";
 
@@ -20,6 +21,7 @@ const { description, heading, publishDate, subHeading } =
 </style>
 
 <BaseLayout description={description} title={heading}>
+  <RSSAutodiscovery slot="head" />
   <SiteHeader />
 
   <main>
