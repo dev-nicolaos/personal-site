@@ -1,7 +1,8 @@
 {
   "scripts": {
     "check-formatting": "prettier --check .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "start": "astro dev"
   },
   "devDependencies": {
     "@astrojs/rss": "^1.0.3",
