@@ -139,7 +139,7 @@ const { description, title, titleTrailer = "Nicolaos Skimas" } = Astro.props;
       /* LAYOUT */
 
       :root {
-        /* @link https://utopia.fyi/space/calculator?c=320,16,1.125,1024,18,1.25,7,0,&s=0.5,2|4|6,&g=s,l,xl,12 */
+        /* @link https://utopia.fyi/space/calculator?c=320,16,1.125,1024,18,1.25,7,0,&s=0.5,2|4|6,m-xl&g=s,l,xl,12 */
         --space-xs: clamp(0.5rem, calc(0.47rem + 0.14vw), 0.56rem);
         --space-s: clamp(1rem, calc(0.94rem + 0.28vw), 1.13rem);
         --space-m: clamp(2rem, calc(1.89rem + 0.57vw), 2.25rem);
@@ -151,6 +151,9 @@ const { description, title, titleTrailer = "Nicolaos Skimas" } = Astro.props;
         --space-s-m: clamp(1rem, calc(0.43rem + 2.84vw), 2.25rem);
         --space-m-l: clamp(2rem, calc(0.86rem + 5.68vw), 4.5rem);
         --space-l-xl: clamp(4rem, calc(2.75rem + 6.25vw), 6.75rem);
+
+        /* Custom pairs */
+        --space-m-xl: clamp(2rem, calc(-0.16rem + 10.8vw), 6.75rem);
 
         /* https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html */
         --min-touch-target-size: 24px;
