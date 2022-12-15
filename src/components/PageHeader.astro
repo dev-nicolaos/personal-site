@@ -4,7 +4,10 @@ const { heading, noContent = false, subHeading } = Astro.props;
 
 <style>
   hgroup {
-    margin-block-end: var(--space-m-l);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
+    margin-block-end: var(--space-m-xl);
   }
 
   hgroup::after {
@@ -13,7 +16,6 @@ const { heading, noContent = false, subHeading } = Astro.props;
     content: "";
     display: block;
     height: 0.5em;
-    margin-block-start: var(--space-m-l);
   }
 
   h1 {
@@ -27,7 +29,6 @@ const { heading, noContent = false, subHeading } = Astro.props;
 
   p {
     font-size: var(--font-size-prose);
-    margin-block-start: var(--space-m);
     text-align: center;
   }
 

@@ -35,7 +35,7 @@ const pageHeaderProps = {
   .site-tech {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--space-xs-s);
+    gap: var(--space-s);
     list-style: none;
   }
 </style>
@@ -67,7 +67,7 @@ const pageHeaderProps = {
         {
           items.map(({ name, url }) => (
             <li>
-              <Link bordered href={url}>
+              <Link hoverEffect href={url}>
                 {name}
               </Link>
             </li>

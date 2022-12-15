@@ -1,0 +1,36 @@
+---
+import Link from "./Link.astro";
+
+const { class: className, ...linkProps } = Astro.props;
+---
+
+<style>
+  .cta {
+    font-weight: bold;
+    line-height: 1;
+    padding: var(--space-xs);
+    position: relative;
+    text-decoration: none;
+    --color-link: var(--color-snow);
+    --font-size-link: var(--font-size-prose);
+  }
+
+  .cta::before {
+    background: var(--color-purple);
+    block-size: 100%;
+    box-shadow: 4px 4px var(--color-ash);
+    content: "";
+    inline-size: 100%;
+    position: absolute;
+    transform: skewX(-15deg);
+    transition: scale 100ms;
+    translate: -8px;
+    z-index: -1;
+  }
+
+  .cta:hover::before {
+    scale: 1.05;
+  }
+</style>
+
+<Link {...linkProps} class={`cta ${className}`}><slot /></Link>

@@ -10,20 +10,24 @@ import Logo from "./Logo.astro";
     flex-wrap: wrap;
     gap: var(--space-s);
     justify-content: space-between;
-    margin-block-end: var(--space-m-l);
+    margin-block-end: var(--space-m-xl);
   }
 
   nav > ul {
     align-items: center;
-    column-gap: var(--space-s);
+    column-gap: var(--space-s-m);
     display: flex;
     flex-wrap: wrap;
     list-style: none;
     row-gap: var(--space-xs);
   }
 
+  nav a:not(:hover) {
+    text-decoration: none;
+  }
+
   svg {
-    color: var(--color-fore);
+    color: var(--color-text);
     display: none;
     inline-size: var(--min-touch-target-size);
     vertical-align: middle;
