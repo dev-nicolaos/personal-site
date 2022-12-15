@@ -108,30 +108,44 @@ const { description, title, titleTrailer = "Nicolaos Skimas" } = Astro.props;
       /* COLOR */
 
       :root {
-        --color-accent: #5ca0a5;
-        --color-back: #222222;
-        --color-fore: #ffffffdd;
-        --color-primary: #5da562;
+        --color-snow: #ffffff;
+        --color-fog: #ffffffdd;
+        --color-ash: #666666;
+        --color-obsidian: #222222;
+
+        --color-vibrant-green: #5da562;
+        --color-logo-green: #0b6c12;
+        --color-blue: #5ca0a5;
+        --color-coral: #f68d5e;
+        --color-purple: #7d8ec8;
+
+        --color-background: var(--color-obsidian);
+        --color-text: var(--color-fog);
+        --color-primary: var(--color-vibrant-green);
         --std-gradient: linear-gradient(
           90deg,
           var(--color-primary) 0%,
-          var(--color-accent) 100%
+          var(--color-blue) 100%
         );
       }
 
       @media print {
         :root {
-          --color-accent: #0a646b;
-          --color-back: #ffffffdd;
-          --color-fore: #222222;
-          --color-primary: #0b6c12;
+          --color-background: var(--color-snow);
+          --color-text: var(--color-obsidian);
+          --color-primary: var(--logo-green);
         }
       }
 
       html {
-        background: var(--color-back);
-        color: var(--color-fore);
-        scrollbar-color: var(--color-accent) var(--color-back);
+        background: var(--color-background);
+        color: var(--color-text);
+        scrollbar-color: var(--color-blue) var(--color-obsidian);
+      }
+
+      :focus-visible {
+        outline: var(--color-coral) solid 3px;
+        outline-offset: 0.2em;
       }
 
       /* END COLOR */

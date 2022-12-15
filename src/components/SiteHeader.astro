@@ -22,8 +22,12 @@ import Logo from "./Logo.astro";
     row-gap: var(--space-xs);
   }
 
+  nav a:not(:hover) {
+    text-decoration: none;
+  }
+
   svg {
-    color: var(--color-fore);
+    color: var(--color-text);
     display: none;
     inline-size: var(--min-touch-target-size);
     vertical-align: middle;

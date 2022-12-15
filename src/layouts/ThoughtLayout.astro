@@ -1,9 +1,13 @@
 ---
+import Card from "@components/Card.astro";
+import Link from "@components/Link.astro";
 import LocalizedDate from "@components/LocalizedDate.astro";
 import PageHeader from "@components/PageHeader.astro";
 import Prose from "@components/Prose.astro";
 import RSSAutodiscovery from "@components/RSSAutodiscovery.astro";
+import RSSIcon from "@components/RSSIcon.astro";
 import SiteHeader from "@components/SiteHeader.astro";
+import { RSS_URL } from "src/consts";
 import BaseLayout from "./BaseLayout.astro";
 
 const { description, heading, publishDate, subHeading } =
@@ -12,11 +16,28 @@ const { description, heading, publishDate, subHeading } =
 
 <style>
   header {
+    /* Space between pub date and first paragraph */
     margin-block-end: var(--space-m);
   }
 
   header :global(time) {
     font-size: var(--font-size-base);
+  }
+
+  .rss-card {
+    margin-top: var(--space-m-l);
+    inline-size: max-content;
+    max-inline-size: 100%;
+  }
+
+  .rss-card h2 {
+    font-size: var(--font-size-secondary-heading);
+    margin-block-end: var(--space-s);
+  }
+
+  .rss-card p {
+    font-size: var(--font-size-base);
+    line-height: 1.65;
   }
 </style>
 
@@ -36,5 +57,17 @@ const { description, heading, publishDate, subHeading } =
         <slot />
       </Prose>
     </article>
+
+    <Card class="rss-card">
+      <h2><RSSIcon /> Enjoy Reading This?</h2>
+      <Prose>
+        <p>
+          Consider subscribing to <a href={RSS_URL}>my RSS feed</a> to get future
+          thoughts in your reader. (<a href="https://aboutfeeds.com/"
+            >What is RSS?</a
+          >)
+        </p>
+      </Prose>
+    </Card>
   </main>
 </BaseLayout>

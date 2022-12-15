@@ -1,10 +1,13 @@
 ---
+import CTALink from "@components/CTALink.astro";
 import Link from "@components/Link.astro";
 import LocalizedDate from "@components/LocalizedDate.astro";
 import PageHeader from "@components/PageHeader.astro";
 import RSSAutodiscovery from "@components/RSSAutodiscovery.astro";
+import RSSIcon from "@components/RSSIcon.astro";
 import SiteHeader from "@components/SiteHeader.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
+import { RSS_URL } from "../consts";
 import { filterOutDrafts, sortThoughtsByPublishDate } from "../utils";
 
 const thoughts = (await Astro.glob("./thoughts/**/*.md"))
@@ -13,17 +16,25 @@ const thoughts = (await Astro.glob("./thoughts/**/*.md"))
 ---
 
 <style>
+  .cta {
+    gap: var(--space-xs);
+    display: inline-flex;
+    align-items: center;
+    margin-block-end: var(--space-m-l);
+  }
+
   li {
-    display: block;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-s);
   }
   li:not(:last-of-type) {
     margin-block-end: var(--space-m-l);
   }
 
   li :global(a) {
-    display: block;
     font-size: var(--font-size-secondary-heading);
-    margin-block-end: var(--space-s);
   }
 
   li :global(time) {
@@ -38,11 +49,18 @@ const thoughts = (await Astro.glob("./thoughts/**/*.md"))
   <main>
     <PageHeader heading="Thoughts" />
 
+    <CTALink href={RSS_URL}>
+      <span>Subscribe via RSS</span>
+      <RSSIcon aria-hidden />
+    </CTALink>
+
     <ul>
       {
         thoughts.map(({ frontmatter, url }) => (
           <li>
-            <Link href={url + "/"}>{frontmatter.heading}</Link>
+            <Link hoverEffect href={url + "/"}>
+              {frontmatter.heading}
+            </Link>
             <LocalizedDate date={frontmatter.publishDate} />
           </li>
         ))
