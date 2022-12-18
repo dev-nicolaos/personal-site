@@ -1,6 +1,5 @@
 ---
 import Card from "@components/Card.astro";
-import Link from "@components/Link.astro";
 import LocalizedDate from "@components/LocalizedDate.astro";
 import PageHeader from "@components/PageHeader.astro";
 import Prose from "@components/Prose.astro";
@@ -10,8 +9,7 @@ import SiteHeader from "@components/SiteHeader.astro";
 import { RSS_URL } from "src/consts";
 import BaseLayout from "./BaseLayout.astro";
 
-const { description, heading, publishDate, subHeading } =
-  Astro.props.frontmatter;
+const { description, title, publishDate, subTitle } = Astro.props.frontmatter;
 ---
 
 <style>
@@ -41,14 +39,14 @@ const { description, heading, publishDate, subHeading } =
   }
 </style>
 
-<BaseLayout description={description} title={heading}>
+<BaseLayout description={description} title={title}>
   <RSSAutodiscovery slot="head" />
   <SiteHeader />
 
   <main>
     <article>
       <header>
-        <PageHeader {...{ heading, subHeading }} />
+        <PageHeader {...{ title, subTitle }} />
 
         <LocalizedDate date={publishDate} />
       </header>

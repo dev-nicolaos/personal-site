@@ -1,5 +1,5 @@
 ---
-const { heading, noContent = false, subHeading } = Astro.props;
+const { title, noContent = false, subTitle } = Astro.props;
 ---
 
 <style>
@@ -38,6 +38,6 @@ const { heading, noContent = false, subHeading } = Astro.props;
 </style>
 
 <hgroup class="page-header" data-no-content={noContent}>
-  <h1>{heading}</h1>
-  {subHeading && <p>{subHeading}</p>}
+  <h1>{title}</h1>
+  {subTitle && <p>{subTitle}</p>}
 </hgroup>

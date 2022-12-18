@@ -23,23 +23,28 @@ const thoughts = (await Astro.glob("./thoughts/**/*.md"))
     margin-block-end: var(--space-m-l);
   }
 
-  li {
+  .thought-listing {
     align-items: flex-start;
     display: flex;
     flex-direction: column;
     gap: var(--space-s);
   }
-  li:not(:last-of-type) {
+  .thought-listing:not(:last-child) {
     margin-block-end: var(--space-m-l);
   }
 
-  li :global(a) {
+  .thought-link {
     font-size: var(--font-size-secondary-heading);
+    font-weight: bold;
+  }
+
+  .thought-desc {
+    font-size: var(--font-size-prose);
   }
 
   li :global(time) {
-    font-style: italic;
     font-size: var(--font-size-base);
+    font-style: italic;
   }
 </style>
 
@@ -47,7 +52,7 @@ const thoughts = (await Astro.glob("./thoughts/**/*.md"))
   <RSSAutodiscovery slot="head" />
   <SiteHeader />
   <main>
-    <PageHeader heading="Thoughts" />
+    <PageHeader title="Thoughts" />
 
     <CTALink href={RSS_URL}>
       <span>Subscribe via RSS</span>
@@ -57,10 +62,11 @@ const thoughts = (await Astro.glob("./thoughts/**/*.md"))
     <ul>
       {
         thoughts.map(({ frontmatter, url }) => (
-          <li>
-            <Link hoverEffect href={url + "/"}>
-              {frontmatter.heading}
+          <li class="thought-listing">
+            <Link class="thought-link" hoverEffect href={url + "/"}>
+              {frontmatter.title}
             </Link>
+            <p class="thought-desc">{frontmatter.description}</p>
             <LocalizedDate date={frontmatter.publishDate} />
           </li>
         ))

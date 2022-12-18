@@ -13,7 +13,7 @@ export const get = () =>
       description: frontmatter.description,
       link: url,
       pubDate: frontmatter.publishDate,
-      title: frontmatter.heading,
+      title: frontmatter.title,
     })),
     site: `${import.meta.env.SITE}thoughts/`,
     stylesheet: "/assets/pretty-feed-v3.xsl",

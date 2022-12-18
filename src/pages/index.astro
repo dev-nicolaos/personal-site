@@ -13,11 +13,6 @@ const layoutProps = {
   title: "Nicolaos Skimas",
   titleTrailer: "Web Developer",
 };
-
-const pageHeaderProps = {
-  heading: "Welcome to my site!",
-  subHeading: "My name is Nicolaos Skimas, and I'm a web developer.",
-};
 ---
 
 <style>
@@ -43,7 +38,10 @@ const pageHeaderProps = {
 <BaseLayout {...layoutProps}>
   <SiteHeader />
   <main>
-    <PageHeader {...pageHeaderProps} />
+    <PageHeader
+      title="Welcome to my site!"
+      subTitle="My name is Nicolaos Skimas, and I'm a web developer."
+    />
 
     <section class="bio">
       <Prose>
