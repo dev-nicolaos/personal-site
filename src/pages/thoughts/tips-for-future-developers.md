@@ -1,6 +1,6 @@
 ---
-description: "Here are a few practices I found helpful in my professional growth as a developer. I hope they're helpful for you too!"
-heading: "Tips for Future Developers"
+description: "A few practices I found helpful in my professional growth as a developer."
+title: "Tips for Future Developers"
 layout: "../../layouts/ThoughtLayout.astro"
 publishDate: "2022-02-02"
 ---

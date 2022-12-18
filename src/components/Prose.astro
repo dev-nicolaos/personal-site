@@ -34,12 +34,27 @@
     margin-block-start: var(--space-s);
   }
 
-  div :global(li) {
-    list-style-position: inside;
+  div :global(:is(ol, ul)) {
+    padding-inline-start: 1.25em;
   }
 
   div :global(details > summary) {
     cursor: pointer;
+    font-style: italic;
+  }
+
+  div :global(.astro-code) {
+    padding: var(--space-s);
+  }
+
+  div :global(:not(.astro-code) > code) {
+    background-color: var(--color-ash);
+    border-radius: 4px;
+    color: var(--color-snow);
+    padding-inline: 2px;
+  }
+
+  div :global(em) {
     font-style: italic;
   }
 </style>
