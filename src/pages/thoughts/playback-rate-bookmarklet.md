@@ -1,18 +1,19 @@
 ---
-description: "Use a JavaScript bookmarklet to adjust the playback speed of media on any web page."
-title: "Speed up Web Audio and Video"
-subTitle: "Works with one click on any page."
+description: "Use a JavaScript bookmarklet to adjust the playback speed of media on almost any page."
+title: "Speed Up Web Audio and Video"
+subTitle: "Works with one click on (almost) any page."
 layout: "../../layouts/ThoughtLayout.astro"
 publishDate: "2022-12-17"
 ---
 
-## TLDR
-
-Bookmark the "link" below. Clicking the bookmark will speed up whatever content is playing on a page. The playback rate of the content will increase each time you click it until the content is playing at 2.5 times its original speed. If you click it again at that point the content will reset back to its original playback rate.
+**<abbr title="Too Long; Didn't Read">TL;DR</abbr>:** Bookmark the "link" below. Clicking the bookmark will speed up whatever content is playing on a page. The playback rate of the content will increase each time you click it until the content is playing at 2.5 times its original speed. If you click it again at that point the content will reset back to its original playback rate.
 
 <a href="javascript:(()=>{const a=Array.from(document.querySelectorAll('video, audio')).find((a=>!a.paused));a&&(a.playbackRate=a.playbackRate>=2.5?1:a.playbackRate+.25)})();">Adjust Playback Rate</a>
 
-A site may have an abnormal setup for their content that prevents this bookmarklet from working, but it's always worked for me. Read on to learn how it works.
+<details>
+  <summary>Limitations</summary>
+  <p>This solution cannot control content that has been embedded on a page from an external site. For example, it can speed up a YouTube video if you're watching it on youtube.com, but not if its been embedded in an article on another site. That's because the code in this bookmarklet runs in the context of whatever site you're on, and there are some pretty significant security implications around letting one site run code on another. Its possible there are other edge cases that prevent this bookmarklet from working, but that's the only one I've found. Read on to learn how it works.</p>
+</details>
 
 ## The Problem
 
@@ -27,7 +28,7 @@ At some point I got curious as to how these sites were including the content on 
 Once you find the content's source it only requires a few steps to adjust the content's playback rate, even it the page doesn't expose that functionality.
 
 1. Select the relevant `<audio>` or `<video>` element in the _Inspector_ or _Elements_ panel of your browser's dev tools
-1. In the _Console_ panel, reference the selected element with the `$0` JavaScript (<abbr>JS</abbr>) variable
+1. In the _Console_ panel, reference the selected element with the `$0` JavaScript variable
 1. Set the element's `playbackRate` property to your desired speed
 1. Hit <kbd>Enter</kbd> to run the statement
 
