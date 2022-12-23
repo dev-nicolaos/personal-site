@@ -2,6 +2,7 @@
   div {
     line-height: 1.8;
     font-size: var(--font-size-prose);
+    max-inline-size: 65ch;
   }
 
   div > :global(* + *) {
@@ -38,9 +39,16 @@
     padding-inline-start: 1.25em;
   }
 
+  div :global(details) {
+    border: 2px dashed var(--color-ash);
+    padding: var(--space-xs);
+  }
   div :global(details > summary) {
     cursor: pointer;
     font-style: italic;
+  }
+  div :global(details[open] > summary) {
+    margin-block-end: var(--space-xs);
   }
 
   div :global(.astro-code) {
@@ -56,6 +64,10 @@
 
   div :global(em) {
     font-style: italic;
+  }
+
+  div :global(strong) {
+    font-weight: bold;
   }
 </style>
 
