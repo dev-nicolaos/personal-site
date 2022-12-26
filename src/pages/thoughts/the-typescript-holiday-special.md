@@ -2,7 +2,7 @@
 description: "Fluffy Bunny"
 title: "The TypeScript Holiday Special"
 layout: "../../layouts/ThoughtLayout.astro"
-publishDate: "2022-12-24"
+publishDate: "2022-12-25"
 subTitle: "When a web developer is feeling whimsical in late December."
 ---
 
