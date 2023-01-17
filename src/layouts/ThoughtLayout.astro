@@ -1,6 +1,6 @@
 ---
 import Card from "@components/Card.astro";
-import LocalizedDate from "@components/LocalizedDate.astro";
+import Date from "@components/Date.astro";
 import PageHeader from "@components/PageHeader.astro";
 import Prose from "@components/Prose.astro";
 import RSSAutodiscovery from "@components/RSSAutodiscovery.astro";
@@ -48,7 +48,7 @@ const { description, title, publishDate, subTitle } = Astro.props.frontmatter;
       <header>
         <PageHeader {...{ title, subTitle }} />
 
-        <LocalizedDate date={publishDate} />
+        <Date date={publishDate} />
       </header>
 
       <Prose>
