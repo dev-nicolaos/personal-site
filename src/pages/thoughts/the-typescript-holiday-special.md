@@ -6,11 +6,11 @@ publishDate: "2022-12-25"
 subTitle: "When a web developer is feeling whimsical in late December."
 ---
 
-The following is the description of a [pull request] (<abbr>PR</abbr>) I put up at work a year or two ago, edited to remove obscure references specific to the project. Long story short: seemingly simple [TypeScript] (<abbr>TS</abbr>) migrations in can get surprisingly complicated. Merry Christmas!
+The following is the description of a [pull request] (<abbr>PR</abbr>) I put up at work a year or two ago, edited to remove obscure references specific to the project. Long story short: seemingly simple [TypeScript] (<abbr>TS</abbr>) migrations can get surprisingly complicated. Merry Christmas!
 
 ## Prologue: Imagine This
 
-You're a developer whose worked on a large, fullstack JavaScript (<abbr>JS</abbr>) application for a couple years and know how messy it can be. This year you receive a wonderful holiday gift: approval to start migrating to TypeScript! By implementing static typing your team can take a big step forward in improving the code's maintainability. So you decide to chip in and convert a file to TS; after all, _it'll only take a moment right?_
+You're a developer who's worked on a large, fullstack JavaScript (<abbr>JS</abbr>) application for a couple years and know how messy it can be. This year you receive a wonderful holiday gift: approval to start migrating to TypeScript! By implementing static typing your team can take a big step forward in improving the code's maintainability. So you decide to chip in and convert a file to TS; after all, _it'll only take a moment right?_
 
 You select a random file with a couple small utility functions. But alas, upon giving it the `.ts` extension and adding the correct type annotations you're greeted by an unpleasant surprise: **the red squiggly line**. For a moment you wonder if maybe your editor is just trying to get into the holiday spirit with a colorful light show, but no other squiggles appear, no music starts, and you realize you'll actually have to deal with this. And thus begins the long journey to this complicated <abbr title="pull request">PR</abbr>.
 
