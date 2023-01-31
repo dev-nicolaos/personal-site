@@ -15,7 +15,7 @@ export const get = () =>
       pubDate: frontmatter.publishDate,
       title: frontmatter.title,
     })),
-    site: `${import.meta.env.SITE}thoughts/`,
+    site: `${import.meta.env.SITE}/thoughts/`,
     stylesheet: "/assets/pretty-feed-v3.xsl",
     title: "Nicolaos Skimas",
   });
