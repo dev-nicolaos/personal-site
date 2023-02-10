@@ -2,8 +2,7 @@
 description: "Use a JavaScript bookmarklet to adjust the playback speed of media on almost any page."
 title: "Speed Up Web Audio and Video"
 subTitle: "Works with one click on (almost) any page."
-layout: "../../layouts/ThoughtLayout.astro"
-publishDate: "2022-12-17"
+pubDate: "2022-12-17"
 ---
 
 **<abbr title="Too Long; Didn't Read">TL;DR</abbr>:** Bookmark the "link" below. Clicking the bookmark will speed up whatever content is playing on a page. The playback rate of the content will increase each time you click it until the content is playing at 2.5 times its original speed. If you click it again at that point the content will reset back to its original playback rate.

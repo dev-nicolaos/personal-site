@@ -2,6 +2,7 @@
 !.vscode/extensions.json
 
 dist
+.astro
 
 # Local Netlify folder
 .netlify
