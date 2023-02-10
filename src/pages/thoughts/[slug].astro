@@ -6,10 +6,23 @@ import Prose from "@components/Prose.astro";
 import RSSAutodiscovery from "@components/RSSAutodiscovery.astro";
 import RSSIcon from "@components/RSSIcon.astro";
 import SiteHeader from "@components/SiteHeader.astro";
+import type { CollectionEntry } from "astro:content";
 import { RSS_URL } from "src/consts";
-import BaseLayout from "./BaseLayout.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+// import ThoughtLayout from "@layouts/ThoughtLayout.astro";
 
-const { description, title, publishDate, subTitle } = Astro.props.frontmatter;
+export async function getStaticPaths() {
+  const thoughts = await getCollection("thoughts");
+  return thoughts.map((thought) => ({
+    params: { slug: thought.slug },
+    props: { thought },
+  }));
+}
+
+const thought: CollectionEntry<"thoughts"> = Astro.props.thought;
+const { Content } = await thought.render();
+const { description, title, pubDate, subTitle } = thought.data;
 ---
 
 <style>
@@ -48,11 +61,11 @@ const { description, title, publishDate, subTitle } = Astro.props.frontmatter;
       <header>
         <PageHeader {...{ title, subTitle }} />
 
-        <Date date={publishDate} />
+        <Date date={pubDate} />
       </header>
 
       <Prose>
-        <slot />
+        <Content />
       </Prose>
     </article>
 

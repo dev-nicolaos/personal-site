@@ -1,8 +1,7 @@
 ---
 description: "A narrative I wrote as a pull request description for a TypeScript migration."
 title: "The TypeScript Holiday Special"
-layout: "../../layouts/ThoughtLayout.astro"
-publishDate: "2022-12-25"
+pubDate: "2022-12-25"
 subTitle: "When a web developer is feeling whimsical in late December."
 ---
 
