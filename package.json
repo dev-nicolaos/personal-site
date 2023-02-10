@@ -7,7 +7,7 @@
   "devDependencies": {
     "@astrojs/rss": "^2.1.0",
     "@astrojs/sitemap": "^1.0.1",
-    "astro": "^2.0.4",
+    "astro": "^2.0.10",
     "prettier": "^2.8.3",
     "prettier-plugin-astro": "^0.8.0"
   }
