@@ -10,7 +10,6 @@ import type { CollectionEntry } from "astro:content";
 import { RSS_URL } from "src/consts";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
-// import ThoughtLayout from "@layouts/ThoughtLayout.astro";
 
 export async function getStaticPaths() {
   const thoughts = await getCollection("thoughts");
