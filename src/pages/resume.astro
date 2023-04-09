@@ -1,6 +1,5 @@
 ---
 import Link from "@components/Link.astro";
-import Logo from "@components/Logo.astro";
 import sections from "@data/resume-sections.json";
 import BaseLayout from "@layouts/BaseLayout.astro";
 ---
@@ -17,8 +16,9 @@ import BaseLayout from "@layouts/BaseLayout.astro";
     margin-block-end: var(--space-m-l);
   }
 
-  header :global(img) {
+  header img {
     display: none;
+    inline-size: var(--space-m);
   }
 
   .resume-header_name {
@@ -79,10 +79,10 @@ import BaseLayout from "@layouts/BaseLayout.astro";
       align-items: center;
       grid-template-columns: auto auto 1fr auto;
       text-align: initial;
-      gap: var(--space-xs);
+      gap: var(--space-xs-s);
     }
 
-    header :global(img) {
+    header img {
       display: inline-block;
     }
 
@@ -116,7 +116,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
   description="A formatted record of my work experience, education, and skills kept mostly up to date"
 >
   <header>
-    <Logo />
+    <img alt="" height="1" src="/assets/img/logo.svg" width="1" />
     <h1 class="contents">
       <div class="resume-header_name">Nicolaos Skimas</div>
       <div class="resume-header_profession">Web Developer</div>
