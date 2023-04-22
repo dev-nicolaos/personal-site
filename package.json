@@ -10,8 +10,5 @@
     "astro": "^2.0.17",
     "prettier": "^2.8.3",
     "prettier-plugin-astro": "^0.8.0"
-  },
-  "dependencies": {
-    "@astrojs/partytown": "^1.2.0"
   }
 }
