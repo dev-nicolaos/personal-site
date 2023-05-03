@@ -4,8 +4,7 @@ const thoughtsCollection = defineCollection({
   schema: z.object({
     description: z.string(),
     draft: z.boolean().optional(),
-    // use z.string().datetime() when astro ships zod 3.20 or later
-    pubDate: z.string(),
+    pubDate: z.string().datetime(),
     subTitle: z.string().optional(),
     title: z.string(),
   }),
