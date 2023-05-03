@@ -9,7 +9,7 @@ const thoughts = (await getCollection("thoughts", filterOutDrafts)).sort(
 export const get = (context) =>
   rss({
     description:
-      "A series of thoughts about life, technology and web development.",
+      "A series of posts about life, technology and web development.",
     items: thoughts.map(({ data, slug }) => ({
       description: data.description,
       link: `/thoughts/${slug}/`,

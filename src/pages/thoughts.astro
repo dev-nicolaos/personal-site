@@ -53,7 +53,10 @@ const thoughts = (await getCollection("thoughts", filterOutDrafts)).sort(
   <RSSAutodiscovery slot="head" />
   <SiteHeader />
   <main>
-    <PageHeader title="Thoughts" />
+    <PageHeader
+      title="Thoughts"
+      subTitle="A series of posts about life, technology and web development."
+    />
 
     <CTALink href={RSS_URL}>
       <span>Subscribe via RSS</span>
