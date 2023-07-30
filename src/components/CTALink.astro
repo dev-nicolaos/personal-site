@@ -6,8 +6,12 @@ const { class: className, ...linkProps } = Astro.props;
 
 <style>
   .cta {
+    align-items: center;
+    display: inline-flex;
     font-weight: bold;
+    gap: var(--space-xs);
     line-height: 1;
+    margin-block-end: var(--space-l);
     padding: var(--space-xs);
     position: relative;
     text-decoration: none;

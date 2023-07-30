@@ -15,15 +15,6 @@ const thoughts = (await getCollection("thoughts", filterOutDrafts)).sort(
 );
 ---
 
-<style>
-  .cta {
-    gap: var(--space-xs);
-    display: inline-flex;
-    align-items: center;
-    margin-block-end: var(--space-l);
-  }
-</style>
-
 <BaseLayout title="Thoughts">
   <RSSAutodiscovery slot="head" />
   <SiteHeader />
