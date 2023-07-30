@@ -3,6 +3,7 @@ description: "A narrative I wrote as a pull request description for a TypeScript
 title: "The TypeScript Holiday Special"
 pubDate: "2022-12-25"
 subTitle: "When a web developer is feeling whimsical in late December."
+tags: ["web-development"]
 ---
 
 The following is the description of a [pull request] (<abbr>PR</abbr>) I put up at work a year or two ago, edited to remove obscure references specific to the project. Long story short: seemingly simple [TypeScript] (<abbr>TS</abbr>) migrations can get surprisingly complicated. Merry Christmas!

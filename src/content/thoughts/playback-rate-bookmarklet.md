@@ -1,5 +1,6 @@
 ---
 description: "Use a JavaScript bookmarklet to adjust the playback speed of media on almost any page."
+tags: ["technology", "web-development"]
 title: "Speed Up Web Audio and Video"
 subTitle: "Works with one click on (almost) any page."
 pubDate: "2022-12-17"

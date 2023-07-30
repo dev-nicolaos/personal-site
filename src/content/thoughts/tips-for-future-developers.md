@@ -2,6 +2,7 @@
 description: "A few practices I found helpful in my professional growth as a developer."
 title: "Tips for Future Developers"
 pubDate: "2022-02-02"
+tags: ["web-development"]
 ---
 
 A couple of years ago I got a message from an old friend who was studying computer science. He asked if I had any advice on what he should work on and learn, given that I'd been in the software industry for a few years. Re-reading my response, I was surprised to see that my advice then was largely the same as it would be now, so I thought I'd post my thoughts here for future developers-in-training to stumble across.

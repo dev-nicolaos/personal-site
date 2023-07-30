@@ -2,6 +2,7 @@
 title: "Traffic Light Pull Request Reviews"
 description: "A simple system for clearer feedback on Pull Requests"
 pubDate: "2023-04-08"
+tags: ["web-development"]
 ---
 
 A large part of my work as a senior developer is reviewing other developer's code.

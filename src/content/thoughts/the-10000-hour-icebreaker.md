@@ -3,6 +3,7 @@ title: "The 10,000 Hour Icebreaker"
 subTitle: "Don't worry, it shouldn't take quite that long to discuss."
 description: "If you could instantly master any skill, what would it be and why?"
 pubDate: "2023-02-24"
+tags: ["life"]
 ---
 
 For those who aren't familiar, an icebreaker is a simple question meant to stimulate conversation. Thing is, there are a lot of low effort icebreakers out there that don't do that. There are many reasons an icebreaker might fail, but here are a few common ones I see:

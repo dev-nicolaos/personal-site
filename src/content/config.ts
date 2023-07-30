@@ -8,6 +8,7 @@ const thoughtsCollection = defineCollection({
     // https://github.com/colinhacks/zod/issues/1676
     pubDate: z.string(),
     subTitle: z.string().optional(),
+    tags: z.array(z.enum(["life", "technology", "web-development"])),
     title: z.string(),
   }),
 });

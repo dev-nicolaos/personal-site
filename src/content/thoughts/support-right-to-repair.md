@@ -2,6 +2,7 @@
 description: "An open letter to our legislators in support of Right to Repair legislation."
 title: "Support Right to Repair"
 pubDate: "2022-01-26"
+tags: ["technology"]
 subTitle: "An open letter to our legislators"
 ---
 
