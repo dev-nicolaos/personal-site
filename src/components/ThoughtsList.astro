@@ -1,0 +1,50 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Date from "./Date.astro";
+import Link from "./Link.astro";
+interface Props {
+  thoughts: CollectionEntry<"thoughts">[];
+}
+
+const { thoughts } = Astro.props;
+---
+
+<style>
+  .thought-listing {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-s);
+  }
+  .thought-listing:not(:last-child) {
+    margin-block-end: var(--space-m-l);
+  }
+
+  .thought-link {
+    font-size: var(--font-size-secondary-heading);
+    font-weight: bold;
+  }
+
+  .thought-desc {
+    font-size: var(--font-size-prose);
+  }
+
+  li :global(time) {
+    font-size: var(--font-size-base);
+    font-style: italic;
+  }
+</style>
+
+<ul>
+  {
+    thoughts.map(({ data, slug }) => (
+      <li class="thought-listing">
+        <Link class="thought-link" hoverEffect href={`/thoughts/${slug}/`}>
+          {data.title}
+        </Link>
+        <p class="thought-desc">{data.description}</p>
+        <Date date={data.pubDate} />
+      </li>
+    ))
+  }
+</ul>
