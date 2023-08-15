@@ -1,5 +1,5 @@
 import rss from "@astrojs/rss";
-import { getTaggedThoughtsStaticPaths, prettifyTag } from "../../utils";
+import { getTaggedThoughtsStaticPaths, prettifyTag } from "../../../../utils";
 
 export const getStaticPaths = getTaggedThoughtsStaticPaths;
 
