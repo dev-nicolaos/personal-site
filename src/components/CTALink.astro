@@ -11,7 +11,6 @@ const { class: className, ...linkProps } = Astro.props;
     font-weight: bold;
     gap: var(--space-xs);
     line-height: 1;
-    margin-block-end: var(--space-l);
     padding: var(--space-xs);
     position: relative;
     text-decoration: none;
@@ -37,4 +36,4 @@ const { class: className, ...linkProps } = Astro.props;
   }
 </style>
 
-<Link {...linkProps} class={`cta ${className}`}><slot /></Link>
+<Link {...linkProps} class:list={["cta", className]}><slot /></Link>

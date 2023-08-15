@@ -15,6 +15,12 @@ const thoughts = (await getCollection("thoughts", filterOutDrafts)).sort(
 );
 ---
 
+<style>
+  .cta {
+    margin-block-end: var(--space-l);
+  }
+</style>
+
 <BaseLayout title="Thoughts">
   <RSSAutodiscovery slot="head" />
   <SiteHeader />
