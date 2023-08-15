@@ -7,7 +7,7 @@ import RSSAutodiscovery from "@components/RSSAutodiscovery.astro";
 import RSSIcon from "@components/RSSIcon.astro";
 import SiteHeader from "@components/SiteHeader.astro";
 import type { CollectionEntry } from "astro:content";
-import { RSS_URL } from "src/consts";
+import { RSS_URLS } from "src/consts";
 import { filterOutDrafts } from "src/utils";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
@@ -73,7 +73,7 @@ const { description, title, pubDate, subTitle } = thought.data;
       <h2><RSSIcon /> Enjoy Reading This?</h2>
       <Prose>
         <p>
-          Consider subscribing to <a href={RSS_URL}>my RSS feed</a> to get future
+          Consider subscribing to <a href={RSS_URLS.all}>my RSS feed</a> to get future
           thoughts in your reader. (<a href="https://aboutfeeds.com/"
             >What is RSS?</a
           >)

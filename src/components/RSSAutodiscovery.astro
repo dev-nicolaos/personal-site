@@ -1,10 +1,31 @@
 ---
-import { RSS_URL } from "../consts";
+import { RSS_URLS } from "../consts";
 ---
 
 <link
-  href={RSS_URL}
+  href={RSS_URLS.all}
   rel="alternate"
-  title="RSS Feed"
+  title="All - RSS Feed"
+  type="application/rss+xml"
+/>
+
+<link
+  href={RSS_URLS.life}
+  rel="alternate"
+  title="Life - RSS Feed"
+  type="application/rss+xml"
+/>
+
+<link
+  href={RSS_URLS.technology}
+  rel="alternate"
+  title="Technology - RSS Feed"
+  type="application/rss+xml"
+/>
+
+<link
+  href={RSS_URLS.webDevelopment}
+  rel="alternate"
+  title="Web Development - RSS Feed"
   type="application/rss+xml"
 />

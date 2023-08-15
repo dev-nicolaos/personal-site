@@ -7,7 +7,7 @@ import RSSIcon from "@components/RSSIcon.astro";
 import SiteHeader from "@components/SiteHeader.astro";
 import ThoughtsList from "@components/ThoughtsList.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import { RSS_URL } from "../consts";
+import { RSS_URLS } from "../consts";
 import { filterOutDrafts, sortThoughtsByPubDate } from "../utils";
 
 const thoughts = (await getCollection("thoughts", filterOutDrafts)).sort(
@@ -24,7 +24,7 @@ const thoughts = (await getCollection("thoughts", filterOutDrafts)).sort(
       subTitle="A series of posts about life, technology and web development."
     />
 
-    <CTALink href={RSS_URL}>
+    <CTALink href={RSS_URLS.all}>
       <span>Subscribe via RSS</span>
       <RSSIcon aria-hidden />
     </CTALink>
