@@ -6,7 +6,7 @@ const thoughts = (await getCollection("thoughts", filterOutDrafts)).sort(
 	sortThoughtsByPubDate,
 );
 
-export const get = (context) =>
+export const GET = (context) =>
 	rss({
 		description:
 			"A series of posts about life, technology and web development.",
