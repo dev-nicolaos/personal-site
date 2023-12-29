@@ -3,7 +3,7 @@ import { filterOutDrafts, sortThoughtsByPubDate } from "../../utils";
 import { getCollection } from "astro:content";
 
 const thoughts = (await getCollection("thoughts", filterOutDrafts)).sort(
-  sortThoughtsByPubDate
+  sortThoughtsByPubDate,
 );
 
 export const get = (context) =>
