@@ -5,156 +5,162 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 ---
 
 <style>
-  header,
-  main {
-    text-align: center;
-  }
+	header,
+	main {
+		text-align: center;
+	}
 
-  header {
-    display: grid;
-    gap: var(--space-s);
-    margin-block-end: var(--space-m-l);
-  }
+	header {
+		display: grid;
+		gap: var(--space-s);
+		margin-block-end: var(--space-m-l);
+	}
 
-  header img {
-    display: none;
-    inline-size: var(--space-m);
-  }
+	header img {
+		display: none;
+		inline-size: var(--space-m);
+	}
 
-  .resume-header_name {
-    font-size: var(--font-size-primary-heading);
-  }
+	.resume-header_name {
+		font-size: var(--font-size-primary-heading);
+	}
 
-  .resume-header_profession {
-    font-size: var(--font-size-secondary-heading);
-  }
+	.resume-header_profession {
+		font-size: var(--font-size-secondary-heading);
+	}
 
-  .resume-header_contact-info {
-    display: flex;
-    flex-direction: column;
-    font-size: var(--font-size-base);
-    gap: var(--space-xs-s);
-    list-style-type: none;
-  }
+	.resume-header_contact-info {
+		display: flex;
+		flex-direction: column;
+		font-size: var(--font-size-base);
+		gap: var(--space-xs-s);
+		list-style-type: none;
+	}
 
-  h2 {
-    font-weight: bold;
-    font-size: var(--font-size-primary-heading);
-  }
+	h2 {
+		font-weight: bold;
+		font-size: var(--font-size-primary-heading);
+	}
 
-  h3 {
-    font-size: var(--font-size-secondary-heading);
-  }
+	h3 {
+		font-size: var(--font-size-secondary-heading);
+	}
 
-  section:not(:first-child) {
-    margin-block-start: var(--space-l);
-  }
+	section:not(:first-child) {
+		margin-block-start: var(--space-l);
+	}
 
-  .section-list,
-  .section-sublist:not(:first-child) {
-    margin-block-start: var(--space-m-l);
-  }
+	.section-list,
+	.section-sublist:not(:first-child) {
+		margin-block-start: var(--space-m-l);
+	}
 
-  .section-sublist {
-    list-style-type: none;
-  }
+	.section-sublist {
+		list-style-type: none;
+	}
 
-  .list-item {
-    margin-block-start: var(--space-m);
-    list-style: inside disc;
-    line-height: 1.4;
-    font-size: var(--font-size-prose);
-  }
-  .list-item::marker {
-    color: var(--color-primary);
-  }
+	.list-item {
+		margin-block-start: var(--space-m);
+		list-style: inside disc;
+		line-height: 1.4;
+		font-size: var(--font-size-prose);
+	}
+	.list-item::marker {
+		color: var(--color-primary);
+	}
 
-  @media (min-width: 620px) {
-    header,
-    main {
-      text-align: initial;
-    }
+	@media (min-width: 620px) {
+		header,
+		main {
+			text-align: initial;
+		}
 
-    header {
-      align-items: center;
-      grid-template-columns: auto auto 1fr auto;
-      text-align: initial;
-      gap: var(--space-xs-s);
-    }
+		header {
+			align-items: center;
+			grid-template-columns: auto auto 1fr auto;
+			text-align: initial;
+			gap: var(--space-xs-s);
+		}
 
-    header img {
-      display: inline-block;
-    }
+		header img {
+			display: inline-block;
+		}
 
-    .resume-header_name {
-      line-height: 1;
-      font-size: var(--font-size-secondary-heading);
-    }
+		.resume-header_name {
+			line-height: 1;
+			font-size: var(--font-size-secondary-heading);
+		}
 
-    .resume-header_profession {
-      grid-column-end: -1;
-      font-size: var(--font-size-prose);
-      line-height: 1;
-    }
+		.resume-header_profession {
+			grid-column-end: -1;
+			font-size: var(--font-size-prose);
+			line-height: 1;
+		}
 
-    .resume-header_contact-info {
-      border-image: var(--std-gradient) 1;
-      border-block-start: 2px solid;
-      flex-direction: row;
-      grid-column: 1/-1;
-      padding-block-start: var(--space-xs);
-    }
+		.resume-header_contact-info {
+			border-image: var(--std-gradient) 1;
+			border-block-start: 2px solid;
+			flex-direction: row;
+			grid-column: 1/-1;
+			padding-block-start: var(--space-xs);
+		}
 
-    .list-item {
-      margin-inline-start: var(--space-s-m);
-    }
-  }
+		.list-item {
+			margin-inline-start: var(--space-s-m);
+		}
+	}
 </style>
 
 <BaseLayout
-  title="Resume"
-  description="A formatted record of my work experience, education, and skills kept mostly up to date"
+	title="Resume"
+	description="A formatted record of my work experience, education, and skills kept mostly up to date"
 >
-  <header>
-    <img alt="" height="1" src="/assets/img/logo.svg" width="1" />
-    <h1 class="contents">
-      <div class="resume-header_name">Nicolaos Skimas</div>
-      <div class="resume-header_profession">Web Developer</div>
-    </h1>
-    <ul class="resume-header_contact-info">
-      <li><Link hoverEffect href="/">https://nicolaos.dev</Link></li>
-      <li><Link hoverEffect href="tel:3606013424">(360) 601-3424</Link></li>
-      <li>
-        <Link hoverEffect href="mailto:contact@nicolaos.dev">
-          contact@nicolaos.dev
-        </Link>
-      </li>
-    </ul>
-  </header>
+	<header>
+		<img alt="" height="1" src="/assets/img/logo.svg" width="1" />
+		<h1 class="contents">
+			<div class="resume-header_name">Nicolaos Skimas</div>
+			<div class="resume-header_profession">Web Developer</div>
+		</h1>
+		<ul class="resume-header_contact-info">
+			<li><Link hoverEffect href="/">https://nicolaos.dev</Link></li>
+			<li>
+				<Link hoverEffect href="tel:3606013424">(360) 601-3424</Link>
+			</li>
+			<li>
+				<Link hoverEffect href="mailto:contact@nicolaos.dev">
+					contact@nicolaos.dev
+				</Link>
+			</li>
+		</ul>
+	</header>
 
-  <main>
-    {
-      Object.entries(sections).map(([sectionTitle, sectionItems]) => (
-        <section>
-          <h2>{sectionTitle}</h2>
-          <ul class="section-list">
-            {Array.isArray(sectionItems)
-              ? sectionItems.map((content) => (
-                  <li class="list-item">{content}</li>
-                ))
-              : Object.entries(sectionItems).map(([title, items]) => (
-                  <li class="section-sublist">
-                    <h3>{title}</h3>
-                    <ul>
-                      {items.map((content) => (
-                        <li class="list-item">{content}</li>
-                      ))}
-                    </ul>
-                  </li>
-                ))}
-          </ul>
-        </section>
-      ))
-    }
-  </main>
+	<main>
+		{
+			Object.entries(sections).map(([sectionTitle, sectionItems]) => (
+				<section>
+					<h2>{sectionTitle}</h2>
+					<ul class="section-list">
+						{Array.isArray(sectionItems)
+							? sectionItems.map((content) => (
+									<li class="list-item">{content}</li>
+								))
+							: Object.entries(sectionItems).map(
+									([title, items]) => (
+										<li class="section-sublist">
+											<h3>{title}</h3>
+											<ul>
+												{items.map((content) => (
+													<li class="list-item">
+														{content}
+													</li>
+												))}
+											</ul>
+										</li>
+									),
+								)}
+					</ul>
+				</section>
+			))
+		}
+	</main>
 </BaseLayout>

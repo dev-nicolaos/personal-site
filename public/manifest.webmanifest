@@ -1,43 +1,43 @@
 {
-  "background_color": "#222222",
-  "display": "minimal-ui",
-  "icons": [
-    {
-      "sizes": "48x48",
-      "src": "./assets/icons/logo-48.webp",
-      "type": "image/webp"
-    },
-    {
-      "sizes": "48x48",
-      "src": "./assets/icons/logo-48.png",
-      "type": "image/png"
-    },
-    {
-      "sizes": "192x192",
-      "src": "./assets/icons/logo-192.webp",
-      "type": "image/webp"
-    },
-    {
-      "sizes": "192x192",
-      "src": "./assets/icons/logo-192.png",
-      "type": "image/png"
-    },
-    {
-      "sizes": "512x512",
-      "src": "./assets/icons/logo-512.webp",
-      "type": "image/webp"
-    },
-    {
-      "sizes": "512x512",
-      "src": "./assets/icons/logo-512.png",
-      "type": "image/png"
-    }
-  ],
-  "lang": "en-US",
-  "name": "Nicolaos Skimas' Portfolio",
-  "orientation": "any",
-  "scope": "./",
-  "short_name": "NS",
-  "start_url": "./",
-  "theme_color": "#5da562"
+	"background_color": "#222222",
+	"display": "minimal-ui",
+	"icons": [
+		{
+			"sizes": "48x48",
+			"src": "./assets/icons/logo-48.webp",
+			"type": "image/webp"
+		},
+		{
+			"sizes": "48x48",
+			"src": "./assets/icons/logo-48.png",
+			"type": "image/png"
+		},
+		{
+			"sizes": "192x192",
+			"src": "./assets/icons/logo-192.webp",
+			"type": "image/webp"
+		},
+		{
+			"sizes": "192x192",
+			"src": "./assets/icons/logo-192.png",
+			"type": "image/png"
+		},
+		{
+			"sizes": "512x512",
+			"src": "./assets/icons/logo-512.webp",
+			"type": "image/webp"
+		},
+		{
+			"sizes": "512x512",
+			"src": "./assets/icons/logo-512.png",
+			"type": "image/png"
+		}
+	],
+	"lang": "en-US",
+	"name": "Nicolaos Skimas' Portfolio",
+	"orientation": "any",
+	"scope": "./",
+	"short_name": "NS",
+	"start_url": "./",
+	"theme_color": "#5da562"
 }

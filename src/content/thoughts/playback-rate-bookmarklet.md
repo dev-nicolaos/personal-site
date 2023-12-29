@@ -43,12 +43,12 @@ Its nice that this workaround is possible, but its a bit clunky (and that's from
 
 ```js
 (() => {
-  const pageMedia = Array.from(document.querySelectorAll("video, audio"));
-  const playing = pageMedia.find((el) => !el.paused);
-  if (playing) {
-    playing.playbackRate =
-      playing.playbackRate >= 2.5 ? 1 : playing.playbackRate + 0.25;
-  }
+	const pageMedia = Array.from(document.querySelectorAll("video, audio"));
+	const playing = pageMedia.find((el) => !el.paused);
+	if (playing) {
+		playing.playbackRate =
+			playing.playbackRate >= 2.5 ? 1 : playing.playbackRate + 0.25;
+	}
 })();
 ```
 
