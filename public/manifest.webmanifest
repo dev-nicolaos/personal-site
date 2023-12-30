@@ -34,10 +34,9 @@
 		}
 	],
 	"lang": "en-US",
-	"name": "Nicolaos Skimas' Portfolio",
+	"name": "nicolaos.dev",
 	"orientation": "any",
 	"scope": "./",
-	"short_name": "NS",
 	"start_url": "./",
 	"theme_color": "#5da562"
 }
