@@ -13,10 +13,10 @@ This advice is targeted at someone who has learned the basics of programming and
 <details>
   <summary>Resources for absolute beginners</summary>
 
-- [Harvard's intro to computer science course](https://youtu.be/1tnj3UCkux)
-- [freeCodeCamp's interactive coding tutorials](https://www.freecodecamp.org)
-- [Mozilla Developer Network's beginners guide to web development](https://developer.mozilla.org/en-US/docs/Lear)
-- [Flavio Copes' linux commands handbook](https://www.freecodecamp.org/news/the-linux-commands-handbook)
+-   [Harvard's intro to computer science course](https://youtu.be/1tnj3UCkux)
+-   [freeCodeCamp's interactive coding tutorials](https://www.freecodecamp.org)
+-   [Mozilla Developer Network's beginners guide to web development](https://developer.mozilla.org/en-US/docs/Lear)
+-   [Flavio Copes' linux commands handbook](https://www.freecodecamp.org/news/the-linux-commands-handbook)
 </details>
 
 ## Solve Real World Problems

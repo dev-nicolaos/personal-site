@@ -13,11 +13,11 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
-  const thoughts = await getCollection("thoughts", filterOutDrafts);
-  return thoughts.map((thought) => ({
-    params: { slug: thought.slug },
-    props: { thought },
-  }));
+	const thoughts = await getCollection("thoughts", filterOutDrafts);
+	return thoughts.map((thought) => ({
+		params: { slug: thought.slug },
+		props: { thought },
+	}));
 }
 
 const thought: CollectionEntry<"thoughts"> = Astro.props.thought;
@@ -26,59 +26,59 @@ const { description, title, pubDate, subTitle } = thought.data;
 ---
 
 <style>
-  header {
-    /* Space between pub date and first paragraph */
-    margin-block-end: var(--space-m);
-  }
+	header {
+		/* Space between pub date and first paragraph */
+		margin-block-end: var(--space-m);
+	}
 
-  header :global(time) {
-    font-size: var(--font-size-base);
-  }
+	header :global(time) {
+		font-size: var(--font-size-base);
+	}
 
-  .rss-card {
-    margin-top: var(--space-m-l);
-    inline-size: max-content;
-    max-inline-size: 100%;
-  }
+	.rss-card {
+		margin-top: var(--space-m-l);
+		inline-size: max-content;
+		max-inline-size: 100%;
+	}
 
-  .rss-card h2 {
-    font-size: var(--font-size-secondary-heading);
-    margin-block-end: var(--space-s);
-  }
+	.rss-card h2 {
+		font-size: var(--font-size-secondary-heading);
+		margin-block-end: var(--space-s);
+	}
 
-  .rss-card p {
-    font-size: var(--font-size-base);
-    line-height: 1.65;
-  }
+	.rss-card p {
+		font-size: var(--font-size-base);
+		line-height: 1.65;
+	}
 </style>
 
 <BaseLayout description={description} title={title}>
-  <RSSAutodiscovery slot="head" />
-  <SiteHeader />
+	<RSSAutodiscovery slot="head" />
+	<SiteHeader />
 
-  <main>
-    <article>
-      <header>
-        <PageHeader {...{ title, subTitle }} />
+	<main>
+		<article>
+			<header>
+				<PageHeader {...{ title, subTitle }} />
 
-        <Date date={pubDate} />
-      </header>
+				<Date date={pubDate} />
+			</header>
 
-      <Prose>
-        <Content />
-      </Prose>
-    </article>
+			<Prose>
+				<Content />
+			</Prose>
+		</article>
 
-    <Card class="rss-card">
-      <h2><RSSIcon /> Enjoy Reading This?</h2>
-      <Prose>
-        <p>
-          Consider subscribing to <a href={RSS_URL}>my RSS feed</a> to get future
-          thoughts in your reader. (<a href="https://aboutfeeds.com/"
-            >What is RSS?</a
-          >)
-        </p>
-      </Prose>
-    </Card>
-  </main>
+		<Card class="rss-card">
+			<h2><RSSIcon /> Enjoy Reading This?</h2>
+			<Prose>
+				<p>
+					Consider subscribing to <a href={RSS_URL}>my RSS feed</a> to
+					get future thoughts in your reader. (<a
+						href="https://aboutfeeds.com/">What is RSS?</a
+					>)
+				</p>
+			</Prose>
+		</Card>
+	</main>
 </BaseLayout>

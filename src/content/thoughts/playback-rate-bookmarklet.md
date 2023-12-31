@@ -24,7 +24,7 @@ Browsers expose the option to control the playback rate of <abbr title="Hyper Te
 
 At some point I got curious as to how these sites were including the content on the page and popped open my browser's dev tools to poke around the code. I found there's usually an `<audio>` or `<video>` element somewhere on the page that's providing the content, but it's either hidden or covered by another transparent element making it un-clickable.
 
-Once you find the content's source it only requires a few steps to adjust the content's playback rate, even it the page doesn't expose that functionality.
+Once you find the content's source it only requires a few steps to adjust the content's playback rate, even if the page doesn't expose that functionality.
 
 1. Select the relevant `<audio>` or `<video>` element in the _Inspector_ or _Elements_ panel of your browser's dev tools
 1. In the _Console_ panel, reference the selected element with the `$0` JavaScript variable
@@ -39,16 +39,16 @@ $0.playbackRate = 1.5;
 
 ## A One Click Solution
 
-Its nice that this workaround is possible, but its a bit clunky (and that's from someone who spends nearly every workday using dev tools). Fortunately we can automate this process using [bookmarklets], a really cool feature of the web I recently learned about. Bookmarklet are just bookmarks where the URL is the string `javascript:` followed by a JavaScript [Immediately Invoked Function Expression][iife]. Here's the <abbr title="Immediately Invoked Function Expression">IIFE</abbr> I wrote to automate adjusting the playback speed of media.
+Its nice that this workaround is possible, but its a bit clunky (and that's from someone who spends nearly every workday using dev tools). Fortunately we can automate this process using [bookmarklets], a really cool feature of the web I recently learned about. Bookmarklets are just bookmarks where the URL is the string `javascript:` followed by a JavaScript [Immediately Invoked Function Expression][iife]. Here's the <abbr title="Immediately Invoked Function Expression">IIFE</abbr> I wrote to automate adjusting the playback speed of media.
 
 ```js
 (() => {
-  const pageMedia = Array.from(document.querySelectorAll("video, audio"));
-  const playing = pageMedia.find((el) => !el.paused);
-  if (playing) {
-    playing.playbackRate =
-      playing.playbackRate >= 2.5 ? 1 : playing.playbackRate + 0.25;
-  }
+	const pageMedia = Array.from(document.querySelectorAll("video, audio"));
+	const playing = pageMedia.find((el) => !el.paused);
+	if (playing) {
+		playing.playbackRate =
+			playing.playbackRate >= 2.5 ? 1 : playing.playbackRate + 0.25;
+	}
 })();
 ```
 

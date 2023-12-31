@@ -2,8 +2,8 @@
 const { date } = Astro.props;
 
 const formattedDate = new Intl.DateTimeFormat("en-US", {
-  dateStyle: "long",
-  timeZone: "UTC",
+	dateStyle: "long",
+	timeZone: "UTC",
 }).format(new Date(date));
 ---
 

@@ -1,14 +1,14 @@
 {
-  "scripts": {
-    "check-formatting": "prettier --check .",
-    "format": "prettier --write .",
-    "start": "astro dev"
-  },
-  "devDependencies": {
-    "@astrojs/rss": "^2.4.4",
-    "@astrojs/sitemap": "^1.4.0",
-    "astro": "^2.10.15",
-    "prettier": "^3.1.1",
-    "prettier-plugin-astro": "^0.8.1"
-  }
+	"scripts": {
+		"check-formatting": "prettier --check .",
+		"format": "prettier --write .",
+		"start": "astro dev"
+	},
+	"devDependencies": {
+		"@astrojs/rss": "^4.0.1",
+		"@astrojs/sitemap": "^3.0.4",
+		"astro": "^4.0.8",
+		"prettier": "^3.1.1",
+		"prettier-plugin-astro": "^0.12.3"
+	}
 }

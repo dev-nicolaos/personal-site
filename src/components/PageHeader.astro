@@ -3,41 +3,41 @@ const { title, noContent = false, subTitle } = Astro.props;
 ---
 
 <style>
-  hgroup {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-m);
-    margin-block-end: var(--space-l);
-  }
+	hgroup {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-m);
+		margin-block-end: var(--space-l);
+	}
 
-  hgroup::after {
-    background: var(--std-gradient);
-    border-radius: var(--space-xs);
-    content: "";
-    display: block;
-    height: 0.5em;
-  }
+	hgroup::after {
+		background: var(--std-gradient);
+		border-radius: var(--space-xs);
+		content: "";
+		display: block;
+		height: 0.5em;
+	}
 
-  h1 {
-    font-size: var(--font-size-primary-heading);
-    text-align: center;
-  }
+	h1 {
+		font-size: var(--font-size-primary-heading);
+		text-align: center;
+	}
 
-  hgroup[data-no-content] h1 {
-    font-size: var(--font-size-mega-heading);
-  }
+	hgroup[data-no-content] h1 {
+		font-size: var(--font-size-mega-heading);
+	}
 
-  p {
-    font-size: var(--font-size-prose);
-    text-align: center;
-  }
+	p {
+		font-size: var(--font-size-prose);
+		text-align: center;
+	}
 
-  hgroup[data-no-content] p {
-    font-size: var(--font-size-secondary-heading);
-  }
+	hgroup[data-no-content] p {
+		font-size: var(--font-size-secondary-heading);
+	}
 </style>
 
 <hgroup class="page-header" data-no-content={noContent}>
-  <h1>{title}</h1>
-  {subTitle && <p>{subTitle}</p>}
+	<h1>{title}</h1>
+	{subTitle && <p>{subTitle}</p>}
 </hgroup>

@@ -1,78 +1,78 @@
 [
-  {
-    "name": "Astro",
-    "url": "https://astro.build"
-  },
-  {
-    "name": "CanIUse",
-    "url": "https://caniuse.com/"
-  },
-  {
-    "name": "CSS Custom Properties",
-    "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/--*"
-  },
-  {
-    "name": "CSS Flexbox",
-    "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout"
-  },
-  {
-    "name": "CSS Logical Properties",
-    "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties"
-  },
-  {
-    "name": "Editor Config",
-    "url": "https://editorconfig.org/"
-  },
-  {
-    "name": "Firefox Dev Tools",
-    "url": "https://developer.mozilla.org/en-US/docs/Tools"
-  },
-  {
-    "name": "Git",
-    "url": "https://git-scm.com/"
-  },
-  {
-    "name": "GitHub",
-    "url": "https://github.com/"
-  },
-  {
-    "name": "HTML Picture Element",
-    "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture"
-  },
-  {
-    "name": "JS Destructuring Assignment",
-    "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment"
-  },
-  {
-    "name": "Lighthouse",
-    "url": "https://developers.google.com/web/tools/lighthouse/"
-  },
-  {
-    "name": "Markdown",
-    "url": "https://www.markdownguide.org/"
-  },
-  {
-    "name": "MDN",
-    "url": "https://developer.mozilla.org/"
-  },
-  {
-    "name": "Netlify",
-    "url": "https://www.netlify.com/"
-  },
-  {
-    "name": "Prettier",
-    "url": "https://prettier.io/"
-  },
-  {
-    "name": "Squoosh",
-    "url": "https://squoosh.app/"
-  },
-  {
-    "name": "Utopia",
-    "url": "https://utopia.fyi"
-  },
-  {
-    "name": "Visual Studio Code",
-    "url": "https://code.visualstudio.com/"
-  }
+	{
+		"name": "Astro",
+		"url": "https://astro.build"
+	},
+	{
+		"name": "CanIUse",
+		"url": "https://caniuse.com/"
+	},
+	{
+		"name": "CSS Custom Properties",
+		"url": "https://developer.mozilla.org/en-US/docs/Web/CSS/--*"
+	},
+	{
+		"name": "CSS Flexbox",
+		"url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout"
+	},
+	{
+		"name": "CSS Logical Properties",
+		"url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties"
+	},
+	{
+		"name": "Editor Config",
+		"url": "https://editorconfig.org/"
+	},
+	{
+		"name": "Firefox Dev Tools",
+		"url": "https://developer.mozilla.org/en-US/docs/Tools"
+	},
+	{
+		"name": "Git",
+		"url": "https://git-scm.com/"
+	},
+	{
+		"name": "GitHub",
+		"url": "https://github.com/"
+	},
+	{
+		"name": "HTML Picture Element",
+		"url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture"
+	},
+	{
+		"name": "JS Destructuring Assignment",
+		"url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment"
+	},
+	{
+		"name": "Lighthouse",
+		"url": "https://developers.google.com/web/tools/lighthouse/"
+	},
+	{
+		"name": "Markdown",
+		"url": "https://www.markdownguide.org/"
+	},
+	{
+		"name": "MDN",
+		"url": "https://developer.mozilla.org/"
+	},
+	{
+		"name": "Netlify",
+		"url": "https://www.netlify.com/"
+	},
+	{
+		"name": "Prettier",
+		"url": "https://prettier.io/"
+	},
+	{
+		"name": "Squoosh",
+		"url": "https://squoosh.app/"
+	},
+	{
+		"name": "Utopia",
+		"url": "https://utopia.fyi"
+	},
+	{
+		"name": "Visual Studio Code",
+		"url": "https://code.visualstudio.com/"
+	}
 ]
