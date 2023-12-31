@@ -1,4 +1,6 @@
 ---
+import { ViewTransitions } from "astro:transitions";
+
 interface Props {
 	description?: string;
 	title: string;
@@ -200,6 +202,8 @@ const { description, title, titleTrailer = "Nicolaos Skimas" } = Astro.props;
 
 			/* END LAYOUT */
 		</style>
+
+		<ViewTransitions fallback="none" />
 
 		<script
 			is:inline
