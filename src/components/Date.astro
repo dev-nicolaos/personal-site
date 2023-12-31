@@ -1,10 +1,19 @@
----
-const { date } = Astro.props;
+<formatted-date>
+	<time datetime={Astro.props.date}>{Astro.props.date}</time>
+</formatted-date>
 
-const formattedDate = new Intl.DateTimeFormat("en-US", {
-	dateStyle: "long",
-	timeZone: "UTC",
-}).format(new Date(date));
----
+<script>
+	const systemLocaleDateFormatter = new Intl.DateTimeFormat(undefined, {
+		dateStyle: "long",
+		timeZone: "UTC",
+	});
 
-<time datetime={date}>{formattedDate}</time>
+	class FormattedDate extends HTMLElement {
+		connectedCallback() {
+			const timeElement = this.querySelector("time")!;
+			const date = new Date(timeElement.getAttribute("datetime")!);
+			timeElement.textContent = systemLocaleDateFormatter.format(date);
+		}
+	}
+	customElements.define("formatted-date", FormattedDate);
+</script>
