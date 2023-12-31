@@ -14,6 +14,10 @@ import { filterOutDrafts, sortThoughtsByPubDate } from "../utils";
 const thoughts = (await getCollection("thoughts", filterOutDrafts)).sort(
 	sortThoughtsByPubDate,
 );
+
+const pageTitle = "Thoughts";
+const pageSubtitle =
+	"A series of posts about life, technology and web development.";
 ---
 
 <style>
@@ -49,14 +53,11 @@ const thoughts = (await getCollection("thoughts", filterOutDrafts)).sort(
 	}
 </style>
 
-<BaseLayout title="Thoughts">
+<BaseLayout title={pageTitle} description={pageSubtitle}>
 	<RSSAutodiscovery slot="head" />
 	<SiteHeader />
 	<main>
-		<PageHeader
-			title="Thoughts"
-			subTitle="A series of posts about life, technology and web development."
-		/>
+		<PageHeader title={pageTitle} subTitle={pageSubtitle} />
 
 		<CTALink href={RSS_URL}>
 			<span>Subscribe via RSS</span>
