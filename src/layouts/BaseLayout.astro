@@ -54,12 +54,24 @@ const { description, title, titleTrailer = "Nicolaos Skimas" } = Astro.props;
 				vertical-align: baseline;
 			}
 
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6 {
+				text-wrap: balance;
+			}
+
+			p {
+				text-wrap: pretty;
+			}
+
 			/* END RESET */
 
 			/* TYPOGRAPHY */
 
 			@font-face {
-				font-display: optional;
 				font-family: Public Sans Web;
 				font-style: normal;
 				font-weight: normal;
@@ -67,7 +79,6 @@ const { description, title, titleTrailer = "Nicolaos Skimas" } = Astro.props;
 			}
 
 			@font-face {
-				font-display: optional;
 				font-family: Public Sans Web;
 				font-style: italic;
 				font-weight: normal;
@@ -75,7 +86,6 @@ const { description, title, titleTrailer = "Nicolaos Skimas" } = Astro.props;
 			}
 
 			@font-face {
-				font-display: optional;
 				font-family: Public Sans Web;
 				font-style: normal;
 				font-weight: bold;
