@@ -1,6 +1,14 @@
 import { z, defineCollection } from "astro:content";
 
+const siteTechItemsCollection = defineCollection({
+	type: "data",
+	schema: z.object({
+		url: z.string().url(),
+	}),
+});
+
 const thoughtsCollection = defineCollection({
+	type: "content",
 	schema: z.object({
 		description: z.string(),
 		draft: z.boolean().optional(),
@@ -13,5 +21,6 @@ const thoughtsCollection = defineCollection({
 });
 
 export const collections = {
+	"site-tech": siteTechItemsCollection,
 	thoughts: thoughtsCollection,
 };

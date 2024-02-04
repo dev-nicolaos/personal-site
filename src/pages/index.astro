@@ -4,8 +4,10 @@ import PageHeader from "@components/PageHeader.astro";
 import Prose from "@components/Prose.astro";
 import SiteHeader from "@components/SiteHeader.astro";
 import { Content as Bio } from "@misc-content/bio.md";
-import items from "@data/site-tech-items.json";
+import { getCollection } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
+
+const items = await getCollection("site-tech");
 
 const layoutProps = {
 	description:
@@ -63,10 +65,10 @@ const layoutProps = {
 			<h2>nicolaos.dev is built using...</h2>
 			<ul class="site-tech">
 				{
-					items.map(({ name, url }) => (
+					items.map(({ id, data }) => (
 						<li>
-							<Link hoverEffect href={url}>
-								{name}
+							<Link hoverEffect href={data.url}>
+								{id}
 							</Link>
 						</li>
 					))
