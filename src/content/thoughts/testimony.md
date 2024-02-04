@@ -5,13 +5,13 @@ pubDate: "2024-02-03"
 subTitle: "How Jesus became the Lord of my life"
 ---
 
-If you were to ask me what the single most important thing you should know about me is, I'd want to tell you about my relationship with Jesus Christ. My relationship with him is _the thing_ that defines my identity. If that's the case for you I hope this post encourages you in your faith; hearing other people's stories has encouraged me many times. If you don't have a relationship with Jesus, I hope this post makes you encourages you to investigate who he is; doing so will be well worth it.
+If you were to ask me what the single most important thing you should know about me is, I'd want to tell you about my relationship with Jesus Christ. My relationship with him is _the thing_ that defines my identity. If that's the case for you I hope this post encourages you in your faith; hearing other people's stories has encouraged me many times. If you don't have a relationship with Jesus, I hope this post encourages you to investigate who he is; doing so will be well worth it.
 
 ## My Story
 
-I was born to Christian parents who started taking me to church before I can remember. Through a combination of their teaching and weekly Sunday school lessons I came to a very basic understanding of Christian salvation at a young age. What I understood was...
+I was born to Christian parents who started taking me to church before I can remember. Through a combination of their teaching and weekly Sunday school lessons I came to a very basic understanding of Christian salvation. What I understood was...
 
--   There was an all powerful God who had created everything in the universe
+-   There was an all-powerful God who had created everything in the universe
 -   God is perfect and everything he created was good
 -   Humans messed up the world by disobeying God
     -   I (being human) also disobeyed God and was therefore part of the problem
@@ -20,7 +20,7 @@ I was born to Christian parents who started taking me to church before I can rem
 
 This message appealed to me as a child. I knew I wasn't perfect and I knew I wanted to go to heaven when I died. So sometime between the ages of 4 and 6 I told my parents that I wanted to accept Jesus as my savior. They helped me pray to God and I told him that I believed and accepted all this and that I wanted to follow him forever.
 
-While my belief was sincere, my understanding was small. As I grew up I learned that faith wasn't just about going to heaven, it was supposed to be something that actually affected my daily life. But my faith had little impact on my behavior outside of church. I was very self centered and I argued with my siblings and disobeyed my parents. Afterwards I'd feel guilty about it. I knew God wanted me to love others and respect my parents, and that I wasn't honoring him with my behavior. I couldn't shake the feeling that I wasn't very good at being a Christian.
+While my belief was sincere, my understanding was small. As I grew up I learned that faith wasn't just about going to heaven, it was supposed to be something that actually affected my daily life. But my faith had little impact on my behavior outside of church. I was very self-centered and I argued with my siblings and disobeyed my parents. Afterwards I'd feel guilty about it. I knew God wanted me to love others and respect my parents, and that I wasn't honoring him with my behavior. I couldn't shake the feeling that I wasn't very good at being a Christian.
 
 Sometimes during church events, a speaker would invite the audience to rededicate their life to Christ. I always took the opportunity to do it, thinking that this time I would "do it right" and stop messing up so much. But nothing really changed; the cycle of selfishness, guilt, and re-dedication continued.
 
@@ -31,7 +31,7 @@ I should also point out that I was not very socially aware as a kid. I was home 
 <details>
 	<summary>Side note: thank you mom</summary>
 
-As I proofread I'm realizing this may sound as though homeschooling was a bad experience or that my parents didn't care about my social development. Nothing could be further from the truth. My mom put in countless hours and many tears to ensure she was giving me and my siblings a good education and I enjoyed being home schooled. My parents made sure I participated in extra curricular activities in part so that I would get more experience being around other kids.
+As I proofread I'm realizing this may sound as though home schooling was a bad experience or that my parents didn't care about my social development. Nothing could be further from the truth. My mom put in countless hours and many tears to ensure she was giving me and my siblings a good education and I enjoyed being home schooled. My parents made sure I participated in extra curricular activities in part so that I would get more experience being around other kids.
 
 </details>
 
@@ -45,11 +45,11 @@ In addition to feeling socially lonely, I also felt spiritually lonely. It didn'
 
 In the middle of seventh grade, I began attending a youth group at a new church on Wednesday nights. The contrast to my school experience could not have been bigger. I felt like I could fit in, have fun, and grow in my faith. Youth group became my sanctuary in the middle of what was often another depressing week at school. Most importantly, it was through the teaching and discussions here that I started to realize that the lessons I learned from the Bible as a child were actually applicable in my everyday life. Feelings of depression, loneliness, and worthlessness could be replaced by peace, joy and the knowledge that my life had tremendous value because God himself deeply loved me.
 
-The summer before my freshman year of high school I went on a white-water rafting trip with the youth group. The setting was beautiful and the rafting was a blast, but the time we spent in the Bible had the biggest impact on my life.
+The summer before my freshman year of high school I went on a white water rafting trip with the youth group. The setting was beautiful and the rafting was a blast, but the time we spent in the Bible had the biggest impact on my life.
 
 During one particular small group discussion we were talking about what it meant to have a relationship with God. Up until this point I'd mostly thought of Christianity as being about how to get to heaven and what you were supposed to do and not do until then. So I shared that I didn't really feel like my relationship with God was personal the way a close relationship with another person can be. But the other group members pushed back and assured me that my relationship with God could actually be more personal than any other. As I reflected on this and studied the Bible throughout the rest of camp I came to believe that they were right; God wanted a personal relationship with me and to be involved in my everyday life.
 
-In the months after that camp I started to more fully realize how central a personal relationship with God is to the life of a Christian. I saw that the Bible stories and teachings described a God who wasn't distant or detached, but one who was close and personal. I began to realize the magnitude of God's love. Jesus loved my broken and flawed self so much that he would suffer incredible pain just so that he could come into my life and make it whole again. And not just in some future utopia, he wanted to change my life right where I was.
+In the months after camp I started to more fully realize how central a personal relationship with God is to the life of a Christian. I saw that the Bible stories and teachings described a God who wasn't distant or detached, but one who was close and personal. I began to realize the magnitude of God's love. Jesus loved my broken and flawed self so much that he would suffer incredible pain just so that he could come into my life and make it whole again. And not just in some future utopia, he wanted to change my life right where I was.
 
 <hr />
 
