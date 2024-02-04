@@ -1,15 +1,15 @@
 ---
 description: "This is my testimony, the story of how Jesus became the Lord of my life."
 title: "My Faith Story"
-pubDate: "2024-02-03"
+pubDate: "2024-02-04"
 subTitle: "How Jesus became the Lord of my life"
 ---
 
-If you were to ask me what the single most important thing you should know about me is, I'd want to tell you about my relationship with Jesus Christ. My relationship with him is _the thing_ that defines my identity. If that's the case for you I hope this post encourages you in your faith; hearing other people's stories has encouraged me many times. If you don't have a relationship with Jesus, I hope this post encourages you to investigate who he is; doing so will be well worth it.
+If you asked me to tell you just one thing about myself, I'd want to tell you about my relationship with Jesus Christ. My relationship with him is _the thing_ that defines my identity. If that's the case for you I hope this post encourages you in your faith; hearing other people's stories has encouraged me many times. If you don't have a relationship with Jesus, I hope this post encourages you to investigate who he is; doing so will be well worth it.
 
 ## My Story
 
-I was born to Christian parents who started taking me to church before I can remember. Through a combination of their teaching and weekly Sunday school lessons I came to a very basic understanding of Christian salvation. What I understood was...
+My parents started taking me to church before I was old enough to remember. Through a combination of their teaching and weekly Sunday school lessons I came to a very basic understanding of Christian salvation. What I understood was...
 
 -   There was an all-powerful God who had created everything in the universe
 -   God is perfect and everything he created was good
@@ -37,7 +37,7 @@ As I proofread I'm realizing this may sound as though home schooling was a bad e
 
 Things didn't get much better in middle school. In fact, those three years may have been the most difficult years of my life. Our family moved just prior to sixth grade and I no longer got to see my former neighbors (who were probably my closest friends) very often. I felt out of place at school and didn't really want to pursue building friendships with any of my classmates. There were multiple incidents where other students punched me and I didn't attend any school social events.
 
-The negativity of my school experience affected my mental health a lot. I tried to compartmentalize my time at school, to the point where I sometimes had trouble recounting much about what my day had been like when my parents asked me at dinner. In the darkest of moments I actually contemplated suicide. I don't think I ever would've gone through with it, but the fact that I would even think about it speaks to how bad the worst days were.
+The negativity of my school experience affected my mental health a lot. I tried to compartmentalize my time at school, to the point where I sometimes had trouble recounting much about what my day had been like when my parents asked me at dinner. In the darkest moments I felt overwhelmed with despair and I didn't know how I could go on.
 
 In addition to feeling socially lonely, I also felt spiritually lonely. It didn't seem like anyone else in the school shared my beliefs and I struggled to see how my childhood faith could help me in that environment. I wanted to share my beliefs with others but I didn't know what to say, and I was afraid of how people would react if I brought it up.
 
@@ -57,11 +57,11 @@ The difficult circumstances I'd faced in middle school didn't just go away in hi
 
 That trend has continued as I've walked the path of life. Difficult circumstances still come, but God is faithful to provide in the midst of them. He uses challenging times to grow me and change me so that by his grace I become a more mature and Christ-like person than I used to be. I still make plenty of mistakes, but he forgives my sins because of Jesus sacrifice on the cross. The fact that I'll never be able to fully comprehend the extent of God's love and power gives me a peace that I could never find by myself.
 
-None of this is a result of anything special about me. God is is incredibly kind and generous; the blessings he has given me far exceed what I deserve. And he offers the gift of salvation and life with him freely to all people regardless of age, gender, or race. The Bible says:
+None of this is a result of anything special about me. God is is incredibly kind and generous; the blessings he has given me far exceed what I deserve. And he offers the gift of salvation and life with him freely to all people regardless of age, gender, or race. The Bible says in <cite>Romans 10:9</cite>:
 
 > If you declare with your mouth, “Jesus is Lord,” and believe in your heart that God raised him from the dead, you will be saved.
 
-That's it. God wants to be a part of your life now and forever and all he asks is that you believe what he says. If you want to learn more about who God is and what that means for us I'll leave a few resources linked below that have been helpful for me. Thanks for taking the time to read this.
+That's it. God wants to be a part of your life now and forever and all he asks is that you believe what he says. If you want to learn more about who God is please take the time to seek answers. I'll leave a few resources linked below that have been helpful for me. Thanks for taking the time to read this.
 
 -   [GotQuestions.org](https://www.gotquestions.org/)
 -   [The Truth about Us](https://libro.fm/audiobooks/9781666558159-the-truth-about-us) by Brant Hansen
