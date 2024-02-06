@@ -7,6 +7,17 @@ const siteTechItemsCollection = defineCollection({
 	}),
 });
 
+export const singleLevelResumeSection = z.array(z.string());
+export const dualLevelResumeSection = z.record(
+	z.string(),
+	singleLevelResumeSection,
+);
+
+const resumeSectionsCollection = defineCollection({
+	type: "data",
+	schema: dualLevelResumeSection.or(singleLevelResumeSection),
+});
+
 const thoughtsCollection = defineCollection({
 	type: "content",
 	schema: z.object({
@@ -21,6 +32,7 @@ const thoughtsCollection = defineCollection({
 });
 
 export const collections = {
+	"resume-sections": resumeSectionsCollection,
 	"site-tech": siteTechItemsCollection,
 	thoughts: thoughtsCollection,
 };

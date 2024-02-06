@@ -1,7 +1,35 @@
 ---
+import { type CollectionEntry, getCollection, z } from "astro:content";
 import Link from "@components/Link.astro";
-import sections from "@data/resume-sections.json";
 import BaseLayout from "@layouts/BaseLayout.astro";
+import {
+	dualLevelResumeSection,
+	singleLevelResumeSection,
+} from "../content/config";
+
+type SectionId = CollectionEntry<"resume-sections">["id"];
+type Sections = {
+	[key in SectionId]: CollectionEntry<"resume-sections">["data"];
+};
+type DualLevelResumeSection = z.infer<typeof dualLevelResumeSection>;
+type SingleLevelResumeSection = z.infer<typeof singleLevelResumeSection>;
+
+const sections: Sections = (await getCollection("resume-sections")).reduce(
+	(acc, curr) => {
+		acc[curr.id] = curr.data;
+		return acc;
+	},
+	{} as Sections,
+);
+
+const orderedSectionNames: Array<SectionId> = [
+	"Work Experience",
+	"Education",
+	"Technical Skills",
+	"Essential Traits",
+	"Volunteer Work",
+	"Awards",
+] as const;
 ---
 
 <style>
@@ -133,28 +161,34 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 
 	<main>
 		{
-			Object.entries(sections).map(([sectionTitle, sectionItems]) => (
+			orderedSectionNames.map((sectionName) => (
 				<section>
-					<h2>{sectionTitle}</h2>
+					<h2>{sectionName}</h2>
 					<ul class="section-list">
-						{Array.isArray(sectionItems)
-							? sectionItems.map((content) => (
+						{Array.isArray(sections[sectionName])
+							? (
+									sections[
+										sectionName
+									] as SingleLevelResumeSection
+								).map((content) => (
 									<li class="list-item">{content}</li>
 								))
-							: Object.entries(sectionItems).map(
-									([title, items]) => (
-										<li class="section-sublist">
-											<h3>{title}</h3>
-											<ul>
-												{items.map((content) => (
-													<li class="list-item">
-														{content}
-													</li>
-												))}
-											</ul>
-										</li>
-									),
-								)}
+							: Object.entries(
+									sections[
+										sectionName
+									] as DualLevelResumeSection,
+								).map(([title, items]) => (
+									<li class="section-sublist">
+										<h3>{title}</h3>
+										<ul>
+											{items.map((content) => (
+												<li class="list-item">
+													{content}
+												</li>
+											))}
+										</ul>
+									</li>
+								))}
 					</ul>
 				</section>
 			))
