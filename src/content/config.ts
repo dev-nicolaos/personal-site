@@ -1,5 +1,9 @@
 import { z, defineCollection } from "astro:content";
 
+const miscellaneousContentCollection = defineCollection({
+	type: "content",
+});
+
 const siteTechItemsCollection = defineCollection({
 	type: "data",
 	schema: z.object({
@@ -32,6 +36,7 @@ const thoughtsCollection = defineCollection({
 });
 
 export const collections = {
+	miscellaneous: miscellaneousContentCollection,
 	"resume-sections": resumeSectionsCollection,
 	"site-tech": siteTechItemsCollection,
 	thoughts: thoughtsCollection,
