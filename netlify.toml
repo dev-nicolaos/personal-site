@@ -1,15 +1,15 @@
 [build]
-  command = "astro build"
-  publish = "dist"
+command = "npm run build"
+publish = "dist"
 
 # Redirect default Netlify subdomain to primary domain
 [[redirects]]
-  from = "https://nicolaos-dot-dev.netlify.com/*"
-  to = "https://nicolaos.dev/:splat"
-  status = 301
-  force = true
+from = "https://nicolaos-dot-dev.netlify.com/*"
+to = "https://nicolaos.dev/:splat"
+status = 301
+force = true
 
 [[redirects]]
-  from = "/*"
-  to = "/404"
-  status = 404
+from = "/*"
+to = "/404"
+status = 404

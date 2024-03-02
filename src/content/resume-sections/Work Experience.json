@@ -1,0 +1,23 @@
+{
+	"Senior Software Engineer at The Home Depot": [
+		"Enabling teams to build accessible and consistent UIs at scale through support, documentation, and reusable themes",
+		"Partnering with UX designers and accessibility specialists to refine and expand our enterprise design system",
+		"Building robust CI/CD pipelines with GitHub Actions and Google Cloud Platform"
+	],
+	"Software Engineer at The Home Depot": [
+		"Built and maintained an Express/React application that generated multi-billion dollar annual revenue",
+		"Lead a cross-functional guild focused on fostering frontend excellence through education and collaboration",
+		"Practiced agile development techniques using the Scrum framework"
+	],
+	"Software Developer at Trend Capital": [
+		"Helped develop new marketing sites and web forms using Laravel and Sass"
+	],
+	"Front End Developer at Dice Services": [
+		"Maintained a data-driven application built in AngularJS supporting resellers and end users",
+		"Modernized large parts of the application to take advantage of new JS features and syntax"
+	],
+	"Web Development Intern at Glenwood Community Church": [
+		"Helped develop an online giving page on the church's Drupal site",
+		"Wrote custom Sass for the church's website and internal contact management system"
+	]
+}
