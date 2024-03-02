@@ -22,6 +22,7 @@ jobs:
 
             - name: Check formatting
               run: npm run check-formatting
+
 	build:
 		runs-on: ubuntu-latest
 
