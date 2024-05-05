@@ -6,12 +6,12 @@
 		"start": "astro dev"
 	},
 	"devDependencies": {
-		"@astrojs/check": "^0.5.6",
+		"@astrojs/check": "^0.5.10",
 		"@astrojs/rss": "^4.0.5",
-		"@astrojs/sitemap": "^3.1.1",
-		"astro": "^4.4.9",
+		"@astrojs/sitemap": "^3.1.4",
+		"astro": "^4.7.1",
 		"prettier": "^3.2.5",
 		"prettier-plugin-astro": "^0.13.0",
-		"typescript": "^5.3.3"
+		"typescript": "^5.4.5"
 	}
 }
