@@ -1,6 +1,5 @@
 ---
 import { getCollection, getEntry } from "astro:content";
-import Link from "@components/Link.astro";
 import PageHeader from "@components/PageHeader.astro";
 import Prose from "@components/Prose.astro";
 import SiteHeader from "@components/SiteHeader.astro";
@@ -60,9 +59,9 @@ const layoutProps = {
 				{
 					items.map(({ id, data }) => (
 						<li>
-							<Link hoverEffect href={data.url}>
+							<a class="link" href={data.url}>
 								{id}
-							</Link>
+							</a>
 						</li>
 					))
 				}

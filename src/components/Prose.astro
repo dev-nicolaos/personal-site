@@ -14,20 +14,6 @@
 		margin-block-start: var(--space-l);
 	}
 
-	div :global(a) {
-		--color: var(--color-link, var(--color-primary));
-		color: var(--color);
-		transition:
-			color 0.2s ease-in-out,
-			box-shadow 0.2s ease-in-out;
-	}
-
-	div :global(a:hover) {
-		box-shadow: inset 0 -1.1em var(--color);
-		color: var(--color-link-hover, var(--color-background));
-		/* color: color-contrast(var(--color) vs var(--color-snow), var(--color-background)) */
-	}
-
 	div :global(blockquote) {
 		font-style: italic;
 		margin-inline: var(--space-s-m);

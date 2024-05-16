@@ -1,6 +1,4 @@
 ---
-import Link from "./Link.astro";
-
 const { class: className, ...linkProps } = Astro.props;
 ---
 
@@ -33,4 +31,4 @@ const { class: className, ...linkProps } = Astro.props;
 	}
 </style>
 
-<Link {...linkProps} class={`cta ${className}`}><slot /></Link>
+<a {...linkProps} class={`cta ${className}`}><slot /></a>

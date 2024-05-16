@@ -1,6 +1,5 @@
 ---
 import { type CollectionEntry, getCollection, z } from "astro:content";
-import Link from "@components/Link.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import {
 	dualLevelResumeSection,
@@ -150,11 +149,11 @@ const orderedSectionNames: Array<SectionId> = [
 			<div class="resume-header_profession">Web Developer</div>
 		</h1>
 		<ul class="resume-header_contact-info">
-			<li><Link hoverEffect href="/">https://nicolaos.dev</Link></li>
+			<li><a class="link" href="/">https://nicolaos.dev</a></li>
 			<li>
-				<Link hoverEffect href="mailto:contact@nicolaos.dev">
+				<a class="link" href="mailto:contact@nicolaos.dev">
 					contact@nicolaos.dev
-				</Link>
+				</a>
 			</li>
 		</ul>
 	</header>

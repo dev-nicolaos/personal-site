@@ -1,7 +1,6 @@
 ---
 import { getCollection } from "astro:content";
 import CTALink from "@components/CTALink.astro";
-import Link from "@components/Link.astro";
 import Date from "@components/Date.astro";
 import PageHeader from "@components/PageHeader.astro";
 import RSSAutodiscovery from "@components/RSSAutodiscovery.astro";
@@ -38,7 +37,7 @@ const pageSubtitle =
 		margin-block-end: var(--space-m-l);
 	}
 
-	.thought-link {
+	.thought-listing .link {
 		font-size: var(--font-size-secondary-heading);
 		font-weight: bold;
 	}
@@ -68,14 +67,15 @@ const pageSubtitle =
 			{
 				thoughts.map(({ data, slug }) => (
 					<li class="thought-listing">
-						<Link
-							class="thought-link"
-							hoverEffect
-							href={`/thoughts/${slug}/`}
-							transition:name={`h1-/thoughts/${slug}/`}
-						>
-							{data.title}
-						</Link>
+						<span>
+							<a
+								class="link"
+								href={`/thoughts/${slug}/`}
+								transition:name={`h1-/thoughts/${slug}/`}
+							>
+								{data.title}
+							</a>
+						</span>
 						<p class="thought-desc">{data.description}</p>
 						<Date date={data.pubDate} />
 					</li>

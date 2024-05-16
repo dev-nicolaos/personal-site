@@ -1,5 +1,4 @@
 ---
-import Link from "./Link.astro";
 import Logo from "./Logo.astro";
 ---
 
@@ -20,10 +19,6 @@ import Logo from "./Logo.astro";
 		flex-wrap: wrap;
 		list-style: none;
 		row-gap: var(--space-xs);
-	}
-
-	nav a:not(:hover) {
-		text-decoration: none;
 	}
 
 	svg {
@@ -55,14 +50,14 @@ import Logo from "./Logo.astro";
 	<Logo />
 	<nav>
 		<ul>
-			<li><Link href="/">Home</Link></li>
+			<li><a class="link nav" href="/">Home</a></li>
 
-			<li><Link href="/thoughts/">Thoughts</Link></li>
+			<li><a class="link nav" href="/thoughts/">Thoughts</a></li>
 
-			<li><Link href="/resume/">Resume</Link></li>
+			<li><a class="link nav" href="/resume/">Resume</a></li>
 
 			<li>
-				<Link href="https://github.com/dev-nicolaos">
+				<a class="link nav" href="https://github.com/dev-nicolaos">
 					<svg viewBox="0 0 16 16">
 						<title>Github</title>
 						<path
@@ -71,11 +66,14 @@ import Logo from "./Logo.astro";
 						></path>
 					</svg>
 					<span>GitHub</span>
-				</Link>
+				</a>
 			</li>
 
 			<li>
-				<Link href="https://www.linkedin.com/in/nicolaos-skimas">
+				<a
+					class="link nav"
+					href="https://www.linkedin.com/in/nicolaos-skimas"
+				>
 					<svg viewBox="0 0 34 34">
 						<title>LinkedIn</title>
 						<path
@@ -84,7 +82,7 @@ import Logo from "./Logo.astro";
 						></path>
 					</svg>
 					<span>LinkedIn</span>
-				</Link>
+				</a>
 			</li>
 		</ul>
 	</nav>
