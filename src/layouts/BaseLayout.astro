@@ -23,9 +23,9 @@ const { description, title, titleTrailer = "Nicolaos Skimas" } = Astro.props;
 
 		{
 			[
-				"/assets/fonts/PublicSans-Regular.woff2",
-				"/assets/fonts/PublicSans-Italic.woff2",
-				"/assets/fonts/PublicSans-Bold.woff2",
+				"/assets/fonts/Figtree[wght].woff2",
+				"/assets/fonts/Figtree-Italic[wght].woff2",
+				"/assets/fonts/Trispace[wdth,wght].woff2",
 			].map((url) => (
 				<link
 					rel="preload"
@@ -70,34 +70,40 @@ const { description, title, titleTrailer = "Nicolaos Skimas" } = Astro.props;
 			/* END RESET */
 
 			/* TYPOGRAPHY */
-
 			@font-face {
-				font-family: Public Sans Web;
+				font-family: Figtree;
 				font-style: normal;
-				font-weight: normal;
-				src: url(/assets/fonts/PublicSans-Regular.woff2) format("woff2");
+				font-weight: 300 900;
+				src: url(/assets/fonts/Figtree[wght].woff2)
+					format("woff2-variations");
 			}
 
 			@font-face {
-				font-family: Public Sans Web;
+				font-family: Figtree;
 				font-style: italic;
-				font-weight: normal;
-				src: url(/assets/fonts/PublicSans-Italic.woff2) format("woff2");
+				font-weight: 300 900;
+				src: url(/assets/fonts/Figtree-Italic[wght].woff2)
+					format("woff2-variations");
 			}
 
 			@font-face {
-				font-family: Public Sans Web;
+				font-family: Trispace;
+				font-stretch: 75 125;
 				font-style: normal;
-				font-weight: bold;
-				src: url(/assets/fonts/PublicSans-Bold.woff2) format("woff2");
+				font-weight: 100 800;
+				src: url(/assets/fonts/Trispace[wdth,wght].woff2)
+					format("woff2-variations");
 			}
 
 			html {
-				font-family:
-					Public Sans Web,
-					Helvetica,
-					Arial,
-					sans-serif;
+				/* https://blog.jim-nielsen.com/2020/system-fonts-on-the-web/ */
+				font-family: Figtree, ui-sans-serif, system-ui, sans-serif;
+				font-synthesis: none;
+			}
+
+			pre,
+			code {
+				font-family: Trispace, ui-monospace, monospace;
 			}
 
 			:root {
