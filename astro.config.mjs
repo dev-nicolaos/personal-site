@@ -16,7 +16,7 @@ export default defineConfig({
 				rehypeClassNames,
 				{
 					"a[href]": "link",
-					blockquote: "blockquote",
+					blockquote: "blockquote flow",
 					details: "details",
 					em: "italic",
 					h2: "secondary-heading",
