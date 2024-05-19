@@ -7,18 +7,23 @@ import Logo from "./Logo.astro";
 		align-items: center;
 		display: flex;
 		flex-wrap: wrap;
-		gap: var(--space-s);
+		gap: var(--space-2);
 		justify-content: space-between;
-		margin-block-end: var(--space-l-xl);
+		margin-block-end: var(--space-6);
 	}
 
 	nav > ul {
 		align-items: center;
-		column-gap: var(--space-s-m);
+		column-gap: var(--space-3);
 		display: flex;
 		flex-wrap: wrap;
 		list-style: none;
-		row-gap: var(--space-xs);
+		row-gap: var(--space-0);
+	}
+
+	nav .link {
+		font-size: var(--font-size-small);
+		font-weight: var(--font-weight-bold);
 	}
 
 	svg {
@@ -29,6 +34,7 @@ import Logo from "./Logo.astro";
 	}
 
 	@media (min-width: 395px) {
+		.link.nav:has(svg),
 		svg {
 			display: inline-block;
 		}
@@ -58,7 +64,7 @@ import Logo from "./Logo.astro";
 
 			<li>
 				<a class="link nav" href="https://github.com/dev-nicolaos">
-					<svg viewBox="0 0 16 16">
+					<svg viewBox="0 0 16 16" aria-hidden="true">
 						<title>Github</title>
 						<path
 							fill="currentcolor"
@@ -74,7 +80,7 @@ import Logo from "./Logo.astro";
 					class="link nav"
 					href="https://www.linkedin.com/in/nicolaos-skimas"
 				>
-					<svg viewBox="0 0 34 34">
+					<svg viewBox="0 0 34 34" aria-hidden="true">
 						<title>LinkedIn</title>
 						<path
 							fill="currentcolor"

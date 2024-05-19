@@ -1,7 +1,6 @@
 ---
 import { getCollection, getEntry } from "astro:content";
 import PageHeader from "@components/PageHeader.astro";
-import Prose from "@components/Prose.astro";
 import SiteHeader from "@components/SiteHeader.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 
@@ -20,22 +19,16 @@ const layoutProps = {
 ---
 
 <style>
-	img {
-		display: block;
-		inline-size: min(100%, 380px);
-		margin: var(--space-m) auto 0;
-	}
-
-	h2 {
-		font-size: var(--font-size-secondary-heading);
-		margin-block: var(--space-m-l) var(--space-m);
+	.bio {
+		margin-block-end: var(--space-6);
 	}
 
 	.site-tech {
 		display: flex;
 		flex-wrap: wrap;
-		gap: var(--space-s);
+		gap: var(--space-2);
 		list-style: none;
+		margin-block-start: var(--space-2);
 	}
 </style>
 
@@ -47,14 +40,12 @@ const layoutProps = {
 			subTitle="My name is Nicolaos Skimas, and I'm a web developer."
 		/>
 
-		<section class="bio">
-			<Prose>
-				<Bio />
-			</Prose>
+		<section class="bio flow">
+			<Bio />
 		</section>
 
 		<section>
-			<h2>nicolaos.dev is built using...</h2>
+			<h2 class="secondary-heading">nicolaos.dev is built using...</h2>
 			<ul class="site-tech">
 				{
 					items.map(({ id, data }) => (

@@ -1,0 +1,78 @@
+@font-face {
+	font-family: Figtree;
+	font-style: normal;
+	font-weight: 300 900;
+	src: url(/assets/fonts/Figtree[wght].woff2) format("woff2-variations");
+}
+
+@font-face {
+	font-family: Figtree;
+	font-style: italic;
+	font-weight: 300 900;
+	src: url(/assets/fonts/Figtree-Italic[wght].woff2)
+		format("woff2-variations");
+}
+
+@font-face {
+	font-family: Trispace;
+	font-stretch: 75 125;
+	font-style: normal;
+	font-weight: 100 800;
+	src: url(/assets/fonts/Trispace[wdth,wght].woff2) format("woff2-variations");
+}
+
+html {
+	--font-size-0: 0.875rem;
+	--font-size-1: 1.125rem;
+	--font-size-2: 1.5rem;
+	--font-size-3: 2rem;
+	--font-size-4: 4rem;
+
+	--font-scale-small-screens: calc(8 / 9);
+
+	--font-size-small: var(--font-size-0);
+	--font-size-base: var(--font-size-1);
+	--font-size-secondary-heading: var(--font-size-2);
+	--font-size-primary-heading: var(--font-size-3);
+	--font-size-mega-heading: var(--font-size-4);
+
+	--font-weight-light: 300;
+	--font-weight-normal: 400;
+	--font-weight-medium: 550;
+	--font-weight-bold: 700;
+
+	--line-height-prose: 1.7;
+}
+
+body {
+	/* https://blog.jim-nielsen.com/2020/system-fonts-on-the-web/ */
+	font-family: Figtree, ui-sans-serif, system-ui, sans-serif;
+	font-synthesis: none;
+	font-weight: var(--font-weight-normal);
+	font-size: var(--font-size-base);
+}
+
+@media (max-width: 480px) {
+	html {
+		--font-size-small: calc(
+			var(--font-size-0) * var(--font-scale-small-screens)
+		);
+		--font-size-base: calc(
+			var(--font-size-1) * var(--font-scale-small-screens)
+		);
+		--font-size-secondary-heading: calc(
+			var(--font-size-2) * var(--font-scale-small-screens)
+		);
+		--font-size-primary-heading: calc(
+			var(--font-size-3) * var(--font-scale-small-screens)
+		);
+		--font-size-mega-heading: calc(
+			var(--font-size-4) * var(--font-scale-small-screens)
+		);
+	}
+}
+
+pre,
+code {
+	font-family: Trispace, ui-monospace, monospace;
+}

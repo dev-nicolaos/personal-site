@@ -1,0 +1,76 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Typography Test Page">
+	<h1 class="primary-heading" style="text-align: center;">
+		Can You See the Light?
+	</h1>
+
+	<hr
+		style="background: var(--std-gradient); height: 8px; border-radius: var(--border-radius-large); margin-block: 2rem;"
+	/>
+
+	<div class="flow">
+		<p class="paragraph">
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
+			<em class="italic">voluptatibus</em> minima reprehenderit repellendus
+			eligendi impedit aliquid quasi iusto, architecto beatae maxime iste dolorem
+			quidem rerum voluptatem cum aut deleniti sit?
+		</p>
+
+		<ul class="list">
+			<li>Some list item text</li>
+			<li>Some list item text</li>
+			<li>Some list item text</li>
+		</ul>
+
+		<h2 class="secondary-heading">A Sub Heading</h2>
+
+		<p class="paragraph">
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Error esse
+			vitae atque ipsum maiores facilis, laborum provident sunt reiciendis
+			unde labore nihil reprehenderit <strong class="bold"
+				>illo accusantium aperiam!</strong
+			> Aspernatur reprehenderit expedita vel.
+		</p>
+
+		<blockquote class="blockquote">
+			Deserunt, earum dolore recusandae quos libero deleniti dolorem rerum
+			eos vel necessitatibus praesentium laborum?
+		</blockquote>
+
+		<h3 class="tertiary-heading">By the Way...</h3>
+
+		<p class="paragraph">
+			Repellat, a eum aut dolor soluta ad molestiae quas officia,
+			consequuntur magni <code class="inline-code"
+				>val.toString(1/2);</code
+			> voluptas quis, rem aliquam. Earum rerum quos laudantium! Nam, laudantium
+			maxime. Quibusdam tempora eaque praesentium illo!
+		</p>
+
+		<details class="details">
+			<summary>Look at me!</summary>
+			<p class="paragraph">
+				Lorem ipsum dolor sit amet consectetur adipisicing elit.
+				Accusamus eveniet earum incidunt aut fuga quidem ex explicabo
+				amet harum cumque, mollitia laboriosam ratione dignissimos
+				vitae! Porro fuga libero eveniet hic!
+			</p>
+		</details>
+
+		<ol class="list">
+			<li>Some list item text</li>
+			<li>Some list item text</li>
+			<li>Some list item text</li>
+		</ol>
+
+		<p class="paragraph">
+			Repellat, a eum aut <a class="link" href="">dolor soluta</a> ad molestiae
+			quas officia, consequuntur magni nam quisquam voluptas quis, rem aliquam.
+			Earum rerum quos laudantium! Nam, laudantium maxime. Quibusdam tempora
+			eaque praesentium illo!
+		</p>
+	</div>
+</BaseLayout>

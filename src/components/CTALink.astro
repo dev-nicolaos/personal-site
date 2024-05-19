@@ -1,21 +1,23 @@
 ---
+import type { HTMLAttributes } from "astro/types";
+type Props = HTMLAttributes<"a">;
 const { class: className, ...linkProps } = Astro.props;
 ---
 
 <style>
 	.cta {
-		font-weight: bold;
+		color: var(--color-fog);
+		font-weight: var(--font-weight-bold);
 		line-height: 1;
-		padding: var(--space-xs);
+		padding: var(--space-1);
 		position: relative;
 		text-decoration: none;
-		--color-link: var(--color-snow);
-		--font-size-link: var(--font-size-prose);
 	}
 
 	.cta::before {
 		background: var(--color-purple);
 		block-size: 100%;
+		border-radius: var(--border-radius-small);
 		box-shadow: 4px 4px var(--color-ash);
 		content: "";
 		inline-size: 100%;
@@ -31,4 +33,4 @@ const { class: className, ...linkProps } = Astro.props;
 	}
 </style>
 
-<a {...linkProps} class={`cta ${className}`}><slot /></a>
+<a {...linkProps} class:list={["cta", className]}><slot /></a>

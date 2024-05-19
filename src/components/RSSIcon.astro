@@ -1,6 +1,16 @@
+---
+import type { HTMLAttributes } from "astro/types";
+type Props = HTMLAttributes<"svg">;
+---
+
 <style>
 	svg {
 		inline-size: 1em;
+	}
+	@supports (inline-size: 1cap) {
+		svg {
+			inline-size: 1cap;
+		}
 	}
 </style>
 
