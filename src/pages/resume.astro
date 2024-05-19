@@ -1,5 +1,6 @@
 ---
 import { type CollectionEntry, getCollection, z } from "astro:content";
+import Logo from "@components/Logo.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import {
 	dualLevelResumeSection,
@@ -32,108 +33,94 @@ const orderedSectionNames: Array<SectionId> = [
 ---
 
 <style>
-	header,
-	main {
-		text-align: center;
-	}
-
 	header {
 		display: grid;
-		gap: var(--space-s);
-		margin-block-end: var(--space-m-l);
+		gap: var(--space-2);
 	}
 
 	header img {
 		display: none;
-		inline-size: var(--space-m);
 	}
 
-	.resume-header_name {
-		font-size: var(--font-size-primary-heading);
-	}
-
-	.resume-header_profession {
-		font-size: var(--font-size-secondary-heading);
-	}
-
-	.resume-header_contact-info {
+	.contact-info {
 		display: flex;
 		flex-direction: column;
 		font-size: var(--font-size-base);
-		gap: var(--space-xs-s);
+		gap: var(--space-1-2);
 		list-style-type: none;
 	}
 
-	h2 {
-		font-weight: bold;
-		font-size: var(--font-size-primary-heading);
+	section {
+		margin-block-start: var(--space-6);
 	}
 
-	h3 {
-		font-size: var(--font-size-secondary-heading);
+	.section-list {
+		line-height: var(--line-height-prose);
+		margin-block-start: var(--space-4);
 	}
 
-	section:not(:first-child) {
-		margin-block-start: var(--space-l);
+	.subsection:not(:first-child) {
+		margin-block-start: var(--space-5);
 	}
 
-	.section-list,
-	.section-sublist:not(:first-child) {
-		margin-block-start: var(--space-m-l);
-	}
-
-	.section-sublist {
+	.subsection {
 		list-style-type: none;
+	}
+
+	.subsection-title {
+		font-weight: var(--font-weight-medium);
 	}
 
 	.list-item {
-		margin-block-start: var(--space-m);
-		list-style: inside disc;
-		line-height: 1.4;
-		font-size: var(--font-size-base);
+		margin-block-start: var(--space-2);
+		list-style: disc;
+		margin-inline-start: 1em;
+		text-align: left;
 	}
+
 	.list-item::marker {
 		color: var(--color-primary);
 	}
 
-	@media (min-width: 620px) {
-		header,
-		main {
-			text-align: initial;
-		}
-
+	@media screen and (min-width: 550px) {
 		header {
-			align-items: center;
+			align-items: baseline;
 			grid-template-columns: auto auto 1fr auto;
 			text-align: initial;
-			gap: var(--space-xs-s);
+			gap: var(--space-1);
+			line-height: 1;
 		}
 
 		header img {
 			display: inline-block;
 		}
 
-		.resume-header_name {
-			line-height: 1;
-			font-size: var(--font-size-secondary-heading);
+		.name,
+		.profession {
+			align-self: last baseline;
 		}
 
-		.resume-header_profession {
+		.profession {
 			grid-column-end: -1;
-			font-size: var(--font-size-base);
-			line-height: 1;
 		}
 
-		.resume-header_contact-info {
+		.contact-info {
 			border-image: var(--std-gradient) 1;
 			border-block-start: 2px solid;
 			flex-direction: row;
 			grid-column: 1/-1;
-			padding-block-start: var(--space-xs);
+			padding-block-start: var(--space-1);
 		}
 
 		.list-item {
-			margin-inline-start: var(--space-s-m);
+			margin-inline-start: calc(1em + 2ch);
+		}
+	}
+
+	@media print {
+		section:has(.section-list > .list-item),
+		.subsection {
+			break-inside: avoid;
 		}
 	}
 </style>
@@ -143,12 +130,12 @@ const orderedSectionNames: Array<SectionId> = [
 	description="A formatted record of my work experience, education, and skills kept mostly up to date"
 >
 	<header>
-		<img alt="" height="1" src="/assets/img/logo.svg" width="1" />
+		<Logo />
 		<h1 class="contents">
-			<div class="resume-header_name">Nicolaos Skimas</div>
-			<div class="resume-header_profession">Web Developer</div>
+			<div class="primary-heading name">Nicolaos Skimas</div>
+			<div class="profession">Web Developer</div>
 		</h1>
-		<ul class="resume-header_contact-info">
+		<ul class="contact-info">
 			<li><a class="link" href="/">https://nicolaos.dev</a></li>
 			<li>
 				<a class="link" href="mailto:contact@nicolaos.dev">
@@ -162,7 +149,7 @@ const orderedSectionNames: Array<SectionId> = [
 		{
 			orderedSectionNames.map((sectionName) => (
 				<section>
-					<h2>{sectionName}</h2>
+					<h2 class="secondary-heading">{sectionName}</h2>
 					<ul class="section-list">
 						{Array.isArray(sections[sectionName])
 							? (
@@ -177,8 +164,10 @@ const orderedSectionNames: Array<SectionId> = [
 										sectionName
 									] as DualLevelResumeSection,
 								).map(([title, items]) => (
-									<li class="section-sublist">
-										<h3>{title}</h3>
+									<li class="subsection">
+										<h3 class="subsection-title">
+											{title}
+										</h3>
 										<ul>
 											{items.map((content) => (
 												<li class="list-item">
