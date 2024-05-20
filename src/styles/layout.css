@@ -32,7 +32,7 @@
 }
 
 body {
-	margin: var(--space-3) auto;
+	margin: var(--space-3) auto var(--space-5) auto;
 	inline-size: min(90vw, 65ch);
 }
 
