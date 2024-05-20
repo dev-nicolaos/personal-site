@@ -12,6 +12,7 @@
 		"astro": "^4.7.1",
 		"prettier": "^3.2.5",
 		"prettier-plugin-astro": "^0.13.0",
+		"rehype-class-names": "^2.0.0",
 		"typescript": "^5.4.5"
 	}
 }

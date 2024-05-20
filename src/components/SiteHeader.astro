@@ -1,5 +1,4 @@
 ---
-import Link from "./Link.astro";
 import Logo from "./Logo.astro";
 ---
 
@@ -8,22 +7,23 @@ import Logo from "./Logo.astro";
 		align-items: center;
 		display: flex;
 		flex-wrap: wrap;
-		gap: var(--space-s);
+		gap: var(--space-2);
 		justify-content: space-between;
-		margin-block-end: var(--space-l-xl);
+		margin-block-end: var(--space-6);
 	}
 
 	nav > ul {
 		align-items: center;
-		column-gap: var(--space-s-m);
+		column-gap: var(--space-3);
 		display: flex;
 		flex-wrap: wrap;
 		list-style: none;
-		row-gap: var(--space-xs);
+		row-gap: var(--space-0);
 	}
 
-	nav a:not(:hover) {
-		text-decoration: none;
+	nav .link {
+		font-size: var(--font-size-small);
+		font-weight: var(--font-weight-bold);
 	}
 
 	svg {
@@ -33,7 +33,8 @@ import Logo from "./Logo.astro";
 		vertical-align: middle;
 	}
 
-	@media (min-width: 395px) {
+	@media (min-width: 336px) {
+		.link.nav:has(svg),
 		svg {
 			display: inline-block;
 		}
@@ -52,18 +53,18 @@ import Logo from "./Logo.astro";
 </style>
 
 <header>
-	<Logo />
+	<Logo spin />
 	<nav>
 		<ul>
-			<li><Link href="/">Home</Link></li>
+			<li><a class="link nav" href="/">Home</a></li>
 
-			<li><Link href="/thoughts/">Thoughts</Link></li>
+			<li><a class="link nav" href="/thoughts/">Thoughts</a></li>
 
-			<li><Link href="/resume/">Resume</Link></li>
+			<li><a class="link nav" href="/resume/">Resume</a></li>
 
 			<li>
-				<Link href="https://github.com/dev-nicolaos">
-					<svg viewBox="0 0 16 16">
+				<a class="link nav" href="https://github.com/dev-nicolaos">
+					<svg viewBox="0 0 16 16" aria-hidden="true">
 						<title>Github</title>
 						<path
 							fill="currentcolor"
@@ -71,12 +72,15 @@ import Logo from "./Logo.astro";
 						></path>
 					</svg>
 					<span>GitHub</span>
-				</Link>
+				</a>
 			</li>
 
 			<li>
-				<Link href="https://www.linkedin.com/in/nicolaos-skimas">
-					<svg viewBox="0 0 34 34">
+				<a
+					class="link nav"
+					href="https://www.linkedin.com/in/nicolaos-skimas"
+				>
+					<svg viewBox="0 0 34 34" aria-hidden="true">
 						<title>LinkedIn</title>
 						<path
 							fill="currentcolor"
@@ -84,7 +88,7 @@ import Logo from "./Logo.astro";
 						></path>
 					</svg>
 					<span>LinkedIn</span>
-				</Link>
+				</a>
 			</li>
 		</ul>
 	</nav>

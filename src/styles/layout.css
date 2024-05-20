@@ -1,0 +1,54 @@
+:root {
+	/* @link https://utopia.fyi/space/calculator?c=320,16,1.2,750,18,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,&g=s,l,xl,12 */
+	/* Manually modified to use vw instead of vi for now for improved support */
+	/* Manually modified to use numeric labels */
+	--space-0: clamp(0.25rem, 0.2035rem + 0.2326vw, 0.3125rem);
+	--space-1: clamp(0.5rem, 0.4535rem + 0.2326vw, 0.5625rem);
+	--space-2: clamp(0.75rem, 0.657rem + 0.4651vw, 0.875rem);
+	--space-3: clamp(1rem, 0.907rem + 0.4651vw, 1.125rem);
+	--space-4: clamp(1.5rem, 1.3605rem + 0.6977vw, 1.6875rem);
+	--space-5: clamp(2rem, 1.814rem + 0.9302vw, 2.25rem);
+	--space-6: clamp(3rem, 2.7209rem + 1.3953vw, 3.375rem);
+	--space-7: clamp(4rem, 3.6279rem + 1.8605vw, 4.5rem);
+	--space-8: clamp(6rem, 5.4419rem + 2.7907vw, 6.75rem);
+
+	/* One-up pairs */
+	--space-0-1: clamp(0.25rem, 0.0174rem + 1.1628vw, 0.5625rem);
+	--space-1-2: clamp(0.5rem, 0.2209rem + 1.3953vw, 0.875rem);
+	--space-2-3: clamp(0.75rem, 0.4709rem + 1.3953vw, 1.125rem);
+	--space-3-4: clamp(1rem, 0.4884rem + 2.5581vw, 1.6875rem);
+	--space-4-5: clamp(1.5rem, 0.9419rem + 2.7907vw, 2.25rem);
+	--space-5-6: clamp(2rem, 0.9767rem + 5.1163vw, 3.375rem);
+	--space-6-7: clamp(3rem, 1.8837rem + 5.5814vw, 4.5rem);
+	--space-7-8: clamp(4rem, 1.9535rem + 10.2326vw, 6.75rem);
+
+	/* https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html */
+	--min-touch-target-size: 24px;
+
+	--border-radius-small: 2px;
+	--border-radius-large: 8px;
+
+	--width-prose-inset: 90%;
+}
+
+body {
+	margin: var(--space-3) auto;
+	inline-size: min(90vw, 65ch);
+}
+
+@media print {
+	/* Let the printing margins handle it */
+	body {
+		margin: 0;
+		padding: 0;
+	}
+}
+
+img {
+	height: auto;
+	max-inline-size: 100%;
+}
+
+.contents {
+	display: contents;
+}

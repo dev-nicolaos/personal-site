@@ -1,3 +1,9 @@
+---
+interface Props {
+	date: string;
+}
+---
+
 <formatted-date>
 	<time datetime={Astro.props.date}>{Astro.props.date}</time>
 </formatted-date>

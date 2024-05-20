@@ -1,3 +1,12 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"img"> {
+	spin?: boolean;
+}
+const { alt = "", spin = false, ...rest } = Astro.props;
+---
+
 <style>
 	@keyframes periodic-spin {
 		12% {
@@ -9,12 +18,13 @@
 	}
 
 	img {
+		border-radius: var(--border-radius-small);
 		display: inline-block;
-		inline-size: 3rem;
+		inline-size: 44px;
 	}
 
 	@media screen and (prefers-reduced-motion: no-preference) {
-		img {
+		.spin {
 			animation-duration: 8s;
 			animation-iteration-count: infinite;
 			animation-name: periodic-spin;
@@ -22,4 +32,11 @@
 	}
 </style>
 
-<img alt="" height="1" src="/assets/img/logo.svg" width="1" />
+<img
+	{alt}
+	class:list={{ spin }}
+	height="1"
+	src="/assets/img/logo.svg"
+	width="1"
+	{...rest}
+/>

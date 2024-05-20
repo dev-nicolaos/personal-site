@@ -1,0 +1,48 @@
+:root {
+	--color-snow: #ffffff;
+	--color-fog: #ffffffdd;
+	--color-ash: #404040;
+	--color-obsidian: #222222;
+
+	--color-light-green: #7ccc81;
+	--color-vibrant-green: #5da562;
+	--color-logo-green: #0b6c12;
+	--color-blue: #5ca0a5;
+	--color-coral: #f68d5e;
+	--color-purple: #7d8ec8;
+
+	--color-background: var(--color-obsidian);
+	--color-text: var(--color-fog);
+	--color-primary: var(--color-vibrant-green);
+	--std-gradient: linear-gradient(
+		90deg,
+		var(--color-primary) 0%,
+		var(--color-blue) 100%
+	);
+
+	color-scheme: dark;
+}
+
+@media print {
+	:root {
+		--color-background: var(--color-snow);
+		--color-text: var(--color-obsidian);
+		--color-primary: var(--logo-green);
+	}
+}
+
+html {
+	background: var(--color-background);
+	color: var(--color-text);
+	scrollbar-color: var(--color-blue) var(--color-obsidian);
+}
+
+:focus-visible {
+	outline: var(--color-coral) solid 3px;
+	outline-offset: 0.2em;
+}
+
+:not(.astro-code)::selection {
+	background-color: var(--color-blue);
+	color: var(--color-obsidian);
+}

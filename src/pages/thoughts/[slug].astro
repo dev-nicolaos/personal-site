@@ -1,8 +1,6 @@
 ---
-import Card from "@components/Card.astro";
 import Date from "@components/Date.astro";
 import PageHeader from "@components/PageHeader.astro";
-import Prose from "@components/Prose.astro";
 import RSSAutodiscovery from "@components/RSSAutodiscovery.astro";
 import RSSIcon from "@components/RSSIcon.astro";
 import SiteHeader from "@components/SiteHeader.astro";
@@ -28,27 +26,17 @@ const { description, title, pubDate, subTitle } = thought.data;
 <style>
 	header {
 		/* Space between pub date and first paragraph */
-		margin-block-end: var(--space-m);
-	}
-
-	header :global(time) {
-		font-size: var(--font-size-base);
+		margin-block-end: var(--space-4);
 	}
 
 	.rss-card {
-		margin-top: var(--space-m-l);
+		margin-top: var(--space-5);
 		inline-size: max-content;
 		max-inline-size: 100%;
 	}
 
-	.rss-card h2 {
-		font-size: var(--font-size-secondary-heading);
+	.rss-card .secondary-heading {
 		margin-block-end: var(--space-s);
-	}
-
-	.rss-card p {
-		font-size: var(--font-size-base);
-		line-height: 1.65;
 	}
 </style>
 
@@ -64,21 +52,23 @@ const { description, title, pubDate, subTitle } = thought.data;
 				<Date date={pubDate} />
 			</header>
 
-			<Prose>
+			<div class="flow">
 				<Content />
-			</Prose>
+			</div>
 		</article>
 
-		<Card class="rss-card">
-			<h2><RSSIcon /> Enjoy Reading This?</h2>
-			<Prose>
-				<p>
-					Consider subscribing to <a href={RSS_URL}>my RSS feed</a> to
-					get future thoughts in your reader. (<a
-						href="https://aboutfeeds.com/">What is RSS?</a
-					>)
-				</p>
-			</Prose>
-		</Card>
+		<aside class="card rss-card">
+			<h2 class="secondary-heading">
+				<RSSIcon aria-hidden /> Enjoy Reading This?
+			</h2>
+			<p class="paragraph">
+				Consider subscribing to <a class="link" href={RSS_URL}
+					>my RSS feed</a
+				> to get future thoughts in your reader. (<a
+					class="link"
+					href="https://aboutfeeds.com/">What is RSS?</a
+				>)
+			</p>
+		</aside>
 	</main>
 </BaseLayout>

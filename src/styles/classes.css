@@ -1,0 +1,137 @@
+.flow > * + * {
+	margin-block-start: calc(
+		var(--flow-space-font-size, 1em) * var(--line-height-prose)
+	);
+}
+
+.flow > .tertiary-heading {
+	--flow-space-font-size: var(--font-size-secondary-heading);
+}
+
+.flow > :is(.break, .break + *) {
+	--flow-space-font-size: var(--font-size-primary-heading);
+}
+
+.italic {
+	font-style: italic;
+}
+
+.bold {
+	font-weight: var(--font-weight-bold);
+}
+
+.inline-code {
+	background-color: var(--color-ash);
+	border-radius: var(--border-radius-small);
+	font-size: var(--font-size-small);
+	padding: 2px;
+}
+
+.primary-heading {
+	font-size: var(--font-size-primary-heading);
+	font-weight: var(--font-weight-medium);
+}
+
+.secondary-heading {
+	font-size: var(--font-size-secondary-heading);
+	font-weight: var(--font-weight-bold);
+}
+
+.tertiary-heading {
+	font-weight: var(--font-weight-bold);
+}
+
+.paragraph {
+	line-height: var(--line-height-prose);
+}
+
+.blockquote {
+	line-height: var(--line-height-prose);
+	font-style: italic;
+	inline-size: var(--width-prose-inset);
+	margin-inline: auto;
+}
+
+.details {
+	border: 2px dashed var(--color-ash);
+	padding: var(--space-3) var(--space-2);
+}
+
+.details > summary {
+	cursor: pointer;
+	font-style: italic;
+}
+
+.details[open] > summary {
+	margin-block-end: var(--space-xs);
+}
+
+/* Color all links */
+.link {
+	--color: var(--color-link, var(--color-primary));
+	color: var(--color);
+}
+
+/* Regular (non-nav) links should have a cool hover effect */
+.link:not(.nav) {
+	transition-property: box-shadow, color;
+	transition-duration: 0.3s;
+	/* Fallback for browsers that don't support lh unit. Requires unitless line heights */
+	--largest-line-height: 2;
+	/*
+		This only works for inline links.
+		Block/inline-block links (including flex/grid children) will break if they wrap onto a new line.
+		Probably easiest to wrap the .link in a span, strong, or em when this is a concern.
+		You could also add a modifier class doubling --shadow-height at screen/container sizes where it might wrap.
+	*/
+	--shadow-height: calc(var(--largest-line-height) * 1em);
+}
+
+@supports (width: 1lh) {
+	.link:not(.nav) {
+		--shadow-height: 1lh;
+	}
+}
+
+.link:not(.nav):hover {
+	color: var(--color-link-hover, var(--color-background));
+	box-shadow: inset 0 calc(var(--shadow-height) * -1) var(--color);
+	text-decoration-color: var(--color);
+	text-decoration-skip-ink: none;
+}
+
+/* Nav links only show underline when hovered */
+.link.nav:not(:hover) {
+	text-decoration: none;
+}
+
+.list {
+	padding-inline-start: 1em;
+	line-height: var(--line-height-prose);
+}
+
+.list .list {
+	padding-inline-start: 2ch;
+}
+
+.break {
+	width: var(--width-prose-inset);
+	height: 2px;
+	background: var(--color-ash);
+	border-radius: var(--border-radius-small);
+	margin-inline: auto;
+}
+
+.astro-code {
+	border-radius: var(--border-radius-small);
+	padding: 0.5em;
+}
+
+.card {
+	background-color: var(--color-ash);
+	border: 3px solid var(--color-purple);
+	border-radius: var(--border-radius-large);
+	color: var(--color-snow);
+	padding: var(--space-1-2);
+	--color-link: var(--color-light-green);
+}
