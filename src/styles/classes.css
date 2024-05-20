@@ -2,7 +2,6 @@
 	margin-block-start: calc(
 		var(--flow-space-font-size, 1em) * var(--line-height-prose)
 	);
-	overflow-wrap: break-word;
 }
 
 .flow > .tertiary-heading {
