@@ -57,9 +57,11 @@ body {
 
 @media (max-width: 480px) {
 	html {
-		--font-size-small: calc(
-			var(--font-size-0) * var(--font-scale-small-screens)
-		);
+		/*
+			Leave --font-size-small as is.
+			14px (assuming default user preferences) is already pretty small,
+			and still smaller than the 16px --font-size-base shrinks to.
+		*/
 		--font-size-base: calc(
 			var(--font-size-1) * var(--font-scale-small-screens)
 		);
