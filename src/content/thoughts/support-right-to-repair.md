@@ -2,7 +2,7 @@
 description: "An open letter to our legislators in support of Right to Repair legislation."
 title: "Support Right to Repair"
 pubDate: "2022-01-26"
-subTitle: "An open letter to our legislators"
+subTitle: "An open letter to our legislators."
 ---
 
 Right to Repair legislation is being considered in a number of US states right now including my home state of Washington. The following is adapted from an email sent to my state representatives in support of Right to Repair. You can learn more about Right to Repair and find out if your state has a similar bill by visiting [repair.org/stand-up](https://www.repair.org/stand-up/).

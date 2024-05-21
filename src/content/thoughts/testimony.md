@@ -2,7 +2,7 @@
 description: "This is my testimony, the story of how Jesus became the Lord of my life."
 title: "My Faith Story"
 pubDate: "2024-02-04"
-subTitle: "How Jesus became the Lord of my life"
+subTitle: "How Jesus became the Lord of my life."
 ---
 
 If you asked me to tell you just one thing about myself, I'd want to tell you about my relationship with Jesus Christ. My relationship with him is _the thing_ that defines my identity. If that's the case for you I hope this post encourages you in your faith; hearing other people's stories has encouraged me many times. If you don't have a relationship with Jesus, I hope this post encourages you to investigate who he is; doing so will be well worth it.
