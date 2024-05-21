@@ -11,8 +11,8 @@ const { title, noContent = false, subTitle } = Astro.props;
 	hgroup {
 		display: flex;
 		flex-direction: column;
-		gap: var(--space-3);
-		margin-block-end: var(--space-6);
+		gap: var(--space-3-4);
+		margin-block-end: var(--page-header-bottom-margin, var(--space-6));
 		text-align: center;
 	}
 
@@ -20,7 +20,6 @@ const { title, noContent = false, subTitle } = Astro.props;
 		background: var(--std-gradient);
 		border-radius: var(--border-radius-large);
 		content: "";
-		display: block;
 		height: 0.5em;
 	}
 

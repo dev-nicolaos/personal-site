@@ -63,7 +63,7 @@
 }
 
 .details[open] > summary {
-	margin-block-end: var(--space-xs);
+	margin-block-end: var(--space-1);
 }
 
 /* Color all links */
@@ -100,6 +100,10 @@
 	text-decoration-skip-ink: none;
 }
 
+.link.nav {
+	text-decoration-thickness: 2px;
+}
+
 /* Nav links only show underline when hovered */
 .link.nav:not(:hover) {
 	text-decoration: none;
@@ -134,4 +138,14 @@
 	color: var(--color-snow);
 	padding: var(--space-1-2);
 	--color-link: var(--color-light-green);
+}
+
+.visually-hidden {
+	position: absolute;
+	overflow: hidden;
+	width: 1px;
+	height: 1px;
+	top: auto;
+	left: -101vw;
+	white-space: nowrap;
 }

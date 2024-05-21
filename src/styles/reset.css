@@ -2,7 +2,8 @@
 ::before,
 ::after {
 	font: inherit;
-	border: 0;
+	/* https://frontendmasters.com/blog/you-want-border-color-transparent-not-border-none/ */
+	border-color: transparent;
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
