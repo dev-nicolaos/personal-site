@@ -1,26 +1,27 @@
 ---
-import { getCollection, getEntry } from "astro:content";
+import { getCollection } from "astro:content";
 import PageHeader from "@components/PageHeader.astro";
 import SiteHeader from "@components/SiteHeader.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 
-const items = await getCollection("site-tech");
-
-const { Content: Bio } = await (
-	await getEntry("miscellaneous", "bio")
-).render();
-
-const layoutProps = {
-	description:
-		"Thanks for stopping by! I keep my thoughts and resume posted on this site and use it to hone my web skills.",
-	title: "Nicolaos Skimas",
-	titleTrailer: "Web Developer",
-};
+const siteTechItems = await getCollection("site-tech");
 ---
 
 <style>
-	.bio {
-		margin-block-end: var(--space-6);
+	main {
+		--page-header-bottom-margin: var(--space-7);
+	}
+
+	section:not(:last-child) {
+		margin-block-end: var(--space-7-8);
+	}
+
+	.secondary-heading {
+		margin-block-end: var(--space-2);
+	}
+
+	.list li::marker {
+		color: var(--color-primary);
 	}
 
 	.site-tech {
@@ -28,27 +29,83 @@ const layoutProps = {
 		flex-wrap: wrap;
 		gap: var(--space-2);
 		list-style: none;
-		margin-block-start: var(--space-2);
+	}
+
+	@media (min-width: 480px) {
+		section {
+			display: grid;
+			grid-template-columns: 1fr 2fr;
+			gap: var(--space-6);
+		}
+
+		section > :first-child {
+			justify-self: end;
+			text-align: end;
+		}
 	}
 </style>
 
-<BaseLayout {...layoutProps}>
+<BaseLayout
+	title="Home"
+	description="Thanks for stopping by! This site is where I post my thoughts, keep my resume, and hone my web skills."
+>
 	<SiteHeader />
 	<main>
 		<PageHeader
-			title="Welcome to my site!"
-			subTitle="My name is Nicolaos Skimas, and I'm a web developer."
+			title="Nicolaos Skimas"
+			subTitle="Welcome to my humble home on the web."
 		/>
 
-		<section class="bio flow">
-			<Bio />
+		<section>
+			<h2 class="secondary-heading">Faith</h2>
+			<p class="paragraph">
+				My identity is rooted in my relationship with Jesus Christ. He
+				is the forgiver of my sins and the one who gives me hope for the
+				future. You can read <a class="link" href="/thoughts/testimony"
+					>my testimony</a
+				> to see how I came to believe and trust in that.
+			</p>
+		</section>
+
+		<section>
+			<h2 class="secondary-heading">Career</h2>
+			<p class="paragraph">
+				I'm a software engineer who loves creating clean, accessible,
+				and responsive user experiences. I'm most experienced working on
+				the frontend, but I've also worked on servers, command line
+				interfaces, and CI/CD pipelines. You can get details about my
+				skills and experience on <a class="link" href="/resume"
+					>my resume</a
+				> or check me out on <a
+					class="link"
+					rel="me"
+					href="https://github.com/dev-nicolaos">GitHub</a
+				>
+				or <a
+					class="link"
+					rel="me"
+					href="https://www.linkedin.com/in/nicolaos-skimas/"
+					>LinkedIn</a
+				>.
+			</p>
+		</section>
+
+		<section>
+			<h2 class="secondary-heading">Interests</h2>
+			<ul class="list">
+				<li>Sports</li>
+				<li>Web Development</li>
+				<li>History</li>
+				<li>Outdoor Recreation</li>
+				<li>Homelabbing</li>
+			</ul>
 		</section>
 
 		<section>
 			<h2 class="secondary-heading">nicolaos.dev is built using...</h2>
 			<ul class="site-tech">
 				{
-					items.map(({ id, data }) => (
+					siteTechItems.map(({ id, data }) => (
 						<li>
 							<a class="link" href={data.url}>
 								{id}
