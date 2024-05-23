@@ -6,10 +6,10 @@
 		"start": "astro dev"
 	},
 	"devDependencies": {
-		"@astrojs/check": "^0.5.10",
-		"@astrojs/rss": "^4.0.5",
-		"@astrojs/sitemap": "^3.1.4",
-		"astro": "^4.7.1",
+		"@astrojs/check": "^0.7.0",
+		"@astrojs/rss": "^4.0.6",
+		"@astrojs/sitemap": "^3.1.5",
+		"astro": "^4.8.7",
 		"prettier": "^3.2.5",
 		"prettier-plugin-astro": "^0.13.0",
 		"rehype-class-names": "^2.0.0",
