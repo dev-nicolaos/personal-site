@@ -25,13 +25,21 @@
 }
 
 html {
+	/* 14px w/default user preferences */
 	--font-size-0: 0.875rem;
+	/* 18px w/default user preferences */
 	--font-size-1: 1.125rem;
+	/* 24px w/default user preferences */
 	--font-size-2: 1.5rem;
+	/* 32px w/default user preferences */
 	--font-size-3: 2rem;
+	/* 64px w/default user preferences */
 	--font-size-4: 4rem;
 
+	/* Takes font-size-base to 16px w/default user preferences */
 	--font-scale-small-screens: calc(8 / 9);
+	/* Takes font-size-base to 20px w/default user preferences */
+	--font-scale-large-screens: calc(10 / 9);
 
 	--font-size-small: var(--font-size-0);
 	--font-size-base: var(--font-size-1);
@@ -73,6 +81,26 @@ body {
 		);
 		--font-size-mega-heading: calc(
 			var(--font-size-4) * var(--font-scale-small-screens)
+		);
+	}
+}
+
+@media (min-width: 1200px) {
+	html {
+		--font-size-small: calc(
+			var(--font-size-0) * var(--font-scale-large-screens)
+		);
+		--font-size-base: calc(
+			var(--font-size-1) * var(--font-scale-large-screens)
+		);
+		--font-size-secondary-heading: calc(
+			var(--font-size-2) * var(--font-scale-large-screens)
+		);
+		--font-size-primary-heading: calc(
+			var(--font-size-3) * var(--font-scale-large-screens)
+		);
+		--font-size-mega-heading: calc(
+			var(--font-size-4) * var(--font-scale-large-screens)
 		);
 	}
 }
