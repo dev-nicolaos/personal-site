@@ -26,26 +26,15 @@
 
 html {
 	/* 14px w/default user preferences */
-	--font-size-0: 0.875rem;
+	--font-size-small: 0.875rem;
 	/* 18px w/default user preferences */
-	--font-size-1: 1.125rem;
+	--font-size-base: 1.125rem;
 	/* 24px w/default user preferences */
-	--font-size-2: 1.5rem;
+	--font-size-secondary-heading: 1.5rem;
 	/* 32px w/default user preferences */
-	--font-size-3: 2rem;
+	--font-size-primary-heading: 2rem;
 	/* 64px w/default user preferences */
-	--font-size-4: 4rem;
-
-	/* Takes font-size-base to 16px w/default user preferences */
-	--font-scale-small-screens: calc(8 / 9);
-	/* Takes font-size-base to 20px w/default user preferences */
-	--font-scale-large-screens: calc(10 / 9);
-
-	--font-size-small: var(--font-size-0);
-	--font-size-base: var(--font-size-1);
-	--font-size-secondary-heading: var(--font-size-2);
-	--font-size-primary-heading: var(--font-size-3);
-	--font-size-mega-heading: var(--font-size-4);
+	--font-size-mega-heading: 4rem;
 
 	--font-weight-light: 300;
 	--font-weight-normal: 400;
@@ -65,43 +54,23 @@ body {
 
 @media (max-width: 480px) {
 	html {
+		/* Takes font-size-base to 16px w/default user preferences */
+		font-size: calc(1em * (8 / 9));
+
 		/*
-			Leave --font-size-small as is.
-			14px (assuming default user preferences) is already pretty small,
-			and still smaller than the 16px --font-size-base shrinks to.
+		Leave --font-size-small as is. 14px (assuming default user preferences)
+		is already pretty small, and still smaller than the 16px --font-size-base
+		shrinks to. Fallback to close value for browsers that don't support round
 		*/
-		--font-size-base: calc(
-			var(--font-size-1) * var(--font-scale-small-screens)
-		);
-		--font-size-secondary-heading: calc(
-			var(--font-size-2) * var(--font-scale-small-screens)
-		);
-		--font-size-primary-heading: calc(
-			var(--font-size-3) * var(--font-scale-small-screens)
-		);
-		--font-size-mega-heading: calc(
-			var(--font-size-4) * var(--font-scale-small-screens)
-		);
+		--font-size-small: 1rem;
+		--font-size-small: round(1rem, 1px);
 	}
 }
 
 @media (min-width: 1200px) {
 	html {
-		--font-size-small: calc(
-			var(--font-size-0) * var(--font-scale-large-screens)
-		);
-		--font-size-base: calc(
-			var(--font-size-1) * var(--font-scale-large-screens)
-		);
-		--font-size-secondary-heading: calc(
-			var(--font-size-2) * var(--font-scale-large-screens)
-		);
-		--font-size-primary-heading: calc(
-			var(--font-size-3) * var(--font-scale-large-screens)
-		);
-		--font-size-mega-heading: calc(
-			var(--font-size-4) * var(--font-scale-large-screens)
-		);
+		/* Takes font-size-base to 20px w/default user preferences */
+		font-size: calc(1em * (10 / 9));
 	}
 }
 
