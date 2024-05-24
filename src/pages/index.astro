@@ -39,8 +39,15 @@ const siteTechItems = await getCollection("site-tech");
 		}
 
 		section > :first-child {
+			inline-size: min(15ch, 100%);
+			min-inline-size: min-content;
 			justify-self: end;
 			text-align: end;
+		}
+
+		section > :last-child {
+			inline-size: min(30ch, 100%);
+			min-inline-size: min-content;
 		}
 	}
 </style>
