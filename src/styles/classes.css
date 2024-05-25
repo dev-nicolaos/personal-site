@@ -133,10 +133,10 @@
 
 .card {
 	background-color: var(--color-ash);
-	border: 3px solid var(--color-purple);
+	border: var(--card-border, 3px solid var(--color-purple));
 	border-radius: var(--border-radius-large);
 	color: var(--color-snow);
-	padding: var(--space-1-2);
+	padding: var(--space-2);
 	--color-link: var(--color-light-green);
 }
 
