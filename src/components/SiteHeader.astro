@@ -1,5 +1,11 @@
 ---
 import Logo from "./Logo.astro";
+
+const topLevelNav = [
+	{ label: "Home", href: "/" },
+	{ label: "Thoughts", href: "/thoughts/" },
+	{ label: "Links and Likes", href: "/links-and-likes/" },
+];
 ---
 
 <style>
@@ -31,13 +37,21 @@ import Logo from "./Logo.astro";
 	<Logo spin />
 	<nav>
 		<ul>
-			<li><a class="link nav" href="/">Home</a></li>
-
-			<li><a class="link nav" href="/thoughts/">Thoughts</a></li>
-
-			<li>
-				<a class="link nav" href="/links-and-likes/">Links and Likes</a>
-			</li>
+			{
+				topLevelNav.map(({ label, href }) => (
+					<li>
+						<a
+							aria-current={
+								href === Astro.url.pathname ? "page" : false
+							}
+							class="link nav"
+							{href}
+						>
+							{label}
+						</a>
+					</li>
+				))
+			}
 		</ul>
 	</nav>
 </header>
