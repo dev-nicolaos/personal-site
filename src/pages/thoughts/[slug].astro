@@ -6,12 +6,12 @@ import RSSIcon from "@components/RSSIcon.astro";
 import SiteHeader from "@components/SiteHeader.astro";
 import type { CollectionEntry } from "astro:content";
 import { RSS_URL } from "src/consts";
-import { filterOutDrafts } from "src/utils";
+import { filterOutDraftThoughts } from "src/utils";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
-	const thoughts = await getCollection("thoughts", filterOutDrafts);
+	const thoughts = await getCollection("thoughts", filterOutDraftThoughts);
 	return thoughts.map((thought) => ({
 		params: { slug: thought.slug },
 		props: { thought },

@@ -8,10 +8,10 @@ import RSSIcon from "@components/RSSIcon.astro";
 import SiteHeader from "@components/SiteHeader.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { RSS_URL } from "../consts";
-import { filterOutDrafts, sortThoughtsByPubDate } from "../utils";
+import { filterOutDraftThoughts, sortEntriesByPubDate } from "../utils";
 
-const thoughts = (await getCollection("thoughts", filterOutDrafts)).sort(
-	sortThoughtsByPubDate,
+const thoughts = (await getCollection("thoughts", filterOutDraftThoughts)).sort(
+	sortEntriesByPubDate,
 );
 
 const pageTitle = "Thoughts";
