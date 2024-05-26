@@ -1,5 +1,14 @@
 import { z, defineCollection } from "astro:content";
 
+const linksAndLikesCollection = defineCollection({
+	type: "content",
+	schema: z.object({
+		url: z.string().url(),
+		pubDate: z.string().date(),
+		tags: z.array(z.string()),
+	}),
+});
+
 const siteTechItemsCollection = defineCollection({
 	type: "data",
 	schema: z.object({
@@ -30,6 +39,7 @@ const thoughtsCollection = defineCollection({
 });
 
 export const collections = {
+	"links-and-likes": linksAndLikesCollection,
 	"resume-sections": resumeSectionsCollection,
 	"site-tech": siteTechItemsCollection,
 	thoughts: thoughtsCollection,

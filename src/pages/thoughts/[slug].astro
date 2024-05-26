@@ -1,11 +1,9 @@
 ---
 import Date from "@components/Date.astro";
 import PageHeader from "@components/PageHeader.astro";
-import RSSAutodiscovery from "@components/RSSAutodiscovery.astro";
-import RSSIcon from "@components/RSSIcon.astro";
+import RSSCard from "@components/RSSCard.astro";
 import SiteHeader from "@components/SiteHeader.astro";
 import type { CollectionEntry } from "astro:content";
-import { RSS_URL } from "src/consts";
 import { filterOutDraftThoughts } from "src/utils";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
@@ -35,21 +33,16 @@ const { description, title, pubDate, subTitle } = thought.data;
 
 	.flow,
 	header :global(formatted-date),
-	.rss-card {
+	aside {
 		margin-inline: var(--margin-inline-prose);
 	}
 
-	.rss-card {
+	aside {
 		margin-top: var(--space-5-6);
-	}
-
-	.rss-card .secondary-heading {
-		margin-block-end: var(--space-1);
 	}
 </style>
 
 <BaseLayout description={description} title={title}>
-	<RSSAutodiscovery slot="head" />
 	<SiteHeader />
 
 	<main>
@@ -65,18 +58,6 @@ const { description, title, pubDate, subTitle } = thought.data;
 			</div>
 		</article>
 
-		<aside class="card rss-card">
-			<h2 class="secondary-heading">
-				<RSSIcon aria-hidden /> Enjoy Reading This?
-			</h2>
-			<p class="paragraph">
-				Consider subscribing to <a class="link" href={RSS_URL}
-					>my RSS feed</a
-				> to get future thoughts in your reader.
-			</p>
-			<p class="paragraph">
-				<a class="link" href="https://aboutfeeds.com/">What is RSS?</a>
-			</p>
-		</aside>
+		<RSSCard tag="aside" heading="Enjoy Reading This?" />
 	</main>
 </BaseLayout>

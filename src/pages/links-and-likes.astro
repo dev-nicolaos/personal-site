@@ -1,20 +1,48 @@
 ---
+import { getCollection } from "astro:content";
+import LinkLike from "@components/LinkLike.astro";
 import PageHeader from "@components/PageHeader.astro";
 import SiteHeader from "@components/SiteHeader.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
+import { sortEntriesByPubDate } from "../utils";
+
+const linkLikes = (await getCollection("links-and-likes")).sort(
+	sortEntriesByPubDate,
+);
 
 const pageTitle = "Links and Likes";
 ---
 
+<style>
+	ul {
+		align-items: start;
+		list-style: none;
+		display: grid;
+		/* use masonry when CSS support is ready */
+		grid-template-columns: repeat(auto-fill, minmax(26ch, 1fr));
+		gap: var(--space-3);
+	}
+</style>
+
 <BaseLayout
 	title={pageTitle}
-	description="A curated feed of the the projects, posts, and links I appreciate."
+	description="A curated feed of shout outs celebrating other people's ideas and projects."
 >
 	<SiteHeader />
-	<PageHeader
-		title={pageTitle}
-		subTitle="A place to celebrate other people's ideas and projects."
-		no-content
-	/>
-	<p>Coming soon!</p>
+
+	<main>
+		<PageHeader
+			title={pageTitle}
+			subTitle="A place to celebrate other people's ideas and projects."
+			no-content
+		/>
+
+		<ul>
+			{
+				linkLikes.map((linkLike) => (
+					<LinkLike element="li" linkLike={linkLike} />
+				))
+			}
+		</ul>
+	</main>
 </BaseLayout>

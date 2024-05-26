@@ -1,0 +1,38 @@
+---
+import Date from "@components/Date.astro";
+import type { HTMLTag } from "astro/types";
+import type { CollectionEntry } from "astro:content";
+import { stripMdFileExtension } from "src/utils";
+
+type Props = {
+	linkLike: CollectionEntry<"links-and-likes">;
+	element?: HTMLTag;
+};
+
+const linkLike = Astro.props.linkLike;
+const { Content } = await linkLike.render();
+const { pubDate, url, tags } = linkLike.data;
+const Element = Astro.props.element || "div";
+---
+
+<style>
+	.card {
+		display: grid;
+		gap: var(--space-1);
+		--card-border: none;
+	}
+
+	.card :global(formatted-date) {
+		font-size: var(--font-size-small);
+	}
+</style>
+
+<Element class="card">
+	<strong>
+		<a class="tertiary-heading link" href={url}
+			>{stripMdFileExtension(linkLike.id)}</a
+		>
+	</strong>
+	<Date date={pubDate} />
+	<Content />
+</Element>

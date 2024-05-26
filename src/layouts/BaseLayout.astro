@@ -1,5 +1,6 @@
 ---
 import { ViewTransitions } from "astro:transitions";
+import RSSAutodiscovery from "@components/RSSAutodiscovery.astro";
 import "../styles/global.css";
 
 interface Props {
@@ -43,6 +44,8 @@ const { description, title, titleTrailer = "Nicolaos Skimas" } = Astro.props;
 		<ViewTransitions fallback="none" />
 
 		<link rel="sitemap" href="/sitemap-index.xml" />
+
+		<RSSAutodiscovery />
 
 		<slot name="head" />
 	</head>

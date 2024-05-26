@@ -1,13 +1,11 @@
 ---
 import { getCollection } from "astro:content";
-import CTALink from "@components/CTALink.astro";
 import Date from "@components/Date.astro";
 import PageHeader from "@components/PageHeader.astro";
-import RSSAutodiscovery from "@components/RSSAutodiscovery.astro";
 import RSSIcon from "@components/RSSIcon.astro";
+import RSSCard from "@components/RSSCard.astro";
 import SiteHeader from "@components/SiteHeader.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import { RSS_URL } from "../consts";
 import { filterOutDraftThoughts, sortEntriesByPubDate } from "../utils";
 
 const thoughts = (await getCollection("thoughts", filterOutDraftThoughts)).sort(
@@ -27,15 +25,12 @@ const pageSubtitle =
 		margin-block-end: var(--space-6);
 	}
 
-	.cta,
-	ul {
+	main > :not(:first-child) {
 		margin-inline: var(--margin-inline-prose);
 	}
 
 	.thought-listing {
 		list-style: none;
-	}
-	.thought-listing:not(:last-child) {
 		margin-block-end: var(--space-6);
 	}
 
@@ -55,15 +50,14 @@ const pageSubtitle =
 </style>
 
 <BaseLayout title={pageTitle} description={pageSubtitle}>
-	<RSSAutodiscovery slot="head" />
 	<SiteHeader />
 	<main>
 		<PageHeader title={pageTitle} subTitle={pageSubtitle} />
 
-		<CTALink href={RSS_URL}>
+		<a class="cta" href="#rss-feeds">
 			<span>Subscribe via RSS</span>
 			<RSSIcon aria-hidden />
-		</CTALink>
+		</a>
 
 		<ul>
 			{
@@ -82,5 +76,7 @@ const pageSubtitle =
 				))
 			}
 		</ul>
+
+		<RSSCard id="rss-feeds" />
 	</main>
 </BaseLayout>

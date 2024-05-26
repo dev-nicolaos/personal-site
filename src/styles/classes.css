@@ -135,7 +135,6 @@
 	background-color: var(--color-ash);
 	border: var(--card-border, 3px solid var(--color-purple));
 	border-radius: var(--border-radius-large);
-	color: var(--color-snow);
 	padding: var(--space-2);
 	--color-link: var(--color-light-green);
 }
@@ -148,4 +147,45 @@
 	top: auto;
 	left: -101vw;
 	white-space: nowrap;
+}
+
+.cta {
+	background-color: transparent;
+	color: var(--color-fog);
+	cursor: pointer;
+	font-weight: var(--font-weight-bold);
+	line-height: 1;
+	padding: var(--space-1);
+	position: relative;
+	text-decoration: none;
+	z-index: 0;
+}
+
+.cta::before {
+	background: var(--color-dark-purple);
+	border-radius: var(--border-radius-small);
+	box-shadow: 4px 4px var(--color-ash);
+	content: "";
+	inset: 0;
+	position: absolute;
+	transform: skewX(-15deg);
+	transition: scale 100ms;
+	z-index: -1;
+}
+
+.cta:hover::before {
+	scale: 1.05;
+}
+
+.form-item {
+	background-color: var(--color-background);
+	border-radius: var(--border-radius-small);
+	cursor: pointer;
+	padding: var(--space-0);
+}
+
+button.form-item {
+	background: var(--color-dark-purple);
+	font-size: var(--font-size-small);
+	font-weight: var(--font-weight-bold);
 }

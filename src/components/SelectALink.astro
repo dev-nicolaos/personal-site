@@ -1,0 +1,80 @@
+---
+interface Props {
+	links: { label: string; href: string; default?: boolean }[];
+	selectLabel: string;
+}
+
+const { links, selectLabel } = Astro.props;
+
+const defaultLink = links.find((link) => link.default) ?? links[0];
+
+const selectId = selectLabel + defaultLink.label.length + links.length;
+---
+
+<style>
+	form > label + div {
+		display: flex;
+		gap: var(--space-1);
+	}
+
+	label {
+		display: block;
+		font-size: var(--font-size-small);
+		font-weight: var(--font-weight-medium);
+		margin-block-end: var(--space-1);
+	}
+</style>
+
+<select-a-link>
+	<template>
+		<form action={defaultLink.href} method="GET">
+			<label for={selectId}>{selectLabel}</label>
+			<div>
+				<select class="form-item" id={selectId}>
+					{
+						links.map((link) => (
+							<option
+								value={link.href}
+								selected={link === defaultLink}
+							>
+								{link.label}
+							</option>
+						))
+					}
+				</select>
+				<button class="form-item">Get Feed</button>
+			</div>
+		</form>
+	</template>
+
+	<ul class="list">
+		{
+			links.map(({ label, href }) => (
+				<li>
+					<a class="link" {href}>
+						{label}
+					</a>
+				</li>
+			))
+		}
+	</ul>
+</select-a-link>
+
+<script>
+	class SelectALink extends HTMLElement {
+		connectedCallback() {
+			this.replaceChildren(
+				(
+					this.firstElementChild as HTMLTemplateElement
+				).content.cloneNode(true),
+			);
+			const formElement = this.querySelector("form")!;
+			const selectElement = this.querySelector("select")!;
+			selectElement.addEventListener("change", () => {
+				formElement.setAttribute("action", selectElement.value);
+			});
+		}
+	}
+
+	customElements.define("select-a-link", SelectALink);
+</script>

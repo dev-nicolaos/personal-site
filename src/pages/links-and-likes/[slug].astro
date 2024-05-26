@@ -1,0 +1,30 @@
+---
+import LinkLike from "@components/LinkLike.astro";
+import SiteHeader from "@components/SiteHeader.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import { stripMdFileExtension } from "src/utils";
+
+export async function getStaticPaths() {
+	const linksAndLikes = await getCollection("links-and-likes");
+	return linksAndLikes.map((linkLike) => ({
+		params: { slug: linkLike.slug },
+		props: { linkLike },
+	}));
+}
+
+const title = `Shout out to ${stripMdFileExtension(Astro.props.linkLike.id)}`;
+---
+
+<style>
+	main {
+		margin-inline: var(--margin-inline-prose);
+	}
+</style>
+
+<BaseLayout {title}>
+	<SiteHeader />
+	<main>
+		<LinkLike linkLike={Astro.props.linkLike} />
+	</main>
+</BaseLayout>

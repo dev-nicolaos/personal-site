@@ -11,3 +11,12 @@ export const sortEntriesByPubDate = (
 
 export const filterOutDraftThoughts = (thought: CollectionEntry<"thoughts">) =>
 	!thought.data.draft;
+
+export function stripMdFileExtension(filename: string): string {
+	if (filename.endsWith(".md")) {
+		return filename.slice(0, -3);
+	}
+
+	console.warn(filename, "does not have a .md file extension");
+	return filename;
+}

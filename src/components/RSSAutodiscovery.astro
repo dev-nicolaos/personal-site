@@ -1,10 +1,28 @@
 ---
-import { RSS_URL } from "../consts";
+import {
+	ALL_POSTS_RSS_URL,
+	LINKS_AND_LIKES_RSS_URL,
+	THOUGHTS_RSS_URL,
+} from "../consts";
 ---
 
 <link
-	href={RSS_URL}
+	href={ALL_POSTS_RSS_URL}
 	rel="alternate"
-	title="RSS Feed"
+	title="All Posts RSS"
+	type="application/rss+xml"
+/>
+
+<link
+	href={THOUGHTS_RSS_URL}
+	rel="alternate"
+	title="Thoughts RSS"
+	type="application/rss+xml"
+/>
+
+<link
+	href={LINKS_AND_LIKES_RSS_URL}
+	rel="alternate"
+	title="Links and Likes RSS"
 	type="application/rss+xml"
 />
