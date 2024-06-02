@@ -5,6 +5,7 @@ import PageHeader from "@components/PageHeader.astro";
 import SiteHeader from "@components/SiteHeader.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { sortEntriesByPubDate } from "../utils";
+import RSSCard from "@components/RSSCard.astro";
 
 const linkLikes = (await getCollection("links-and-likes")).sort(
 	sortEntriesByPubDate,
@@ -21,6 +22,7 @@ const pageTitle = "Links and Likes";
 		/* use masonry when CSS support is ready */
 		grid-template-columns: repeat(auto-fill, minmax(26ch, 1fr));
 		gap: var(--space-3);
+		margin-block-end: var(--space-6);
 	}
 </style>
 
@@ -44,5 +46,7 @@ const pageTitle = "Links and Likes";
 				))
 			}
 		</ul>
+
+		<RSSCard />
 	</main>
 </BaseLayout>
