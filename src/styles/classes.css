@@ -72,7 +72,7 @@
 	color: var(--color);
 }
 
-/* Regular (non-nav) links should have a cool hover effect */
+/* Regular (non-nav) links */
 .link:not(.nav) {
 	transition-property: box-shadow, color;
 	transition-duration: 0.3s;
@@ -100,13 +100,18 @@
 	text-decoration-skip-ink: none;
 }
 
+/* Nav Links */
 .link.nav {
-	text-decoration-thickness: 2px;
+	text-decoration: none;
 }
 
-/* Nav links only show underline when hovered */
-.link.nav:not(:hover) {
-	text-decoration: none;
+.link.nav[aria-current="page"] {
+	color: var(--color-text);
+}
+
+.link.nav:where(:hover, [aria-current="page"]) {
+	text-decoration: underline 2px var(--color);
+	text-underline-offset: var(--space-1);
 }
 
 .list {
