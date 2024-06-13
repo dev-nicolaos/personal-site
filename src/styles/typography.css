@@ -42,6 +42,7 @@ html {
 	--font-weight-bold: 700;
 
 	--line-height-prose: 1.8;
+	--line-height-short-prose: 1.4;
 }
 
 body {

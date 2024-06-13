@@ -20,6 +20,10 @@ const {
 		gap: var(--space-2);
 		inline-size: fit-content;
 	}
+
+	p {
+		line-height: var(--line-height-short-prose);
+	}
 </style>
 
 <Tag class="card" {...cardAttributes}>
@@ -27,7 +31,7 @@ const {
 		<RSSIcon aria-hidden />&VeryThinSpace;
 		{heading}
 	</h2>
-	<p class="paragraph">
+	<p>
 		Follow any of the feeds below to get future posts in your reader of
 		choice. <a class="link" href="https://aboutfeeds.com/">What is RSS?</a>
 	</p>
