@@ -47,7 +47,6 @@ const orderedSectionNames: Array<SectionId> = [
 		flex-direction: column;
 		font-size: var(--font-size-base);
 		gap: var(--space-1-2);
-		list-style-type: none;
 	}
 
 	section {
@@ -134,14 +133,12 @@ const orderedSectionNames: Array<SectionId> = [
 			<div class="primary-heading name">Nicolaos Skimas</div>
 			<div class="profession">Web Developer</div>
 		</h1>
-		<ul class="contact-info">
-			<li><a class="link" href="/">https://nicolaos.dev</a></li>
-			<li>
-				<a class="link" href="mailto:contact@nicolaos.dev">
-					contact@nicolaos.dev
-				</a>
-			</li>
-		</ul>
+		<address class="contact-info">
+			<a class="link" href="/">https://nicolaos.dev</a>
+			<a class="link" href="mailto:contact@nicolaos.dev">
+				contact@nicolaos.dev
+			</a>
+		</address>
 	</header>
 
 	<main>
