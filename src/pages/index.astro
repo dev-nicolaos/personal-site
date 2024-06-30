@@ -1,19 +1,13 @@
 ---
 import { getCollection } from "astro:content";
-import PageHeader from "@components/PageHeader.astro";
-import SiteHeader from "@components/SiteHeader.astro";
-import BaseLayout from "@layouts/BaseLayout.astro";
+import ListLayout from "@layouts/ListLayout.astro";
 
 const siteTechItems = await getCollection("site-tech");
 ---
 
 <style>
-	main {
-		--page-header-bottom-margin: var(--space-7);
-	}
-
 	section:not(:last-child) {
-		margin-block-end: var(--space-7-8);
+		margin-block-end: var(--space-7);
 	}
 
 	.secondary-heading {
@@ -30,39 +24,15 @@ const siteTechItems = await getCollection("site-tech");
 		gap: var(--space-2);
 		list-style: none;
 	}
-
-	@media (min-width: 480px) {
-		section {
-			display: grid;
-			grid-template-columns: 1fr 2fr;
-			gap: var(--space-6);
-		}
-
-		section > :first-child {
-			inline-size: min(15ch, 100%);
-			min-inline-size: min-content;
-			justify-self: end;
-			text-align: end;
-		}
-
-		section > :last-child {
-			inline-size: min(30ch, 100%);
-			min-inline-size: min-content;
-		}
-	}
 </style>
 
-<BaseLayout
+<ListLayout
+	heading="Nicolaos Skimas"
+	subHeading="Welcome to my humble home on the web"
 	title="Home"
 	description="Thanks for stopping by! This site is where I post my thoughts, keep my resume, and hone my web skills."
 >
-	<SiteHeader />
 	<main>
-		<PageHeader
-			title="Nicolaos Skimas"
-			subTitle="Welcome to my humble home on the web."
-		/>
-
 		<section>
 			<h2 class="secondary-heading">Faith</h2>
 			<p class="paragraph">
@@ -123,4 +93,4 @@ const siteTechItems = await getCollection("site-tech");
 			</ul>
 		</section>
 	</main>
-</BaseLayout>
+</ListLayout>

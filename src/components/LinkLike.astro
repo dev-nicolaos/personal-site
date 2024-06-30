@@ -6,13 +6,11 @@ import { stripMdFileExtension } from "src/utils";
 
 type Props = {
 	linkLike: CollectionEntry<"links-and-likes">;
-	element?: HTMLTag;
 };
 
 const linkLike = Astro.props.linkLike;
 const { Content } = await linkLike.render();
 const { pubDate, url, tags } = linkLike.data;
-const Element = Astro.props.element || "div";
 ---
 
 <style>
@@ -27,7 +25,7 @@ const Element = Astro.props.element || "div";
 	}
 </style>
 
-<Element class="card">
+<article class="card">
 	<strong>
 		<a class="tertiary-heading link" href={url}
 			>{stripMdFileExtension(linkLike.id)}</a
@@ -35,4 +33,4 @@ const Element = Astro.props.element || "div";
 	</strong>
 	<Date date={pubDate} />
 	<Content />
-</Element>
+</article>

@@ -1,11 +1,8 @@
 ---
 import { getCollection } from "astro:content";
 import Date from "@components/Date.astro";
-import PageHeader from "@components/PageHeader.astro";
-import RSSIcon from "@components/RSSIcon.astro";
 import RSSCard from "@components/RSSCard.astro";
-import SiteHeader from "@components/SiteHeader.astro";
-import BaseLayout from "@layouts/BaseLayout.astro";
+import ListLayout from "@layouts/ListLayout.astro";
 import { filterOutDraftThoughts, sortEntriesByPubDate } from "../utils";
 
 const thoughts = (await getCollection("thoughts", filterOutDraftThoughts)).sort(
@@ -25,12 +22,7 @@ const pageSubtitle =
 		margin-block-end: var(--space-6);
 	}
 
-	main > :not(:first-child) {
-		margin-inline: var(--margin-inline-prose);
-	}
-
 	.thought-listing {
-		list-style: none;
 		margin-block-end: var(--space-6);
 	}
 
@@ -44,40 +36,34 @@ const pageSubtitle =
 		margin-block: var(--space-1);
 	}
 
-	li :global(formatted-date) {
+	article :global(formatted-date) {
 		font-size: var(--font-size-small);
 		font-style: italic;
 	}
 </style>
 
-<BaseLayout title={pageTitle} description={pageSubtitle}>
-	<SiteHeader />
+<ListLayout
+	heading={pageTitle}
+	subHeading={pageSubtitle}
+	description={pageSubtitle}
+>
 	<main>
-		<PageHeader title={pageTitle} subTitle={pageSubtitle} />
-
-		<a class="cta" href="#rss-feeds">
-			<span>Follow via RSS</span>
-			<RSSIcon aria-hidden />
-		</a>
-
-		<ul>
-			{
-				thoughts.map(({ data, slug }) => (
-					<li class="thought-listing">
-						<a
-							class="link"
-							href={`/thoughts/${slug}/`}
-							transition:name={`h1-/thoughts/${slug}/`}
-						>
-							{data.title}
-						</a>
-						<p>{data.description}</p>
-						<Date date={data.pubDate} />
-					</li>
-				))
-			}
-		</ul>
+		{
+			thoughts.map(({ data, slug }) => (
+				<article class="thought-listing">
+					<a
+						class="link"
+						href={`/thoughts/${slug}/`}
+						transition:name={`h1-/thoughts/${slug}/`}
+					>
+						{data.title}
+					</a>
+					<p>{data.description}</p>
+					<Date date={data.pubDate} />
+				</article>
+			))
+		}
 
 		<RSSCard id="rss-feeds" />
 	</main>
-</BaseLayout>
+</ListLayout>

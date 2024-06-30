@@ -1,0 +1,70 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import SiteNav from "@components/SiteNav.astro";
+
+interface Props {
+	description?: string;
+	heading: string;
+	subHeading?: string;
+	title?: string;
+	titleTrailer?: string;
+}
+
+const {
+	description,
+	heading,
+	subHeading,
+	title = heading,
+	titleTrailer,
+} = Astro.props;
+---
+
+<style is:global>
+	body {
+		--body-max-width: 60rem;
+		display: grid;
+		gap: var(--space-6);
+	}
+
+	@media (min-width: 45rem) {
+		body {
+			align-items: start;
+			grid-template-columns: clamp(25ch, 35%, 35ch) 1fr;
+		}
+
+		body > header {
+			position: sticky;
+			top: var(--space-4-5);
+		}
+	}
+</style>
+
+<style>
+	header::after {
+		background: var(--std-gradient);
+		border-radius: var(--border-radius-large);
+		content: "";
+		display: block;
+		height: 1ex;
+	}
+
+	hgroup > p {
+		line-height: var(--line-height-short-prose);
+		margin-block-start: var(--space-1);
+	}
+
+	header :global(nav) {
+		margin-block: var(--space-2) var(--space-4);
+	}
+</style>
+
+<BaseLayout {title} {description} {titleTrailer}>
+	<header>
+		<hgroup>
+			<h1 class="primary-heading">{heading}</h1>
+			{subHeading && <p>{subHeading}</p>}
+		</hgroup>
+		<SiteNav />
+	</header>
+	<slot />
+</BaseLayout>

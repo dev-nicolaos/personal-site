@@ -1,0 +1,42 @@
+---
+const topLevelNav = [
+	{ label: "Home", href: "/" },
+	{ label: "Thoughts", href: "/thoughts/" },
+	{ label: "Links and Likes", href: "/links-and-likes/" },
+];
+---
+
+<style>
+	nav > ul {
+		align-items: end;
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-2);
+		list-style: none;
+	}
+
+	.link.nav {
+		font-size: var(--font-size-small);
+		font-weight: var(--font-weight-bold);
+	}
+</style>
+
+<nav>
+	<ul>
+		{
+			topLevelNav.map(({ label, href }) => (
+				<li>
+					<a
+						aria-current={
+							href === Astro.url.pathname ? "page" : false
+						}
+						class="link nav"
+						{href}
+					>
+						{label}
+					</a>
+				</li>
+			))
+		}
+	</ul>
+</nav>

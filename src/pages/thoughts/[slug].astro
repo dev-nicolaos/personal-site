@@ -2,11 +2,10 @@
 import Date from "@components/Date.astro";
 import PageHeader from "@components/PageHeader.astro";
 import RSSCard from "@components/RSSCard.astro";
-import SiteHeader from "@components/SiteHeader.astro";
 import type { CollectionEntry } from "astro:content";
 import { filterOutDraftThoughts } from "src/utils";
-import BaseLayout from "@layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
+import SingleColumnLayout from "@layouts/SingleColumnLayout.astro";
 
 export async function getStaticPaths() {
 	const thoughts = await getCollection("thoughts", filterOutDraftThoughts);
@@ -31,20 +30,12 @@ const { description, title, pubDate, subTitle } = thought.data;
 		display: block;
 	}
 
-	.flow,
-	header :global(formatted-date),
-	aside {
-		margin-inline: var(--margin-inline-prose);
-	}
-
 	aside {
 		margin-top: var(--space-5-6);
 	}
 </style>
 
-<BaseLayout description={description} title={title}>
-	<SiteHeader />
-
+<SingleColumnLayout description={description} title={title}>
 	<main>
 		<article>
 			<header>
@@ -60,4 +51,4 @@ const { description, title, pubDate, subTitle } = thought.data;
 
 		<RSSCard tag="aside" heading="Enjoy Reading This?" />
 	</main>
-</BaseLayout>
+</SingleColumnLayout>

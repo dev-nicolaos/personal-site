@@ -1,0 +1,22 @@
+---
+import Logo from "@components/Logo.astro";
+import SiteNav from "@components/SiteNav.astro";
+import BaseLayout, { type Props } from "./BaseLayout.astro";
+---
+
+<style>
+	header {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+		margin-block-end: var(--space-4);
+	}
+</style>
+
+<BaseLayout {...Astro.props}>
+	<header>
+		<Logo spin />
+		<SiteNav />
+	</header>
+	<slot />
+</BaseLayout>

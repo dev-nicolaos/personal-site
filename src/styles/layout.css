@@ -28,13 +28,12 @@
 	--border-radius-small: 2px;
 	--border-radius-large: 8px;
 
-	--margin-inline-prose: max((100% - 43rem) / 2, 0px);
 	--width-prose-inset: 90%;
 }
 
 body {
-	margin: var(--space-3) auto var(--space-5) auto;
-	inline-size: min(90vw, 1080px);
+	margin: var(--space-4-5) auto;
+	inline-size: min(90vw, var(--body-max-width, 43rem));
 }
 
 @media print {

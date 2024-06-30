@@ -1,7 +1,6 @@
 ---
 import LinkLike from "@components/LinkLike.astro";
-import SiteHeader from "@components/SiteHeader.astro";
-import BaseLayout from "@layouts/BaseLayout.astro";
+import SingleColumnLayout from "@layouts/SingleColumnLayout.astro";
 import { getCollection } from "astro:content";
 import { stripMdFileExtension } from "src/utils";
 
@@ -16,15 +15,8 @@ export async function getStaticPaths() {
 const title = `Shout out to ${stripMdFileExtension(Astro.props.linkLike.id)}`;
 ---
 
-<style>
-	main {
-		margin-inline: var(--margin-inline-prose);
-	}
-</style>
-
-<BaseLayout {title}>
-	<SiteHeader />
+<SingleColumnLayout {title}>
 	<main>
 		<LinkLike linkLike={Astro.props.linkLike} />
 	</main>
-</BaseLayout>
+</SingleColumnLayout>
