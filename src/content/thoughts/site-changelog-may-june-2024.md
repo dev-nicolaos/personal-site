@@ -4,7 +4,7 @@ description: "A brief recap of what's changed on this site recently."
 pubDate: "2024-06-30"
 ---
 
-The great thing about building a personal website/blog from scratch is that there are no limits on what you can do with it. The terrible thing about building a personal website/blog from scratch is that there are no limits on what you can do with it. Ideas start to piling up and what was supposed to be a fun way to share your ideas can become a never-ending checklist of unimplemented features.
+The great thing about building a personal website/blog from scratch is that there are no limits on what you can do with it. The terrible thing about building a personal website/blog from scratch is that there are no limits on what you can do with it. Ideas start piling up and what was supposed to be a fun way to share your ideas can become a never-ending checklist of unimplemented features.
 
 Its been really nice having a little free time to work on this site lately. Here's a quick roundup of some of the changes I've made over the last couple months.
 
@@ -22,7 +22,7 @@ My new approach to font sizes uses a simple combination of `rem`s and a couple m
 
 ## Redesigned Homepage and Navigation
 
-The old homepage mainly consisted of large blocks of text that didn't feel very welcoming. I redesigned it to have shorter and more scan-able sections that link to other pages on the site with more details. I've also relocated my external profile links from the site wide navigation into one of the new sections to makes room in for a new internal page (see below). The navigation also uses `aria-current` as a styling hook for the link representing the current page.
+The old [homepage] was made up of large blocks of text that didn't feel very welcoming. I've redesigned it to have shorter and more scan-able sections that link to other pages on the site with more details. I've also relocated my external profile links from the site wide navigation into one of the new sections to makes room for a new internal link (see below). Finally, the navigation now uses `aria-current` as a styling hook for the link representing the current page.
 
 ## New Feed!
 
@@ -35,8 +35,9 @@ I've also created an "All Posts" feed that aggregates the posts from both feeds.
 [a few lines of code]: https://github.com/dev-nicolaos/personal-site/blob/main/src/styles/typography.css
 [accessibility concerns around scaling text]: https://adrianroselli.com/2019/12/responsive-type-and-zoom.html
 [my thoughts]: https://nicolaos.dev/thoughts/
-[the math ]: https://www.smashingmagazine.com/2023/11/addressing-accessibility-concerns-fluid-type/
+[the math needed to ensure you don't cause an issue]: https://www.smashingmagazine.com/2023/11/addressing-accessibility-concerns-fluid-type/
 [Links and Likes]: https://nicolaos.dev/links-and-likes/
 [Figtree]: https://www.erikdkennedy.com/projects/figtree.html
 [Trispace]: https://etceteratype.co/trispace/
 [Public Sans]: https://public-sans.digital.gov/
+[homepage]: https://nicolaos.dev
