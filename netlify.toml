@@ -13,3 +13,19 @@ force = true
 from = "/*"
 to = "/404"
 status = 404
+
+[[headers]]
+for = "/*"
+[headers.values]
+# This isn't really needed at the moment since there's no user provided content served on this site,
+# but it doesn't hurt and adding it now protects future me from accidentally forgetting to add it
+# if I do add a feature that allows for user provided content.
+# https://developer.mozilla.org/en-US/docs/Web/Security/Practical_implementation_guides/MIME_types
+# https://securityfest.com/speakers/2019/dont-sniff-the-mime/
+# https://www.youtube.com/watch?v=8t8JYpt0egE&pp=ygUZZG9uJ3Qgc25pZmYgdGhlIG1pbWUgdHlwZQ%3D%3D
+X-Content-Type-Options = "nosniff"
+# If being unable to iframe this site breaks a legitamite use case on the web,
+# file an issue and let me know: https://github.com/dev-nicolaos/personal-site/issues/new
+# Otherwise I'm inclined to air on the side of caution.
+# https://developer.mozilla.org/en-US/docs/Web/Security/Practical_implementation_guides/Clickjacking
+Content-Security-Policy = "frame-ancestors 'none'"
