@@ -110,7 +110,11 @@
 }
 
 .link.nav:where(:hover, [aria-current="page"]) {
-	text-decoration: underline 2px var(--color);
+	text-decoration: underline;
+	/* Safari doesn't support the text-decoration shorthand yet */
+	/* https://bugs.webkit.org/show_bug.cgi?id=230083 */
+	text-decoration-color: var(--color);
+	text-decoration-thickness: 2px;
 	text-underline-offset: var(--space-1);
 }
 
@@ -186,6 +190,8 @@
 .form-item {
 	background-color: var(--color-background);
 	border-radius: var(--border-radius-small);
+	/* Button/input/select elements don't inherit color */
+	color: var(--color-text);
 	cursor: pointer;
 	padding: var(--space-0);
 }
