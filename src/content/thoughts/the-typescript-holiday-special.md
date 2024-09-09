@@ -5,13 +5,13 @@ pubDate: "2022-12-25"
 subTitle: "When a web developer is feeling whimsical in late December."
 ---
 
-The following is the description of a [pull request] (<abbr>PR</abbr>) I put up at work a year or two ago, edited to remove obscure references specific to the project. Long story short: seemingly simple [TypeScript] (<abbr>TS</abbr>) migrations can get surprisingly complicated. Merry Christmas!
+The following is the description of a [pull request] (PR) I put up at work a year or two ago, edited to remove obscure references specific to the project. Long story short: seemingly simple [TypeScript] (TS) migrations can get surprisingly complicated. Merry Christmas!
 
 ## Prologue: Imagine This
 
-You're a developer who's worked on a large, fullstack JavaScript (<abbr>JS</abbr>) application for a couple years and know how messy it can be. This year you receive a wonderful holiday gift: approval to start migrating to TypeScript! By implementing static typing your team can take a big step forward in improving the code's maintainability. So you decide to chip in and convert a file to TS; after all, _it'll only take a moment right?_
+You're a developer who's worked on a large, fullstack JavaScript (JS) application for a couple years and know how messy it can be. This year you receive a wonderful holiday gift: approval to start migrating to TypeScript! By implementing static typing your team can take a big step forward in improving the code's maintainability. So you decide to chip in and convert a file to TS; after all, _it'll only take a moment right?_
 
-You select a random file with a couple small utility functions. But alas, upon giving it the `.ts` extension and adding the correct type annotations you're greeted by an unpleasant surprise: **the red squiggly line**. For a moment you wonder if maybe your editor is just trying to get into the holiday spirit with a colorful light show, but no other squiggles appear, no music starts, and you realize you'll actually have to deal with this. And thus begins the long journey to this complicated <abbr title="pull request">PR</abbr>.
+You select a random file with a couple small utility functions. But alas, upon giving it the `.ts` extension and adding the correct type annotations you're greeted by an unpleasant surprise: **the red squiggly line**. For a moment you wonder if maybe your editor is just trying to get into the holiday spirit with a colorful light show, but no other squiggles appear, no music starts, and you realize you'll actually have to deal with this. And thus begins the long journey to this complicated PR.
 
 ## Chapter 1: A Global Environment
 
@@ -30,11 +30,11 @@ TypeScript's mind is blown! But its thirst for knowledge is not so easily quench
 
 ## Chapter 3: The Explosion
 
-The definition for what will become `window.env` lives in `app.js`, so you do a tiny bit of rearranging and export those values as `envData`. Then you pop back into `global.d.ts`, import the values, and add `typeof envData` as the type of `window.env`. You pat yourself on the back, knowing you've done a good <abbr title="pull request">PR</abbr>'s work and prepare to move on to other adventures.
+The definition for what will become `window.env` lives in `app.js`, so you do a tiny bit of rearranging and export those values as `envData`. Then you pop back into `global.d.ts`, import the values, and add `typeof envData` as the type of `window.env`. You pat yourself on the back, knowing you've done a good PR's work and prepare to move on to other adventures.
 
 ...
 
-Except you're not done; TypeScript decides to throw you a curve ball. Glancing back at your editor you notice another red squiggly line. Puzzled, you look into it and slowly come to the horrifying realization that TypeScript really has no idea what `envData` is. It thinks `envData` is just some random value (after all, it's coming from a <abbr title="JavaScript">JS</abbr> file right?) and thus can't be used as a type. This is the moment your shoulders slump, your mind blurs and everything in you groans. You realize for this to work, you'll have to convert `app.js` to TypeScript.
+Except you're not done; TypeScript decides to throw you a curve ball. Glancing back at your editor you notice another red squiggly line. Puzzled, you look into it and slowly come to the horrifying realization that TypeScript really has no idea what `envData` is. It thinks `envData` is just some random value (after all, it's coming from a JS file right?) and thus can't be used as a type. This is the moment your shoulders slump, your mind blurs and everything in you groans. You realize for this to work, you'll have to convert `app.js` to TypeScript.
 
 You'd always planned to convert it eventually. But the idea was to do this at the very end of the repository's migration because `app.js` sits at the very top of the server's dependency tree and TypeScript will expect all its dependencies to be properly typed. Doing it now with only a fraction of the dependencies converted would be insane.
 
@@ -44,12 +44,12 @@ Maybe its just the holiday spirit. Maybe its knowing you can't ship anything any
 
 > Ok what's a few missing types to clean up? Sure, I'll probably have to put in a few ignore comments for the deepest parts of the tree, but I can probably make some significant progress that'll benefit everyone with perhaps a day's worth of work.
 
-These are the rationalizations you encourage yourself with as you begin to install <abbr title="Node Package Manager">npm</abbr> `@types` dependencies for the now squiggle filled `app.ts`.
+These are the rationalizations you encourage yourself with as you begin to install npm (Node Package Manager) `@types` dependencies for the now squiggle filled `app.ts`.
 
 At first you seem to be making quite a bit of progress. In fact, only two third party dependencies seem to have issues...
 
--   `express-handlebars` doesn't have types published for it. Further research shows this is because the package itself has recently been converted to <abbr title="TypeScript">TS</abbr>. So you install the latest version, update the import statement to account for a breaking change, and watch another squiggle disappear.
--   `@types/connect-timeout` marks the use of the package as invalid, but a look at the source code reveals the typings are incorrect. You slap an ignore on it, put up a <abbr title="pull request">PR</abbr> to the open source typings correcting the mistake and move on.
+-   `express-handlebars` doesn't have types published for it. Further research shows this is because the package itself has recently been converted to TS. So you install the latest version, update the import statement to account for a breaking change, and watch another squiggle disappear.
+-   `@types/connect-timeout` marks the use of the package as invalid, but a look at the source code reveals the typings are incorrect. You slap an ignore on it, put up a PR to the open source typings correcting the mistake and move on.
 
 Now its down to handling first party squiggles. You got this! No definitions for the server's routes (the gateway to the rest of the untyped files)? Slap an `@ts-ignore` comment down, no need to blow up the scope of the work any further. Some of the functions in `app.ts`' have parameters that need types brought in from ExpressJS? No problem. We should be specifying an encoding in our use of a Node.js file API? Easy fix. At this rate you'll be done in no time.
 
@@ -63,7 +63,7 @@ Exasperated, you reach out to a colleague for help. While he also don't understa
 
 All this leaves just one particularly annoying error cropping up in a couple places. TypeScript appears to have taken issue with our use of computed property access (`object[someValue]`). A bit of further research on your (now annoyingly) noisy type checker reveals this is due to its burning desire to be totally sure about everything. You tell it to chill out with an ignore in one spot (including a comment explaining the situation to future you and everyone else) and a type assertion in another.
 
-Finally, you push to Git and open a draft <abbr title="pull request">PR</abbr>. A huge sigh of relief. Your work is finally done.
+Finally, you push to Git and open a draft PR. A huge sigh of relief. Your work is finally done.
 
 ## Chapter 6: The CI Error Cycle
 
@@ -83,7 +83,7 @@ Fail again. Two test suites this time. One's failure is bizarre yet straightforw
 
 ## Chapter 7: Tunnel's End
 
-You rub your tired eyes. Can it be? The type checker, linter, and tests **all pass in CI!** Sure, the security scanner complains about a few things, but an examination reveals none were introduced in your <abbr title="pull request">PR</abbr>. And what's more, its been long enough that the fix you submitted to `@types/connect-timeout` has been approved, merged, and released. With new life in your step you install the new version, remove the related ignore, and revel in another CI run passing.
+You rub your tired eyes. Can it be? The type checker, linter, and tests **all pass in CI!** Sure, the security scanner complains about a few things, but an examination reveals none were introduced in your PR. And what's more, its been long enough that the fix you submitted to `@types/connect-timeout` has been approved, merged, and released. With new life in your step you install the new version, remove the related ignore, and revel in another CI run passing.
 
 ## Epilogue
 
