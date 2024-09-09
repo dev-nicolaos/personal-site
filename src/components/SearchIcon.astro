@@ -1,0 +1,64 @@
+---
+import type { HTMLAttributes } from "astro/types";
+type Props = HTMLAttributes<"svg">;
+---
+
+<style>
+	svg {
+		inline-size: 1em;
+	}
+</style>
+
+<svg
+	role="img"
+	xmlns="http://www.w3.org/2000/svg"
+	viewBox="0 0 360 360"
+	{...Astro.props}
+>
+	<title>Search</title>
+	<path
+		fill="none"
+		stroke-width="25"
+		stroke-linecap="round"
+		stroke-linejoin="round"
+		stroke="var(--color-primary)"
+		stroke-opacity="1"
+		stroke-miterlimit="10"
+		d="M 320 120 C 320 120 320 40 240 40 "></path>
+	<path
+		fill="none"
+		stroke-width="25"
+		stroke-linecap="round"
+		stroke-linejoin="round"
+		stroke="var(--color-primary)"
+		stroke-opacity="1"
+		stroke-miterlimit="10"
+		d="M 240 40 C 240 40 160 40 160 120 "></path>
+	<path
+		fill="none"
+		stroke-width="25"
+		stroke-linecap="round"
+		stroke-linejoin="round"
+		stroke="var(--color-primary)"
+		stroke-opacity="1"
+		stroke-miterlimit="10"
+		d="M 160 120 C 160 120 160 200 240 200 "></path>
+	<path
+		fill="none"
+		stroke-width="25"
+		stroke-linecap="round"
+		stroke-linejoin="round"
+		stroke="var(--color-primary)"
+		stroke-opacity="1"
+		stroke-miterlimit="10"
+		d="M 240 200 C 240 200 320 200 320 120 "></path>
+	<path
+		fill="none"
+		stroke-width="25"
+		stroke-linecap="round"
+		stroke-linejoin="round"
+		stroke="var(--color-primary)"
+		stroke-opacity="1"
+		stroke-miterlimit="10"
+		d="M 180 180 L 40 320 "></path>
+</svg>

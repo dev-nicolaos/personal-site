@@ -1,0 +1,122 @@
+---
+import SearchIcon from "./SearchIcon.astro";
+---
+
+<style>
+	.icon-button {
+		font-size: var(--font-size-secondary-heading);
+	}
+
+	dialog {
+		border: none;
+	}
+
+	dialog::backdrop {
+		background: var(--color-obsidian);
+		opacity: 70%;
+	}
+	form {
+		background-color: var(--color-ash);
+		border-radius: var(--border-radius-large);
+		inline-size: min(90vw, var(--body-max-width, 43rem));
+		/* Someday */
+		/* place-self: center; */
+		position: fixed;
+		left: 50%;
+		top: var(--space-5);
+		translate: -50%;
+		display: grid;
+		gap: var(--space-1);
+		padding: var(--space-3);
+	}
+
+	label {
+		display: inline-block;
+		font-weight: var(--font-weight-medium);
+	}
+</style>
+
+<my-search>
+	<search>
+		<button type="button" class="icon-button"><SearchIcon /></button>
+		<dialog>
+			<form method="dialog">
+				<label for="search-input">Search</label>
+				<input
+					class="form-item"
+					type="search"
+					name="site-search"
+					required
+					id="search-input"
+				/>
+
+				<!-- <button class="form-item">Submit</button> -->
+			</form>
+		</dialog>
+	</search>
+</my-search>
+
+<script>
+	class MySearch extends HTMLElement {
+		connectedCallback() {
+			const launcher = this.querySelector(
+				"button[type=button]",
+			) as HTMLButtonElement;
+			const dialog = this.querySelector("dialog")!;
+			const form = this.querySelector("form")!;
+
+			launcher.addEventListener("click", () => {
+				dialog.showModal();
+			});
+
+			launcher.addEventListener(
+				"click",
+				() => {
+					window.dispatchEvent(new Event("opensearch"));
+				},
+				{ once: true },
+			);
+
+			dialog?.addEventListener("submit", async () => {
+				const searchTerm = (
+					form.elements.namedItem("site-search") as HTMLInputElement
+				).value;
+
+				if (window?.pagefind) {
+					const results =
+						await window.pagefind.search(searchTerm).results;
+
+					const resultsData = await Promise.all(
+						results.map((result: { data: () => Promise<any> }) =>
+							result.data(),
+						),
+					);
+
+					console.log(resultsData);
+				} else {
+					// window.location.assign(
+					// 	`https://duckduckgo.com/?q=${(form.elements.namedItem("site-search") as HTMLInputElement).value}+site%3Anicolaos.dev`,
+					// );
+				}
+			});
+
+			dialog.addEventListener("pointerdown", (e) => {
+				// Prevent default allows us to focus the icon button
+				// https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/focus#notes
+				e.preventDefault();
+				if (e.target === dialog) dialog.close();
+				// launcher.focus();
+			});
+		}
+	}
+
+	customElements.define("my-search", MySearch);
+</script>
+
+<script defer>
+	window.addEventListener("opensearch", async () => {
+		console.log("received");
+		window.pagefind = await import("/pagefind/pagefind.js");
+		pagefind.init();
+	});
+</script>

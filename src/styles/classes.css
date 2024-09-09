@@ -192,12 +192,21 @@
 	border-radius: var(--border-radius-small);
 	/* Button/input/select elements don't inherit color */
 	color: var(--color-text);
-	cursor: pointer;
 	padding: var(--space-0);
+}
+
+:is(button, select).form-item {
+	cursor: pointer;
 }
 
 button.form-item {
 	background: var(--color-dark-purple);
 	font-size: var(--font-size-small);
 	font-weight: var(--font-weight-bold);
+}
+
+.icon-button {
+	background-color: transparent;
+	cursor: pointer;
+	line-height: 0;
 }

@@ -10,6 +10,7 @@
 		"@astrojs/rss": "^4.0.7",
 		"@astrojs/sitemap": "^3.1.6",
 		"astro": "^4.11.5",
+		"pagefind": "^1.1.1",
 		"prettier": "^3.2.5",
 		"prettier-plugin-astro": "^0.13.0",
 		"rehype-class-names": "^2.0.0",
