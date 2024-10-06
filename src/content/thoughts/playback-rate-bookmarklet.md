@@ -5,7 +5,7 @@ subTitle: "Works with one click on (almost) any page."
 pubDate: "2022-12-17"
 ---
 
-**<abbr title="Too Long; Didn't Read">TL;DR</abbr>:** Bookmark the "link" below. Clicking the bookmark will speed up whatever content is playing on a page. The playback rate of the content will increase each time you click it until the content is playing at 2.5 times its original speed. If you click it again at that point the content will reset back to its original playback rate.
+**Too Long; Didn't Read:** Bookmark the "link" below. Clicking the bookmark will speed up whatever content is playing on a page. The playback rate of the content will increase each time you click it until the content is playing at 2.5 times its original speed. If you click it again at that point the content will reset back to its original playback rate.
 
 <a href="javascript:(()=>{const a=Array.from(document.querySelectorAll('video, audio')).find((a=>!a.paused));a&&(a.playbackRate=a.playbackRate>=2.5?1:a.playbackRate+.25)})();">Adjust Playback Rate</a>
 
@@ -18,7 +18,7 @@ pubDate: "2022-12-17"
 
 I listen to a lot of audio and watch a lot of video on the web. One of my favorite features is the ability to adjust the playback rate of the content. I typically set it between 1.25 and 1.75 unless I'm watching sports or listening to a naturally fast speaker. I find the pacing more comfortable that way and appreciate the time it saves me, especially since some creators have a tendency to drag out content.
 
-Browsers expose the option to control the playback rate of <abbr title="Hyper Text Markup Language">HTML</abbr> `<audio>` and `<video>` elements via the right-click context menu. Many sites have dedicated <abbr>UI</abbr> (user interface) controls that offer similar functionality, but every now and then I'll come across one where the browser's default control doesn't show up and the site's <abbr title="User Interface">UI</abbr> doesn't provide one either. It always frustrates me; just let me consume the content at my preferred pace.
+Browsers expose the option to control the playback rate of HTML `<audio>` and `<video>` elements via the right-click context menu. Many sites have dedicated UI (user interface) controls that offer similar functionality, but every now and then I'll come across one where the browser's default control doesn't show up and the site's UI doesn't provide one either. It always frustrates me; just let me consume the content at my preferred pace.
 
 ## The Investigation
 
@@ -39,7 +39,7 @@ $0.playbackRate = 1.5;
 
 ## A One Click Solution
 
-Its nice that this workaround is possible, but its a bit clunky (and that's from someone who spends nearly every workday using dev tools). Fortunately we can automate this process using [bookmarklets], a really cool feature of the web I recently learned about. Bookmarklets are just bookmarks where the URL is the string `javascript:` followed by a JavaScript [Immediately Invoked Function Expression][iife]. Here's the <abbr title="Immediately Invoked Function Expression">IIFE</abbr> I wrote to automate adjusting the playback speed of media.
+Its nice that this workaround is possible, but its a bit clunky (and that's from someone who spends nearly every workday using dev tools). Fortunately we can automate this process using [bookmarklets], a really cool feature of the web I recently learned about. Bookmarklets are just bookmarks where the URL is the string `javascript:` followed by a JavaScript [immediately invoked function expression][iife]. Here's the one I wrote to automate adjusting the playback speed of media.
 
 ```js
 (() => {
@@ -54,7 +54,7 @@ Its nice that this workaround is possible, but its a bit clunky (and that's from
 
 The script collects any `<audio>` and `<video>` elements on a page and finds the first one that's playing. If its `playbackRate` is greater than or equal to 2.5, it resets it back to 1. Otherwise, it increases the `playbackRate` by 0.25.
 
-I've placed this code as the URL of a bookmark and now it never takes more than a single click to speed up the media I'm watching/listing to, even on those pesky sites with restrictive <abbr title="user interfaces">UIs</abbr>.
+I've placed this code as the URL of a bookmark and now it never takes more than a single click to speed up the media I'm watching/listing to, even on those pesky sites with restrictive UIs.
 
 [bookmarklets]: https://www.freecodecamp.org/news/what-are-bookmarklets/
 [iife]: https://developer.mozilla.org/en-US/docs/Glossary/IIFE
