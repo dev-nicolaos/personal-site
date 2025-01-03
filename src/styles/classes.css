@@ -4,10 +4,6 @@
 	);
 }
 
-.flow > .tertiary-heading {
-	--flow-space-font-size: var(--font-size-secondary-heading);
-}
-
 .flow > :is(.break, .break + *) {
 	--flow-space-font-size: var(--font-size-primary-heading);
 }
@@ -34,7 +30,6 @@
 
 .secondary-heading {
 	font-size: var(--font-size-secondary-heading);
-	font-weight: var(--font-weight-bold);
 }
 
 .tertiary-heading {
