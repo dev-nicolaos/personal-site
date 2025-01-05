@@ -43,7 +43,7 @@ html {
 
 :focus-visible {
 	outline: var(--color-outline) solid 3px;
-	outline-offset: 0.2em;
+	outline-offset: 0.3em;
 }
 
 :not(.astro-code)::selection {

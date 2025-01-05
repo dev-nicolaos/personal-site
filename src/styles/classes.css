@@ -64,10 +64,13 @@
 	margin-block-end: var(--space-2);
 }
 
-/* Color all links */
 .link {
+	/* Color all links */
 	--color: var(--color-link, var(--color-primary));
 	color: var(--color);
+
+	/* For outlines */
+	border-radius: var(--border-radius-small);
 }
 
 /* Regular (non-nav) links */
