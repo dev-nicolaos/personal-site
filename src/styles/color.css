@@ -10,13 +10,18 @@
 	--color-blue: #5ca0a5;
 	--color-coral: #f68d5e;
 
+	--color-accent: var(--color-blue);
 	--color-background: var(--color-obsidian);
-	--color-text: var(--color-fog);
+	--color-outline: var(--color-snow);
 	--color-primary: var(--color-vibrant-green);
+	--color-raised-background: var(--color-ash);
+	--color-primary-light: var(var(--color-light-green));
+	--color-text: var(--color-fog);
+
 	--std-gradient: linear-gradient(
 		90deg,
 		var(--color-primary) 0%,
-		var(--color-blue) 100%
+		var(--color-accent) 100%
 	);
 
 	color-scheme: dark;
@@ -26,22 +31,22 @@
 	:root {
 		--color-background: var(--color-snow);
 		--color-text: var(--color-obsidian);
-		--color-primary: var(--logo-green);
+		--color-primary: var(--color-logo-green);
 	}
 }
 
 html {
 	background: var(--color-background);
 	color: var(--color-text);
-	scrollbar-color: var(--color-blue) var(--color-obsidian);
+	scrollbar-color: var(--color-accent) var(--color-background);
 }
 
 :focus-visible {
-	outline: var(--color-snow) solid 3px;
+	outline: var(--color-outline) solid 3px;
 	outline-offset: 0.2em;
 }
 
 :not(.astro-code)::selection {
-	background-color: var(--color-blue);
-	color: var(--color-obsidian);
+	background-color: var(--color-accent);
+	color: var(--color-background);
 }

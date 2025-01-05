@@ -17,7 +17,10 @@
 }
 
 .inline-code {
-	background-color: var(--color-code-background, var(--color-ash));
+	background-color: var(
+		--color-code-background,
+		var(--color-raised-background)
+	);
 	border-radius: var(--border-radius-small);
 	font-size: var(--font-size-small);
 	padding: 2px;
@@ -48,7 +51,7 @@
 }
 
 .details {
-	border: 2px dashed var(--color-ash);
+	border: 2px dashed var(--color-raised-background);
 	padding: var(--space-3) var(--space-2);
 }
 
@@ -58,7 +61,7 @@
 }
 
 .details[open] > summary {
-	margin-block-end: var(--space-1);
+	margin-block-end: var(--space-2);
 }
 
 /* Color all links */
@@ -89,7 +92,7 @@
 }
 
 .link:not(.nav):hover {
-	color: var(--color-link-hover, var(--color-background));
+	color: var(--color-background);
 	box-shadow: inset 0 calc(var(--shadow-height) * -1) var(--color);
 	text-decoration-color: var(--color);
 	text-decoration-skip-ink: none;
@@ -125,7 +128,7 @@
 .break {
 	width: var(--width-prose-inset);
 	height: 2px;
-	background: var(--color-ash);
+	background: var(--color-raised-background);
 	border-radius: var(--border-radius-small);
 	margin-inline: auto;
 }
@@ -136,10 +139,10 @@
 }
 
 .card {
-	background-color: var(--color-ash);
+	background-color: var(--color-raised-background);
 	border-radius: var(--border-radius-large);
 	padding: var(--space-2);
-	--color-link: var(--color-light-green);
+	--color-link: var(--color-primary-light);
 	--color-code-background: var(--color-background);
 }
 
