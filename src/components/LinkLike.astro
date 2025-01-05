@@ -15,18 +15,13 @@ const { pubDate, url, tags } = linkLike.data;
 <style>
 	.card {
 		display: grid;
-		gap: var(--space-1);
-		--card-border: none;
-	}
-
-	.card :global(formatted-date) {
-		font-size: var(--font-size-small);
+		gap: var(--space-2);
 	}
 </style>
 
 <article class="card">
 	<strong>
-		<a class="tertiary-heading link" href={url}
+		<a class="secondary-heading link" href={url}
 			>{stripMdFileExtension(linkLike.id)}</a
 		>
 	</strong>

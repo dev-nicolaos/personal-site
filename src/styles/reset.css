@@ -11,6 +11,14 @@
 	scroll-behavior: smooth;
 }
 
+:root {
+	interpolate-size: allow-keywords;
+}
+
+@view-transition {
+	navigation: auto;
+}
+
 h1,
 h2,
 h3,
