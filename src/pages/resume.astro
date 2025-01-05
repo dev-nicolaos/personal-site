@@ -67,10 +67,6 @@ const orderedSectionNames: Array<SectionId> = [
 		list-style-type: none;
 	}
 
-	.subsection-title {
-		font-weight: var(--font-weight-medium);
-	}
-
 	.list-item {
 		list-style: disc;
 		margin-block-start: var(--space-2);
@@ -133,7 +129,7 @@ const orderedSectionNames: Array<SectionId> = [
 		<Logo />
 		<h1 class="contents">
 			<div class="primary-heading name">Nicolaos Skimas</div>
-			<div class="profession">Web Developer</div>
+			<div class="profession">Software Engineer</div>
 		</h1>
 		<address class="contact-info">
 			<a class="link" href="/">https://nicolaos.dev</a>
@@ -163,7 +159,7 @@ const orderedSectionNames: Array<SectionId> = [
 									] as DualLevelResumeSection,
 								).map(([title, items]) => (
 									<li class="subsection">
-										<h3 class="subsection-title">
+										<h3 class="tertiary-heading">
 											{title}
 										</h3>
 										<ul>

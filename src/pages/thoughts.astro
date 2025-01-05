@@ -15,20 +15,8 @@ const pageSubtitle =
 ---
 
 <style>
-	.cta {
-		gap: var(--space-0);
-		display: inline-flex;
-		align-items: center;
-		margin-block-end: var(--space-6);
-	}
-
 	.thought-listing {
 		margin-block-end: var(--space-6);
-	}
-
-	.thought-listing .link {
-		font-size: var(--font-size-secondary-heading);
-		font-weight: var(--font-weight-medium);
 	}
 
 	.thought-listing p {
@@ -47,7 +35,7 @@ const pageSubtitle =
 			thoughts.map(({ data, slug }) => (
 				<article class="thought-listing">
 					<a
-						class="link"
+						class="link secondary-heading"
 						href={`/thoughts/${slug}/`}
 						transition:name={`h1-/thoughts/${slug}/`}
 					>
@@ -59,6 +47,6 @@ const pageSubtitle =
 			))
 		}
 
-		<RSSCard id="rss-feeds" />
+		<RSSCard />
 	</main>
 </ListLayout>

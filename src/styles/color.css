@@ -9,8 +9,6 @@
 	--color-logo-green: #0b6c12;
 	--color-blue: #5ca0a5;
 	--color-coral: #f68d5e;
-	--color-purple: #7d8ec8;
-	--color-dark-purple: #5d6992;
 
 	--color-background: var(--color-obsidian);
 	--color-text: var(--color-fog);
@@ -39,7 +37,7 @@ html {
 }
 
 :focus-visible {
-	outline: var(--color-coral) solid 3px;
+	outline: var(--color-snow) solid 3px;
 	outline-offset: 0.2em;
 }
 

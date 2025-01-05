@@ -19,16 +19,14 @@ const selectId = selectLabel + defaultLink.label.length + links.length;
 
 	label {
 		display: block;
-		font-size: var(--font-size-small);
-		font-weight: var(--font-weight-medium);
 		margin-block-end: var(--space-1);
 	}
 </style>
 
 <select-a-link>
 	<template>
-		<form action={defaultLink.href} method="GET">
-			<label for={selectId}>{selectLabel}</label>
+		<form action={defaultLink.href}>
+			<label for={selectId} class="form-label">{selectLabel}</label>
 			<div>
 				<select class="form-item" id={selectId}>
 					{
