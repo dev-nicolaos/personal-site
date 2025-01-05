@@ -196,3 +196,7 @@ button.form-item {
 	font-size: var(--font-size-small);
 	font-weight: var(--font-weight-bold);
 }
+
+.date {
+	font-weight: var(--font-weight-light);
+}
