@@ -3,7 +3,7 @@
 	font-family: Figtree;
 	font-style: normal;
 	font-weight: 300 900;
-	src: url(/assets/fonts/Figtree[wght].woff2) format("woff2-variations");
+	src: url(/assets/fonts/Figtree-wght.woff2) format("woff2-variations");
 }
 
 @font-face {
@@ -11,8 +11,7 @@
 	font-family: Figtree;
 	font-style: italic;
 	font-weight: 300 900;
-	src: url(/assets/fonts/Figtree-Italic[wght].woff2)
-		format("woff2-variations");
+	src: url(/assets/fonts/Figtree-Italic-wght.woff2) format("woff2-variations");
 }
 
 @font-face {
@@ -21,7 +20,7 @@
 	font-stretch: 75 125;
 	font-style: normal;
 	font-weight: 100 800;
-	src: url(/assets/fonts/Trispace[wdth,wght].woff2) format("woff2-variations");
+	src: url(/assets/fonts/Trispace-wdth,wght.woff2) format("woff2-variations");
 }
 
 html {

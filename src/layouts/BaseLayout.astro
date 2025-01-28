@@ -22,20 +22,19 @@ const { description, title, titleTrailer = "Nicolaos Skimas" } = Astro.props;
 
 		<meta name="theme-color" content="#5da562" />
 
-		{
-			[
-				"/assets/fonts/Figtree[wght].woff2",
-				"/assets/fonts/Figtree-Italic[wght].woff2",
-			].map((url) => (
-				<link
-					rel="preload"
-					href={url}
-					as="font"
-					type="font/woff2"
-					crossorigin
-				/>
-			))
-		}
+		<style>
+			@view-transition {
+				navigation: auto;
+			}
+		</style>
+
+		<link
+			rel="preload"
+			href="/assets/fonts/Figtree-wght.woff2"
+			as="font"
+			type="font/woff2"
+			crossorigin
+		/>
 		<link rel="icon" href="/favicon.ico" type="image/x-icon" />
 		<link rel="apple-touch-icon" href="/assets/icons/logo-192.png" />
 		<link rel="manifest" href="/manifest.webmanifest" />
