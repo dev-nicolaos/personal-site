@@ -13,11 +13,11 @@
 		"Helped develop new marketing sites and web forms using Laravel and Sass"
 	],
 	"Front End Developer at Dice Services": [
-		"Maintained a data-driven application built in AngularJS supporting resellers and end users",
-		"Modernized large parts of the application to take advantage of new JS features and syntax"
+		"Maintained an AngularJS application for a PAAS that supported white-label resellers and end users",
+		"Modernized large amounts of legacy code to take advantage of new JavaScript features and syntax"
 	],
 	"Web Development Intern at Glenwood Community Church": [
 		"Helped develop an online giving page on the church's Drupal site",
-		"Wrote custom Sass for the church's website and internal contact management system"
+		"Improved styling for the church's public website and internal contact management system"
 	]
 }
