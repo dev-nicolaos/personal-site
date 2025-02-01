@@ -1,25 +1,17 @@
 ---
-import { type CollectionEntry, getCollection, z } from "astro:content";
-import Logo from "@components/Logo.astro";
+import { type CollectionEntry, getCollection } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import {
-	dualLevelResumeSection,
-	singleLevelResumeSection,
-} from "../content/config";
+import ResumeSection from "@components/ResumeSection.astro";
 
-type SectionId = CollectionEntry<"resume-sections">["id"];
-type Sections = {
-	[key in SectionId]: CollectionEntry<"resume-sections">["data"];
-};
-type DualLevelResumeSection = z.infer<typeof dualLevelResumeSection>;
-type SingleLevelResumeSection = z.infer<typeof singleLevelResumeSection>;
+type Section = CollectionEntry<"resume-sections">;
+type SectionId = Section["id"];
 
-const sections: Sections = (await getCollection("resume-sections")).reduce(
-	(acc, curr) => {
-		acc[curr.id] = curr.data;
+const sections = (await getCollection("resume-sections")).reduce(
+	(acc, section) => {
+		acc[section.id] = section;
 		return acc;
 	},
-	{} as Sections,
+	{} as { [key in SectionId]: Section },
 );
 
 const orderedSectionNames: Array<SectionId> = [
@@ -38,62 +30,18 @@ const orderedSectionNames: Array<SectionId> = [
 		gap: var(--space-2);
 	}
 
-	header img {
-		display: none;
-	}
-
 	.contact-info {
 		display: flex;
-		flex-direction: column;
-		align-items: start;
 		font-size: var(--font-size-base);
 		gap: var(--space-1-2);
 	}
 
-	section {
-		margin-block-start: var(--space-6);
-	}
-
-	.section-list {
-		line-height: var(--line-height-prose);
-		margin-block-start: var(--space-4);
-	}
-
-	.subsection:not(:first-child) {
-		margin-block-start: var(--space-5);
-	}
-
-	.subsection {
-		list-style-type: none;
-	}
-
-	.list-item {
-		list-style: disc;
-		margin-block-start: var(--space-2);
-		margin-inline-start: 1em;
-		text-align: left;
-		text-wrap: pretty;
-	}
-
-	.list-item::marker {
-		color: var(--color-primary);
-	}
-
-	@media screen and (min-width: 550px) {
+	@media (min-width: 550px) {
 		header {
 			align-items: baseline;
-			grid-template-columns: auto auto 1fr auto;
+			grid-template-columns: auto 1fr auto;
 			text-align: initial;
 			line-height: 1;
-		}
-
-		header img {
-			display: inline-block;
-		}
-
-		.name,
-		.profession {
-			align-self: last baseline;
 		}
 
 		.profession {
@@ -103,20 +51,8 @@ const orderedSectionNames: Array<SectionId> = [
 		.contact-info {
 			border-image: var(--std-gradient) 1;
 			border-block-start: 2px solid;
-			flex-direction: row;
 			grid-column: 1/-1;
 			padding-block-start: var(--space-1);
-		}
-
-		.list-item {
-			margin-inline-start: calc(1em + 2ch);
-		}
-	}
-
-	@media print {
-		section:has(.section-list > .list-item),
-		.subsection {
-			break-inside: avoid;
 		}
 	}
 </style>
@@ -126,10 +62,9 @@ const orderedSectionNames: Array<SectionId> = [
 	description="A formatted record of my work experience, education, and skills kept mostly up to date"
 >
 	<header>
-		<Logo />
 		<h1 class="contents">
-			<div class="primary-heading name">Nicolaos Skimas</div>
-			<div class="profession">Software Engineer</div>
+			<span class="primary-heading name">Nicolaos Skimas</span>
+			<span class="profession">Software Engineer</span>
 		</h1>
 		<address class="contact-info">
 			<a class="link" href="/">https://nicolaos.dev</a>
@@ -142,37 +77,7 @@ const orderedSectionNames: Array<SectionId> = [
 	<main>
 		{
 			orderedSectionNames.map((sectionName) => (
-				<section>
-					<h2 class="secondary-heading">{sectionName}</h2>
-					<ul class="section-list">
-						{Array.isArray(sections[sectionName])
-							? (
-									sections[
-										sectionName
-									] as SingleLevelResumeSection
-								).map((content) => (
-									<li class="list-item">{content}</li>
-								))
-							: Object.entries(
-									sections[
-										sectionName
-									] as DualLevelResumeSection,
-								).map(([title, items]) => (
-									<li class="subsection">
-										<h3 class="tertiary-heading">
-											{title}
-										</h3>
-										<ul>
-											{items.map((content) => (
-												<li class="list-item">
-													{content}
-												</li>
-											))}
-										</ul>
-									</li>
-								))}
-					</ul>
-				</section>
+				<ResumeSection section={sections[sectionName]} />
 			))
 		}
 	</main>
