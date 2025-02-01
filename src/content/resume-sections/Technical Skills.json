@@ -18,7 +18,5 @@
 		"Deployment platforms including Docker, Netlify, and GCP",
 		"Using SQL to interact with relational databases"
 	],
-	"I'm currently learning...": [
-		"The Go programming language"
-	]
+	"I'm currently learning...": ["The Go programming language"]
 }
