@@ -1,0 +1,84 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+	section: CollectionEntry<"resume-sections">;
+}
+
+const { section } = Astro.props;
+---
+
+<style>
+	section {
+		--margin-top-large: var(--space-6);
+		--margin-top-medium: var(--space-4);
+		--margin-top-small: var(--space-2);
+
+		@media print {
+			--margin-top-large: var(--space-5);
+			--margin-top-medium: var(--space-3);
+			--margin-top-small: var(--space-1);
+			--line-height-prose: 1.5;
+		}
+
+		margin-block-start: var(--margin-top-large);
+	}
+
+	.section-list {
+		line-height: var(--line-height-prose);
+		margin-block-start: var(--margin-top-medium);
+	}
+
+	.subsection:not(:first-child) {
+		margin-block-start: var(--margin-top-medium);
+	}
+
+	.subsection {
+		list-style-type: none;
+	}
+
+	.list-item {
+		list-style: disc;
+		margin-block-start: var(--margin-top-small);
+		margin-inline-start: 1em;
+		text-align: left;
+		text-wrap: pretty;
+
+		&::marker {
+			color: var(--color-primary);
+		}
+
+		@media (min-width: 550px) {
+			margin-inline-start: calc(1em + 2ch);
+		}
+	}
+
+	@media print {
+		section:has(.section-list > .list-item),
+		.subsection {
+			break-inside: avoid;
+		}
+	}
+</style>
+
+<section>
+	<h2 class="secondary-heading">{section.id}</h2>
+	<ul class="section-list">
+		{
+			Array.isArray(section.data)
+				? section.data.map((content) => (
+						<li class="list-item">{content}</li>
+					))
+				: Object.entries(section.data).map(([title, items]) => (
+						<li class="subsection">
+							<h3 class="tertiary-heading">{title}</h3>
+							<ul>
+								{items.map((content) => (
+									<li class="list-item">{content}</li>
+								))}
+							</ul>
+						</li>
+					))
+		}
+	</ul>
+</section>

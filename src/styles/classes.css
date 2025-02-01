@@ -71,6 +71,11 @@
 
 	/* For outlines */
 	border-radius: var(--border-radius-small);
+
+	@media print {
+		text-decoration: none;
+		color: inherit;
+	}
 }
 
 /* Regular (non-nav) links */
