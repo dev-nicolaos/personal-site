@@ -32,12 +32,12 @@ const pageSubtitle =
 >
 	<main>
 		{
-			thoughts.map(({ data, slug }) => (
+			thoughts.map(({ data, id }) => (
 				<article class="thought-listing">
 					<a
 						class="link secondary-heading"
-						href={`/thoughts/${slug}/`}
-						transition:name={`h1-/thoughts/${slug}/`}
+						href={`/thoughts/${id}/`}
+						transition:name={`h1-/thoughts/${id}/`}
 					>
 						{data.title}
 					</a>

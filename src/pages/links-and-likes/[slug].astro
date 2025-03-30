@@ -2,17 +2,17 @@
 import LinkLike from "@components/LinkLike.astro";
 import SingleColumnLayout from "@layouts/SingleColumnLayout.astro";
 import { getCollection } from "astro:content";
-import { stripMdFileExtension } from "src/utils";
+import { slugify } from "src/utils";
 
 export async function getStaticPaths() {
 	const linksAndLikes = await getCollection("links-and-likes");
 	return linksAndLikes.map((linkLike) => ({
-		params: { slug: linkLike.slug },
+		params: { slug: slugify(linkLike.id) },
 		props: { linkLike },
 	}));
 }
 
-const title = `Shout out to ${stripMdFileExtension(Astro.props.linkLike.id)}`;
+const title = `Shout out to ${Astro.props.linkLike.id}`;
 ---
 
 <SingleColumnLayout {title}>

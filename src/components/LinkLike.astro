@@ -1,14 +1,13 @@
 ---
 import Date from "@components/Date.astro";
-import type { CollectionEntry } from "astro:content";
-import { stripMdFileExtension } from "src/utils";
+import { type CollectionEntry, render } from "astro:content";
 
 type Props = {
 	linkLike: CollectionEntry<"links-and-likes">;
 };
 
 const linkLike = Astro.props.linkLike;
-const { Content } = await linkLike.render();
+const { Content } = await render(linkLike);
 const { pubDate, url, tags } = linkLike.data;
 ---
 
@@ -21,9 +20,7 @@ const { pubDate, url, tags } = linkLike.data;
 
 <article class="card">
 	<strong>
-		<a class="secondary-heading link" href={url}
-			>{stripMdFileExtension(linkLike.id)}</a
-		>
+		<a class="secondary-heading link" href={url}>{linkLike.id}</a>
 	</strong>
 	<Date date={pubDate} />
 	<Content />

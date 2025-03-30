@@ -1,7 +1,15 @@
 import { z, defineCollection } from "astro:content";
+import { glob } from "astro/loaders";
+import { stripFileExtension } from "./utils";
+
+const entryToId = ({ entry }: { entry: string }) => stripFileExtension(entry);
 
 const linksAndLikesCollection = defineCollection({
-	type: "content",
+	loader: glob({
+		base: "src/content/links-and-likes",
+		pattern: "*.md",
+		generateId: entryToId,
+	}),
 	schema: z.object({
 		url: z.string().url(),
 		pubDate: z.string().date(),
@@ -10,7 +18,11 @@ const linksAndLikesCollection = defineCollection({
 });
 
 const siteTechItemsCollection = defineCollection({
-	type: "data",
+	loader: glob({
+		base: "src/content/site-tech",
+		pattern: "*.json",
+		generateId: entryToId,
+	}),
 	schema: z.object({
 		url: z.string().url(),
 	}),
@@ -23,12 +35,16 @@ export const dualLevelResumeSection = z.record(
 );
 
 const resumeSectionsCollection = defineCollection({
-	type: "data",
+	loader: glob({
+		base: "src/content/resume-sections",
+		pattern: "*.json",
+		generateId: entryToId,
+	}),
 	schema: dualLevelResumeSection.or(singleLevelResumeSection),
 });
 
 const thoughtsCollection = defineCollection({
-	type: "content",
+	loader: glob({ base: "src/content/thoughts", pattern: "*.md" }),
 	schema: z.object({
 		description: z.string(),
 		draft: z.boolean().optional(),

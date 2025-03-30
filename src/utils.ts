@@ -12,11 +12,30 @@ export const sortEntriesByPubDate = (
 export const filterOutDraftThoughts = (thought: CollectionEntry<"thoughts">) =>
 	!thought.data.draft;
 
-export function stripMdFileExtension(filename: string): string {
-	if (filename.endsWith(".md")) {
-		return filename.slice(0, -3);
+export function slugify(slugToBe: string): string {
+	const slugParts = slugToBe
+		.trim()
+		.replaceAll(/[^\w\s]/g, "")
+		.toLowerCase()
+		.match(/\w+/g);
+
+	if (slugParts === null) {
+		throw Error(
+			`Cannot slugify ${slugToBe}, contains no alphanumeric characters.`,
+		);
 	}
 
-	console.warn(filename, "does not have a .md file extension");
-	return filename;
+	return slugParts.join("-");
+}
+
+export function stripFileExtension(filename: string): string {
+	if (!filename.includes(".")) {
+		console.warn(
+			"Tried to strip non-existent file extension from:",
+			filename,
+		);
+		return filename;
+	}
+
+	return filename.slice(0, filename.lastIndexOf("."));
 }
