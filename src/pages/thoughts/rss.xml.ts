@@ -9,10 +9,10 @@ const thoughts = (await getCollection("thoughts", filterOutDraftThoughts)).sort(
 
 export const formatThoughtFeedItem = ({
 	data,
-	slug,
+	id,
 }: CollectionEntry<"thoughts">) => ({
 	description: data.description,
-	link: `/thoughts/${slug}/`,
+	link: `/thoughts/${id}/`,
 	pubDate: new Date(data.pubDate),
 	title: data.title,
 });

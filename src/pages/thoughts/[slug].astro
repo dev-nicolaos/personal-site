@@ -2,7 +2,7 @@
 import Date from "@components/Date.astro";
 import PageHeader from "@components/PageHeader.astro";
 import RSSCard from "@components/RSSCard.astro";
-import type { CollectionEntry } from "astro:content";
+import { type CollectionEntry, render } from "astro:content";
 import { filterOutDraftThoughts } from "src/utils";
 import { getCollection } from "astro:content";
 import SingleColumnLayout from "@layouts/SingleColumnLayout.astro";
@@ -10,13 +10,13 @@ import SingleColumnLayout from "@layouts/SingleColumnLayout.astro";
 export async function getStaticPaths() {
 	const thoughts = await getCollection("thoughts", filterOutDraftThoughts);
 	return thoughts.map((thought) => ({
-		params: { slug: thought.slug },
+		params: { slug: thought.id },
 		props: { thought },
 	}));
 }
 
 const thought: CollectionEntry<"thoughts"> = Astro.props.thought;
-const { Content } = await thought.render();
+const { Content } = await render(thought);
 const { description, title, pubDate, subTitle } = thought.data;
 ---
 

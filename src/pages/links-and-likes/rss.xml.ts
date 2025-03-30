@@ -1,19 +1,18 @@
 import type { APIRoute } from "astro";
 import rss from "@astrojs/rss";
-import { sortEntriesByPubDate, stripMdFileExtension } from "../../utils";
+import { sortEntriesByPubDate, slugify } from "../../utils";
 import { getCollection, type CollectionEntry } from "astro:content";
 import { micromark } from "micromark";
 
 export const formatLinkLikeFeedItem = ({
 	data,
-	slug,
 	id,
 	body,
 }: CollectionEntry<"links-and-likes">) => ({
 	description: micromark(body),
-	link: `/links-and-likes/${slug}/`,
+	link: `/links-and-likes/${slugify(id)}/`,
 	pubDate: new Date(data.pubDate),
-	title: stripMdFileExtension(id),
+	title: id,
 });
 
 const linkLikes = (await getCollection("links-and-likes")).sort(
