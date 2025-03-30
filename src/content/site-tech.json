@@ -1,0 +1,14 @@
+{
+	"Astro": "https://astro.build",
+	"CSS Custom Properties": "https://developer.mozilla.org/en-US/docs/Web/CSS/--*",
+	"CSS Logical Properties": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties",
+	"Custom Elements": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Components/Using_custom_elements",
+	"EditorConfig": "https://editorconfig.org/",
+	"Git": "https://git-scm.com/",
+	"Markdown": "https://www.markdownguide.org/",
+	"Netlify": "https://www.netlify.com/",
+	"Porkbun": "https://porkbun.com/",
+	"Prettier": "https://prettier.io/",
+	"rehype": "https://unifiedjs.com/explore/project/rehypejs/rehype/",
+	"Utopia": "https://utopia.fyi"
+}

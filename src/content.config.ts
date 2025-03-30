@@ -1,5 +1,5 @@
 import { z, defineCollection } from "astro:content";
-import { glob } from "astro/loaders";
+import { file, glob } from "astro/loaders";
 import { stripFileExtension } from "./utils";
 
 const entryToId = ({ entry }: { entry: string }) => stripFileExtension(entry);
@@ -18,14 +18,8 @@ const linksAndLikesCollection = defineCollection({
 });
 
 const siteTechItemsCollection = defineCollection({
-	loader: glob({
-		base: "src/content/site-tech",
-		pattern: "*.json",
-		generateId: entryToId,
-	}),
-	schema: z.object({
-		url: z.string().url(),
-	}),
+	loader: file("src/content/site-tech.json"),
+	schema: z.string().url(),
 });
 
 export const singleLevelResumeSection = z.array(z.string());
