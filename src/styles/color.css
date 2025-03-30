@@ -15,7 +15,7 @@
 	--color-outline: var(--color-snow);
 	--color-primary: var(--color-vibrant-green);
 	--color-raised-background: var(--color-ash);
-	--color-primary-light: var(var(--color-light-green));
+	--color-primary-light: var(--color-light-green);
 	--color-text: var(--color-fog);
 
 	--std-gradient: linear-gradient(
