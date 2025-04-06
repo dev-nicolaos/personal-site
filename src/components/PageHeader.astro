@@ -44,7 +44,7 @@ const { title, noContent = false, subTitle } = Astro.props;
 	}
 </style>
 
-<hgroup class="page-header" data-no-content={noContent}>
+<hgroup data-no-content={noContent}>
 	<h1 class="primary-heading" transition:name={`h1-${Astro.url.pathname}`}>
 		{title}
 	</h1>
