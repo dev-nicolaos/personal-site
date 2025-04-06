@@ -2,6 +2,7 @@
 interface Props {
 	title: string;
 	subTitle?: string;
+	/** Use when a page has no content other than the header, such as a 404 page. */
 	noContent?: boolean;
 }
 const { title, noContent = false, subTitle } = Astro.props;
