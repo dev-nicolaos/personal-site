@@ -28,20 +28,20 @@ const { title, noContent = false, subTitle } = Astro.props;
 		text-wrap: balance;
 	}
 
-	hgroup[data-no-content] h1 {
+	hgroup.no-content h1 {
 		font-size: var(--font-size-mega-heading);
 	}
 
-	hgroup[data-no-content] p {
+	hgroup.no-content p {
 		font-size: var(--font-size-secondary-heading);
 	}
 
-	hgroup[data-no-content]::after {
+	hgroup.no-content::after {
 		margin-block-start: var(--space-5);
 	}
 </style>
 
-<hgroup data-no-content={noContent}>
+<hgroup class:list={[{ "no-content": noContent }]}>
 	<h1 class="primary-heading" transition:name={`h1-${Astro.url.pathname}`}>
 		{title}
 	</h1>
