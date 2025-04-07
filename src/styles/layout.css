@@ -1,6 +1,5 @@
 :root {
-	/* @link https://utopia.fyi/space/calculator?c=320,16,1.2,1080,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,&g=s,l,xl,12 */
-	/* Manually modified to use vw instead of vi for now for improved support */
+	/* @link https://utopia.fyi/space/calculator?c=320,16,1.2,1080,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,xs-2xs&g=s,l,xl,12 */
 	/* Manually modified to use numeric labels */
 	--space-0: clamp(0.25rem, 0.2237rem + 0.1316vw, 0.3125rem);
 	--space-1: clamp(0.5rem, 0.4474rem + 0.2632vw, 0.625rem);
@@ -21,6 +20,9 @@
 	--space-5-6: clamp(2rem, 1.2632rem + 3.6842vw, 3.75rem);
 	--space-6-7: clamp(3rem, 2.1579rem + 4.2105vw, 5rem);
 	--space-7-8: clamp(4rem, 2.5263rem + 7.3684vw, 7.5rem);
+
+	/* Custom pairs */
+	--space-2-1: clamp(0.625rem, 0.8026rem + -0.2632vw, 0.75rem);
 
 	/* https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html */
 	--min-touch-target-size: 24px;
