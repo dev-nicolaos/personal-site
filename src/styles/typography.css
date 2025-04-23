@@ -75,6 +75,7 @@ body {
 }
 
 pre,
-code {
+code,
+kbd {
 	font-family: Trispace, ui-monospace, monospace;
 }

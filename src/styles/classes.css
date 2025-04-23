@@ -16,7 +16,8 @@
 	font-weight: var(--font-weight-bold);
 }
 
-.inline-code {
+.inline-code,
+.keys {
 	background-color: var(
 		--color-code-background,
 		var(--color-raised-background)
