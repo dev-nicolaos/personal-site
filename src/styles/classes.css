@@ -67,7 +67,7 @@
 
 .link {
 	/* Color all links */
-	--color: var(--color-link, var(--color-primary));
+	--color: var(--color-primary);
 	color: var(--color);
 
 	/* For outlines */
@@ -151,7 +151,6 @@
 	background-color: var(--color-raised-background);
 	border-radius: var(--border-radius-large);
 	padding: var(--space-2);
-	--color-link: var(--color-primary-light);
 	--color-code-background: var(--color-background);
 }
 

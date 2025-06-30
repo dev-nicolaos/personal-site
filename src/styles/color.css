@@ -1,22 +1,9 @@
 :root {
-	--color-snow: #ffffff;
-	--color-fog: #ffffffdd;
-	--color-ash: #404040;
-	--color-obsidian: #222222;
-
-	--color-light-green: #7ccc81;
-	--color-vibrant-green: #5da562;
-	--color-logo-green: #0b6c12;
-	--color-blue: #5ca0a5;
-	--color-coral: #f68d5e;
-
-	--color-accent: var(--color-blue);
-	--color-background: var(--color-obsidian);
-	--color-outline: var(--color-snow);
-	--color-primary: var(--color-vibrant-green);
-	--color-raised-background: var(--color-ash);
-	--color-primary-light: var(--color-light-green);
-	--color-text: var(--color-fog);
+	--color-background: #222;
+	--color-primary: #5da562;
+	--color-raised-background: #333;
+	--color-text: #fffd;
+	--color-accent: color-mix(in oklab, var(--color-primary) 75%, var(--color-text));
 
 	--std-gradient: linear-gradient(
 		90deg,
@@ -29,9 +16,10 @@
 
 @media print {
 	:root {
-		--color-background: var(--color-snow);
-		--color-text: var(--color-obsidian);
-		--color-primary: var(--color-logo-green);
+		--color-background: white;
+		--color-text: black;
+		/* Green from the logo */
+		--color-primary: #0b6c12;
 	}
 }
 
@@ -42,7 +30,7 @@ html {
 }
 
 :focus-visible {
-	outline: var(--color-outline) solid 3px;
+	outline: var(--color-text) solid 3px;
 	outline-offset: 0.3em;
 }
 
