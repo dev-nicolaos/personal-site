@@ -52,7 +52,7 @@
 }
 
 .details {
-	border: 2px dashed var(--color-raised-background);
+	border: 2px dashed var(--color-accent);
 	padding: var(--space-3) var(--space-2);
 }
 
@@ -137,7 +137,7 @@
 .break {
 	width: var(--width-prose-inset);
 	height: 2px;
-	background: var(--color-raised-background);
+	background: var(--color-accent);
 	border-radius: var(--border-radius-small);
 	margin-inline: auto;
 }

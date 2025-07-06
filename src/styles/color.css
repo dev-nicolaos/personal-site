@@ -3,7 +3,11 @@
 	--color-primary: #5da562;
 	--color-raised-background: #333;
 	--color-text: #fffd;
-	--color-accent: color-mix(in oklab, var(--color-primary) 75%, var(--color-text));
+	--color-accent: color-mix(
+		in oklab,
+		var(--color-primary) 75%,
+		var(--color-text)
+	);
 
 	--std-gradient: linear-gradient(
 		90deg,
@@ -11,7 +15,17 @@
 		var(--color-accent) 100%
 	);
 
-	color-scheme: dark;
+	color-scheme: dark light;
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		--color-background: #dfccbd;
+		--color-raised-background: #cfb6a2;
+		--color-text: #071c2e;
+		--color-primary: #194967;
+		--color-accent: #86a7c0;
+	}
 }
 
 @media print {
