@@ -2,20 +2,15 @@
 	--color-background: #222;
 	--color-primary: #5da562;
 	--color-raised-background: #333;
-	--color-text: #fffd;
-	--color-accent: color-mix(
-		in oklab,
-		var(--color-primary) 75%,
-		var(--color-text)
-	);
+	--color-text: #e2e2e2;
+	/* Rougly color-mix(in oklab, var(--color-primary) 75%, var(--color-text)); */
+	--color-accent: #80b582;
 
 	--std-gradient: linear-gradient(
 		90deg,
 		var(--color-primary) 0%,
 		var(--color-accent) 100%
 	);
-
-	color-scheme: dark light;
 }
 
 @media (prefers-color-scheme: light) {
