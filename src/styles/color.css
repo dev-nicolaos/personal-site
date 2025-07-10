@@ -2,7 +2,9 @@
 	--color-background: #222;
 	--color-primary: #5da562;
 	--color-raised-background: #333;
-	--color-text: #fffd;
+	--color-text: #e2e2e2;
+	/* This should be roughly the same value as output by color-mix below */
+	--color-accent: #80b582;
 	--color-accent: color-mix(
 		in oklab,
 		var(--color-primary) 75%,
