@@ -14,8 +14,6 @@
 		var(--color-primary) 0%,
 		var(--color-accent) 100%
 	);
-
-	color-scheme: dark light;
 }
 
 @media (prefers-color-scheme: light) {
