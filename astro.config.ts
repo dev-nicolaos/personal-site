@@ -7,6 +7,14 @@ export default defineConfig({
 	integrations: [sitemap()],
 	site: "https://nicolaos.dev",
 	markdown: {
+		shikiConfig: {
+			themes: {
+				dark: "poimandres",
+				light: "solarized-light",
+			},
+			// Use light-dark here when better supported https://shiki.style/guide/dual-themes#light-dark-function
+			defaultColor: "dark",
+		},
 		remarkRehype: {
 			allowDangerousHtml: true,
 		},
