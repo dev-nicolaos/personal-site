@@ -60,17 +60,34 @@ const selectId = selectLabel + defaultLink.label.length + links.length;
 
 <script>
 	class SelectALink extends HTMLElement {
+		originalMarkup = "";
+		template: HTMLTemplateElement | undefined;
+
+		render() {
+			if (this.template) {
+				this.replaceChildren(this.template.content.cloneNode(true));
+				const formElement = this.querySelector("form")!;
+				const selectElement = this.querySelector("select")!;
+				selectElement.addEventListener("change", () => {
+					formElement.setAttribute("action", selectElement.value);
+				});
+			}
+		}
+
 		connectedCallback() {
-			this.replaceChildren(
-				(
-					this.firstElementChild as HTMLTemplateElement
-				).content.cloneNode(true),
-			);
-			const formElement = this.querySelector("form")!;
-			const selectElement = this.querySelector("select")!;
-			selectElement.addEventListener("change", () => {
-				formElement.setAttribute("action", selectElement.value);
-			});
+			if (this.firstElementChild instanceof HTMLTemplateElement) {
+				this.originalMarkup = this.innerHTML;
+				this.template = this.firstElementChild;
+				this.render();
+
+				window.matchMedia("print").addEventListener("change", (e) => {
+					if (e.matches) {
+						this.innerHTML = this.originalMarkup;
+					} else {
+						this.render();
+					}
+				});
+			}
 		}
 	}
 

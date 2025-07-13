@@ -26,7 +26,7 @@ const {
 		gap: var(--space-6);
 	}
 
-	@media (min-width: 45rem) {
+	@media screen and (min-width: 45rem) {
 		body {
 			align-items: start;
 			grid-template-columns: clamp(25ch, 35%, 35ch) 1fr;
@@ -46,6 +46,12 @@ const {
 		content: "";
 		display: block;
 		height: 1ex;
+
+		@media print {
+			background: unset;
+			border-block-start: 1ex solid black;
+			height: unset;
+		}
 	}
 
 	hgroup > p {

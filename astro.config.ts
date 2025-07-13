@@ -23,6 +23,7 @@ export default defineConfig({
 					h3: "tertiary-heading",
 					hr: "break",
 					kbd: "keys",
+					"pre:has(> code)": "code-block",
 					":not(pre) code": "inline-code",
 					"ol,ul": "list",
 					p: "paragraph",

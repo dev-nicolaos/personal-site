@@ -1,3 +1,8 @@
+.flow > * {
+	display: block;
+	break-inside: avoid-page;
+}
+
 .flow > * + * {
 	margin-block-start: calc(
 		var(--flow-space-font-size, 1em) * var(--line-height-prose)
@@ -27,6 +32,14 @@
 	padding: 2px;
 }
 
+.code-block {
+	tab-size: 4;
+
+	@media print {
+		white-space: pre-wrap;
+	}
+}
+
 .primary-heading {
 	font-size: var(--font-size-primary-heading);
 	font-weight: var(--font-weight-medium);
@@ -34,10 +47,12 @@
 
 .secondary-heading {
 	font-size: var(--font-size-secondary-heading);
+	break-after: avoid;
 }
 
 .tertiary-heading {
 	font-weight: var(--font-weight-bold);
+	break-after: avoid;
 }
 
 .paragraph {
@@ -107,6 +122,12 @@
 	text-decoration-skip-ink: none;
 }
 
+@media print {
+	:is(.flow, .paragraph, .list) .link::after {
+		content: " (" attr(href) ")";
+	}
+}
+
 /* Nav Links */
 .link.nav {
 	text-decoration: none;
@@ -126,8 +147,9 @@
 }
 
 .list {
-	padding-inline-start: 1em;
+	padding-inline-start: 2em;
 	line-height: var(--line-height-prose);
+	break-inside: avoid;
 }
 
 .list .list {
@@ -136,8 +158,7 @@
 
 .break {
 	width: var(--width-prose-inset);
-	height: 2px;
-	background: var(--color-accent);
+	border-block-start: 2px solid var(--color-accent);
 	border-radius: var(--border-radius-small);
 	margin-inline: auto;
 }
@@ -150,8 +171,14 @@
 .card {
 	background-color: var(--color-raised-background);
 	border-radius: var(--border-radius-large);
+	break-inside: avoid;
 	padding: var(--space-2);
 	--color-code-background: var(--color-background);
+
+	@media print {
+		border: 1px solid black;
+		background-color: transparent;
+	}
 }
 
 .visually-hidden {

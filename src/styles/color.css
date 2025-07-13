@@ -27,8 +27,8 @@
 	:root {
 		--color-background: white;
 		--color-text: black;
-		/* Green from the logo */
-		--color-primary: #0b6c12;
+		--color-accent: black;
+		--std-gradient: linear-gradient(90deg, black, white);
 	}
 }
 

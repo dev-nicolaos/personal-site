@@ -21,6 +21,12 @@ const { title, noContent = false, subTitle } = Astro.props;
 		display: block;
 		height: 0.5em;
 		margin-block-start: var(--space-3-4);
+
+		@media print {
+			background: unset;
+			border-block-start: 0.5em solid black;
+			height: unset;
+		}
 	}
 
 	p {

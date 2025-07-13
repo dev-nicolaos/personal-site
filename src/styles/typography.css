@@ -42,6 +42,11 @@ html {
 
 	--line-height-prose: 1.8;
 	--line-height-short-prose: 1.4;
+
+	@media print {
+		--line-height-prose: 1.6;
+		--line-height-short-prose: 1.3;
+	}
 }
 
 body {
