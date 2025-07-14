@@ -1,8 +1,10 @@
 <svg version="1.1" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
   <style>
-    rect { fill: #333; }
-    line { stroke: #e2e2e2; }
-    path { stroke: #5da562; }
+    @media (prefers-color-scheme: dark) {
+      rect { fill: #333; }
+      line { stroke: #e2e2e2; }
+      path { stroke: #5da562; }
+    }
     @media (prefers-color-scheme: light) {
       rect { fill: #CFB6A2; }
       line { stroke: #071c23; }
