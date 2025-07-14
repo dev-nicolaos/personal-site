@@ -1,0 +1,12 @@
+<svg version="1.1" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    rect { fill: #333; }
+    line { stroke: #e2e2e2; }
+    path { stroke: #5da562; }
+  </style>
+  <rect x="0" y="0" width="120" height="120"></rect>
+  <line x1="100" y1="100" x2="100" y2="0" style="stroke-linecap:round;stroke-width:4;" />
+  <line x1="20" y1="120" x2="20" y2="20" style="stroke-linecap:round;stroke-width:4;" />
+  <line x1="20" y1="20" x2="100" y2="100" style="stroke-linecap:round;stroke-width:4;" />
+  <path d="M119,-6C104.9485,-1.0342 49.8235,17.8356 49.8235,35.7123C49.8235,53.589 93.0588,51.6027 93.0588,71.4658C93.0588,91.3288 -26.3787,138.0068 -28,139" style="stroke-width:8;fill:none;" />
+</svg>
