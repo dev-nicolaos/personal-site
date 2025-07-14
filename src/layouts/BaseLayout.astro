@@ -44,15 +44,12 @@ const { description, title, titleTrailer = "Nicolaos Skimas" } = Astro.props;
 
 		<link rel="icon" href="/favicon.ico" sizes="32x32" />
 		<link rel="icon" href="/assets/icons/logo.svg" type="image/svg+xml" />
-		<link
-			rel="apple-touch-icon"
-			href="/assets/icons/apple-touch-icon-light.png"
-			media="(prefers-color-scheme: light)"
-		/><!-- 180×180 -->
+		<!-- Safari doesn't support SVG favicons nor media queries on favicons, -->
+		<!-- so only give it the dark one (https://stackoverflow.com/q/79637210) -->
 		<link
 			rel="apple-touch-icon"
 			href="/assets/icons/apple-touch-icon.png"
-		/><!-- 180×180 -->
+		/>
 
 		<link rel="sitemap" href="/sitemap-index.xml" />
 
