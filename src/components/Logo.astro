@@ -32,11 +32,15 @@ const { alt = "", spin = false, ...rest } = Astro.props;
 	}
 </style>
 
-<img
-	{alt}
-	class:list={{ spin }}
-	height="1"
-	src="/assets/icons/logo.svg"
-	width="1"
-	{...rest}
-/>
+<!-- TODO: rm picture and just use <img src=.../logo.svg> once Safari supports media queries in SVGs -->
+<picture>
+	<source media="(prefers-color-scheme: light)" srcset="/assets/icons/logo-light.svg" />
+	<img
+		{alt}
+		class:list={{ spin }}
+		height="1"
+		src="/assets/icons/logo-dark.svg"
+		width="1"
+		{...rest}
+	/>
+</picture>

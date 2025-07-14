@@ -3,11 +3,6 @@
     rect { fill: #333; }
     line { stroke: #e2e2e2; }
     path { stroke: #5da562; }
-    @media (prefers-color-scheme: light) {
-      rect { fill: #CFB6A2; }
-      line { stroke: #071c23; }
-      path { stroke: #194967; }
-    }
   </style>
   <rect x="0" y="0" width="120" height="120"></rect>
   <line x1="100" y1="100" x2="100" y2="0" style="stroke-linecap:round;stroke-width:4;" />
