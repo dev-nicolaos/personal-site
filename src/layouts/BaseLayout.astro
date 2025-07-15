@@ -55,19 +55,19 @@ const { description, title, titleTrailer = "Nicolaos Skimas" } = Astro.props;
 
 		<RSSAutodiscovery />
 
-		<script defer>
+		<script>
 			window.matchMedia("print").addEventListener("change", (evt) => {
 				if (evt.matches) {
-					elms = document.querySelectorAll(
+					const elms = document.querySelectorAll<HTMLDetailsElement>(
 						"details:not([open]):not([data-no-print-open])",
 					);
-					for (e of elms) {
+					for (const e of elms) {
 						e.setAttribute("open", "");
 						e.dataset.wasclosed = "";
 					}
 				} else {
-					elms = document.querySelectorAll("details[data-wasclosed]");
-					for (e of elms) {
+					const elms = document.querySelectorAll<HTMLDetailsElement>("details[data-wasclosed]");
+					for (const e of elms) {
 						e.removeAttribute("open");
 						delete e.dataset.wasclosed;
 					}
