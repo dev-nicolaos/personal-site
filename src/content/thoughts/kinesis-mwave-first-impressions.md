@@ -10,13 +10,13 @@ For reference I've been using the [Keychron K8 Pro] for last couple years and ha
 
 ## The Good
 
--   The plush wrist wrest feels very nice compared to the wooden Keychron one I've been using.
--   The resting position of my forearms, wrists, and hands feels very natural.
+- The plush wrist wrest feels very nice compared to the wooden Keychron one I've been using.
+- The resting position of my forearms, wrists, and hands feels very natural.
 
 ## The Different
 
--   I'm realizing I usually hit the <kbd>y</kbd> key with my left index finger and the <kbd>b</kbd> key using my right index. The mWave's split design will force me to retrain both of those habits.
--   The full size number pad available on the keyboard's function layer seems like it could be really nice in certain situations, though I think it'll take a bit of getting used to.
+- I'm realizing I usually hit the <kbd>y</kbd> key with my left index finger and the <kbd>b</kbd> key using my right index. The mWave's split design will force me to retrain both of those habits.
+- The full size number pad available on the keyboard's function layer seems like it could be really nice in certain situations, though I think it'll take a bit of getting used to.
 
 ## The Meh
 
@@ -24,9 +24,9 @@ The "thonk" sound and feel of each keypress is fine, but not as satisfying as th
 
 ## The Bad
 
--   The right shift key is annoyingly small.
-    -   This is particularly noticeable when trying to type a <kbd>?</kbd> or <kbd>"</kbd>, as the two fingers I use have to get very close together.
--   Some keys around the edge of the keyboard produce a faint metallic squeaking sound when pressed.
+- The right shift key is annoyingly small.
+    - This is particularly noticeable when trying to type a <kbd>?</kbd> or <kbd>"</kbd>, as the two fingers I use have to get very close together.
+- Some keys around the edge of the keyboard produce a faint metallic squeaking sound when pressed.
 
 [Kinesis mWave]: https://kinesis-ergo.com/keyboards/mwave/
 [Keychron K8 Pro]: https://www.keychron.com/products/keychron-k8-pro-qmk-via-wireless-mechanical-keyboard

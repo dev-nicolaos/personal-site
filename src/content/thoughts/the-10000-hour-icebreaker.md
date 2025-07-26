@@ -7,9 +7,9 @@ pubDate: "2023-02-24"
 
 For those who aren't familiar, an icebreaker is a simple question meant to stimulate conversation. Thing is, there are a lot of low effort icebreakers out there that don't do that. There are many reasons an icebreaker might fail, but here are a few common ones I see:
 
--   The question can be easily answered in one word, leaving no room for follow up discussion
--   The question is too niche, so many people can't provide an interesting answer
--   The question is used as an icebreaker too often, so using it feels really boring
+- The question can be easily answered in one word, leaving no room for follow up discussion
+- The question is too niche, so many people can't provide an interesting answer
+- The question is used as an icebreaker too often, so using it feels really boring
 
 Turns out making actually good icebreakers can be tricky, so I'm always impressed when I hear a good one. That happened last week when someone shared this:
 

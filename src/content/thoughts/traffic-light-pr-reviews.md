@@ -11,8 +11,8 @@ Blocking a PR can be helpful in communicating the seriousness of a concern, but 
 
 Each comment I leave on a PR gets prefixed with one of three emojis that represent the importance of the concern expressed in the comment.
 
--   🔴: This comment represents a concern that's causing me to block/request changes to the PR
--   🟡: This comment represents a concern I'd like to dialog about before approving the PR, but I won't block merging the PR if others approve it
--   🟢: This is a random or unimportant comment, no need to reply
+- 🔴: This comment represents a concern that's causing me to block/request changes to the PR
+- 🟡: This comment represents a concern I'd like to dialog about before approving the PR, but I won't block merging the PR if others approve it
+- 🟢: This is a random or unimportant comment, no need to reply
 
 I post this legend in the summary of the first couple reviews I do for a new teammate to let them know what's going on. This "traffic light" system is an expansion of a system Kim Bradshaw (a former coworker of mine) used in her reviews which just made use of the red emoji to indicate blocking concerns. I've found these emoji prefixes provide helpful context at a glance for authors and other reviewers. We deal with enough ambiguity as developers, so I love finding simple ways to make our communication clearer.

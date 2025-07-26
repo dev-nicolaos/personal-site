@@ -17,8 +17,8 @@ You select a random file with a couple small utility functions. But alas, upon g
 
 A quick hover reveals the issue: a reference to `window.env`. Thanks to the many moons you've spent digging through the codebase you know this is a safe reference because of two lines of code in the [NodeJS] server:
 
--   One that passes environment variables to a view template
--   One in the view template that sets the `window.env` client-side variable to those environment variables
+- One that passes environment variables to a view template
+- One in the view template that sets the `window.env` client-side variable to those environment variables
 
 Unfortunately, TypeScript hasn't spent nearly the time you have in this codebase and doesn't know about this yet. The definitions it comes with for `window` don't include a property `env`. Being the good teammate you are, you decide to give TypeScript a hand and let it know what's up.
 
@@ -48,8 +48,8 @@ These are the rationalizations you encourage yourself with as you begin to insta
 
 At first you seem to be making quite a bit of progress. In fact, only two third party dependencies seem to have issues...
 
--   `express-handlebars` doesn't have types published for it. Further research shows this is because the package itself has recently been converted to TS. So you install the latest version, update the import statement to account for a breaking change, and watch another squiggle disappear.
--   `@types/connect-timeout` marks the use of the package as invalid, but a look at the source code reveals the typings are incorrect. You slap an ignore on it, put up a PR to the open source typings correcting the mistake and move on.
+- `express-handlebars` doesn't have types published for it. Further research shows this is because the package itself has recently been converted to TS. So you install the latest version, update the import statement to account for a breaking change, and watch another squiggle disappear.
+- `@types/connect-timeout` marks the use of the package as invalid, but a look at the source code reveals the typings are incorrect. You slap an ignore on it, put up a PR to the open source typings correcting the mistake and move on.
 
 Now its down to handling first party squiggles. You got this! No definitions for the server's routes (the gateway to the rest of the untyped files)? Slap an `@ts-ignore` comment down, no need to blow up the scope of the work any further. Some of the functions in `app.ts`' have parameters that need types brought in from ExpressJS? No problem. We should be specifying an encoding in our use of a Node.js file API? Easy fix. At this rate you'll be done in no time.
 

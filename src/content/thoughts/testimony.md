@@ -11,12 +11,12 @@ If you asked me to tell you just one thing about myself, I'd want to tell you ab
 
 My parents started taking me to church before I was old enough to remember. Through a combination of their teaching and weekly Sunday school lessons I came to a very basic understanding of Christian salvation. What I understood was...
 
--   There was an all-powerful God who had created everything in the universe
--   God is perfect and everything he created was good
--   Humans messed up the world by disobeying God
-    -   I (being human) also disobeyed God and was therefore part of the problem
--   God sent his perfect son Jesus Christ to Earth where he was unjustly killed, but God raised him from the dead.
--   Anyone who believed and accepted all this could spend eternity in heaven
+- There was an all-powerful God who had created everything in the universe
+- God is perfect and everything he created was good
+- Humans messed up the world by disobeying God
+    - I (being human) also disobeyed God and was therefore part of the problem
+- God sent his perfect son Jesus Christ to Earth where he was unjustly killed, but God raised him from the dead.
+- Anyone who believed and accepted all this could spend eternity in heaven
 
 This message appealed to me as a child. I knew I wasn't perfect and I knew I wanted to go to heaven when I died. So sometime between the ages of 4 and 6 I told my parents that I wanted to accept Jesus as my savior. They helped me pray to God and I told him that I believed and accepted all this and that I wanted to follow him forever.
 
@@ -63,6 +63,6 @@ None of this is a result of anything special about me. God is is incredibly kind
 
 That's it. God wants to be a part of your life now and forever and all he asks is that you believe what he says. If you want to learn more about who God is please take the time to seek answers. I'll leave a few resources linked below that have been helpful for me. Thanks for taking the time to read this.
 
--   [GotQuestions.org](https://www.gotquestions.org/)
--   [The Truth about Us](https://libro.fm/audiobooks/9781666558159-the-truth-about-us) by Brant Hansen
--   [The Bible Project](https://bibleproject.com/explore/)
+- [GotQuestions.org](https://www.gotquestions.org/)
+- [The Truth about Us](https://libro.fm/audiobooks/9781666558159-the-truth-about-us) by Brant Hansen
+- [The Bible Project](https://bibleproject.com/explore/)

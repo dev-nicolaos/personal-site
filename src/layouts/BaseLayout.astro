@@ -66,7 +66,9 @@ const { description, title, titleTrailer = "Nicolaos Skimas" } = Astro.props;
 						e.dataset.wasclosed = "";
 					}
 				} else {
-					const elms = document.querySelectorAll<HTMLDetailsElement>("details[data-wasclosed]");
+					const elms = document.querySelectorAll<HTMLDetailsElement>(
+						"details[data-wasclosed]",
+					);
 					for (const e of elms) {
 						e.removeAttribute("open");
 						delete e.dataset.wasclosed;
