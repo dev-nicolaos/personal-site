@@ -20,9 +20,9 @@ My parents started taking me to church before I was old enough to remember. Thro
 
 This message appealed to me as a child. I knew I wasn't perfect and I knew I wanted to go to heaven when I died. So sometime between the ages of 4 and 6 I told my parents that I wanted to accept Jesus as my savior. They helped me pray to God and I told him that I believed and accepted all this and that I wanted to follow him forever.
 
-While my belief was sincere, my understanding was small. As I grew up I learned that faith wasn't just about going to heaven, it was supposed to be something that actually affected my daily life. But my faith had little impact on my behavior outside of church. I was very self-centered and I argued with my siblings and disobeyed my parents. Afterwards I'd feel guilty about it. I knew God wanted me to love others and respect my parents, and that I wasn't honoring him with my behavior. I couldn't shake the feeling that I wasn't very good at being a Christian.
+While my belief was sincere, my understanding was small. As I grew up I learned that Christianity wasn't just about going to heaven, it was supposed to be something that actually affected my daily life. But my faith had little impact on my behavior: I was very self-centered, argued with my siblings, and disobeyed my parents. I felt guilty about my bad behavior because I knew God wanted me to love others and respect my parents, and I knew wasn't honoring him with my behavior. I couldn't shake the feeling that I wasn't very good at being a Christian.
 
-Sometimes during church events, a speaker would invite the audience to rededicate their life to Christ. I always took the opportunity to do it, thinking that this time I would "do it right" and stop messing up so much. But nothing really changed; the cycle of selfishness, guilt, and re-dedication continued.
+Sometimes during church events, a speaker would invite audience members to rededicate their lives to Christ. I always took the opportunity with the thought that "this time I'll do it right" and stop messing up so much. But nothing really changed; the cycle of selfishness, guilt, and re-dedication continued.
 
 <hr />
 
@@ -43,7 +43,7 @@ In addition to feeling socially lonely, I also felt spiritually lonely. It didn'
 
 <hr />
 
-In the middle of seventh grade, I began attending a youth group at a new church on Wednesday nights. The contrast to my school experience could not have been bigger. I felt like I could fit in, have fun, and grow in my faith. Youth group became my sanctuary in the middle of what was often another depressing week at school. Most importantly, it was through the teaching and discussions here that I started to realize that the lessons I learned from the Bible as a child were actually applicable in my everyday life. Feelings of depression, loneliness, and worthlessness could be replaced by peace, joy and the knowledge that my life had tremendous value because God himself deeply loved me.
+In the middle of seventh grade, I began attending a youth group at a new church on Wednesday nights. The contrast to my school experience could not have been greater. I felt like I could fit in, have fun, and grow in my faith. Youth group became my sanctuary in the middle of what was often another depressing week at school. Most importantly, it was through the teaching and discussions there that I started to realize that the lessons I learned from the Bible as a child were actually applicable in my everyday life. Feelings of depression, loneliness, and worthlessness could be replaced by peace, joy and the knowledge that my life had tremendous value because God himself deeply loved me.
 
 The summer before my freshman year of high school I went on a white water rafting trip with the youth group. The setting was beautiful and the rafting was a blast, but the time we spent in the Bible had the biggest impact on my life.
 
@@ -53,11 +53,11 @@ In the months after camp I started to more fully realize how central a personal 
 
 <hr />
 
-The difficult circumstances I'd faced in middle school didn't just go away in high school. I was still not particularly social, though I was able to start building some genuine friendships. I still didn't really enjoy school. But these issues didn't have anywhere near the same level influence in my life as they did before. I had confidence in my value and self-worth because I knew God loved me. I knew I was never alone (even when I felt like it) because God's Spirit lived within me. I had hope because I could trust God's promise that he would provide for me in the midst of struggles big and small.
+The difficult circumstances I'd faced in middle school did not disappear in high school. I was still not particularly social, though I was able to start building some genuine friendships. I still didn't really enjoy my time at school. But these issues didn't have anywhere near the same level influence in my life as they did before. I had confidence in my value and self-worth because I knew God loved me. I knew I was never alone (even when I felt like it) because God's Spirit lived within me. I had hope because I could trust God's promise that he would provide for me in the midst of struggles big and small.
 
-That trend has continued as I've walked the path of life. Difficult circumstances still come, but God is faithful to provide in the midst of them. He uses challenging times to grow me and change me so that by his grace I become a more mature and Christ-like person than I used to be. I still make plenty of mistakes, but he forgives my sins because of Jesus sacrifice on the cross. The fact that I'll never be able to fully comprehend the extent of God's love and power gives me a peace that I could never find by myself.
+That trend has continued as I've walked the path of life. Difficult circumstances still come, but God is faithful to provide in the midst of them. He uses challenging times to grow me and change me so that by his grace I become a more mature and Christ-like person than I used to be. I still make plenty of mistakes, but he forgives my sins because Jesus paid for them through his sacrifice on the cross. The fact that I'll never be able to fully comprehend the extent of God's love and power gives me a peace that I could never find by myself.
 
-None of this is a result of anything special about me. God is is incredibly kind and generous; the blessings he has given me far exceed what I deserve. And he offers the gift of salvation and life with him freely to all people regardless of age, gender, or race. The Bible says in <cite>Romans 10:9</cite>:
+None of this is a result of anything special about me. God is is incredibly kind and generous; the blessings he has given me far exceed what I deserve. And he offers the gift of salvation and life with him freely to all people regardless of age, gender, or race, wealth, or social status. The Bible says in <cite>Romans 10:9</cite>:
 
 > If you declare with your mouth, “Jesus is Lord,” and believe in your heart that God raised him from the dead, you will be saved.
 
