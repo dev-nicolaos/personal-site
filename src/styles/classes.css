@@ -200,8 +200,11 @@
 	border-radius: var(--border-radius-small);
 	/* Button/input/select elements don't inherit color */
 	color: var(--color-text);
-	cursor: pointer;
 	padding: var(--space-0);
+
+	&:not(:is(input, text-area)) {
+		cursor: pointer;
+	}
 }
 
 button.form-item {
@@ -211,4 +214,11 @@ button.form-item {
 
 .date {
 	font-weight: var(--font-weight-light);
+}
+
+.icon-button {
+	background: none;
+	border-color: transparent;
+	cursor: pointer;
+	padding: var(--space-0);
 }

@@ -1,0 +1,52 @@
+---
+import CloseIcon from "./svg/Close.svg";
+import SearchIcon from "./svg/Search.svg";
+---
+<site-search>
+	<button data-fn="open" class="icon-button"><SearchIcon width="24" /></button>
+	<dialog closedby="any">
+		<button data-fn="close" class="icon-button"><CloseIcon width="24" /></button>
+		<form>
+			<label>
+				<span>Search Site</span>
+				<input class="form-item" type="search" autofocus />
+			</label>
+		</form>
+	</dialog>
+</site-search>
+
+<style>
+	dialog {
+		background: var(--color-raised-background);
+		border-radius: var(--border-radius-large);
+		padding: var(--space-2);
+		top: 10dvh;
+		justify-self: center;
+
+	}
+	dialog::backdrop {
+		background: var(--color-background);
+		opacity: 50%;
+	}
+</style>
+
+<script>
+	class SiteSearch extends HTMLElement {
+		connectedCallback() {
+			const dialog = this.querySelector("dialog");
+			this.querySelector("button[data-fn=open]").addEventListener(
+				"click",
+				() => {
+					dialog.showModal();
+				},
+			);
+			this.querySelector("button[data-fn=close]").addEventListener(
+				"click",
+				() => {
+					dialog.close();
+				},
+			);
+		}
+	}
+	customElements.define("site-search", SiteSearch);
+</script>
