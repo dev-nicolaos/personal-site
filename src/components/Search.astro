@@ -3,14 +3,12 @@ import CloseIcon from "./svg/Close.svg";
 import SearchIcon from "./svg/Search.svg";
 ---
 <site-search>
-	<button data-fn="open" class="icon-button"><SearchIcon width="24" /></button>
+	<button type="button" data-fn="open" class="icon-button"><SearchIcon width="24" /></button>
 	<dialog closedby="any">
-		<button data-fn="close" class="icon-button"><CloseIcon width="24" /></button>
-		<form>
-			<label>
-				<span>Search Site</span>
-				<input class="form-item" type="search" autofocus />
-			</label>
+		<!-- <button data-fn="close" class="icon-button"><CloseIcon width="24" /></button> -->
+		<form method="post" action="">
+			<input class="form-item" type="search" autofocus required />
+			<button class="form-item">Search</button>
 		</form>
 	</dialog>
 </site-search>
@@ -28,6 +26,16 @@ import SearchIcon from "./svg/Search.svg";
 		background: var(--color-background);
 		opacity: 50%;
 	}
+
+	form {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-1);
+
+		> * {
+			flex-grow: 1;
+		}
+	}
 </style>
 
 <script>
@@ -40,12 +48,12 @@ import SearchIcon from "./svg/Search.svg";
 					dialog.showModal();
 				},
 			);
-			this.querySelector("button[data-fn=close]").addEventListener(
-				"click",
-				() => {
-					dialog.close();
-				},
-			);
+			<!-- this.querySelector("button[data-fn=close]").addEventListener( -->
+				<!-- "click", -->
+				<!-- () => { -->
+					<!-- dialog.close(); -->
+				<!-- }, -->
+			<!-- ); -->
 		}
 	}
 	customElements.define("site-search", SiteSearch);

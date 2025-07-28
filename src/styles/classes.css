@@ -208,8 +208,11 @@
 }
 
 button.form-item {
+	background: var(--color-primary);
+	color: var(--color-background);
 	font-size: var(--font-size-small);
 	font-weight: var(--font-weight-bold);
+	text-transform: uppercase;
 }
 
 .date {
@@ -219,6 +222,8 @@ button.form-item {
 .icon-button {
 	background: none;
 	border-color: transparent;
+	border-radius: var(--border-radius-small);
 	cursor: pointer;
+	line-height: 0;
 	padding: var(--space-0);
 }

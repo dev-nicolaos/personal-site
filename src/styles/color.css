@@ -39,8 +39,8 @@ html {
 }
 
 :focus-visible {
-	outline: var(--color-text) solid 3px;
-	outline-offset: 0.3em;
+	outline: var(--color-text) solid 2px;
+	outline-offset: 0.2em;
 }
 
 ::selection {
