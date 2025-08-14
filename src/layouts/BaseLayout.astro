@@ -56,6 +56,8 @@ const { description, title, titleTrailer = "Nicolaos Skimas" } = Astro.props;
 		<RSSAutodiscovery />
 
 		<script>
+			// TODO: replace this script with CSS when ::details-content is better supported
+			// https://github.com/w3c/csswg-drafts/issues/2084#issuecomment-3188365883
 			window.matchMedia("print").addEventListener("change", (evt) => {
 				if (evt.matches) {
 					const elms = document.querySelectorAll<HTMLDetailsElement>(
